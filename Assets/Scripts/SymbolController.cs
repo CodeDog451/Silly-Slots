@@ -9,6 +9,7 @@ public class SymbolController : MonoBehaviour
     private bool hasSpawnNext = false;
     private float bottomLimit = 0;
     private ReelController reel;
+    private float speed = 20f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,18 +23,19 @@ public class SymbolController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.Translate(Vector3.down * Time.deltaTime * speed);
-        //if (pullingHandle)
-        //{
-        if (!hasSpawnNext && transform.position.y < spawnHeightTrigger)
+        
+        if (pullingHandle)
         {
-            hasSpawnNext = true;
-            reel.SpawnRandomSymbol();
+            transform.Translate(Vector3.down * Time.deltaTime * speed);
+            if (!hasSpawnNext && transform.position.y < spawnHeightTrigger)
+            {
+                hasSpawnNext = true;
+                reel.SpawnRandomSymbol();
+            }
+            if (transform.position.y < bottomLimit)
+            {
+                Destroy(gameObject);
+            }
         }
-        if (transform.position.y < bottomLimit)
-        {
-            Destroy(gameObject);
-        }
-        //}
     }
 }

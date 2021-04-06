@@ -10,10 +10,14 @@ public class ReelController : MonoBehaviour
     private float spawnInterval = 0.1f;
     private bool pullingHandle = false;
     private bool lastEnabled = false;
+    private GameObject row1;
+    private BoxCollider row1Collider;
 
     // Start is called before the first frame update
     void Start()
     {
+        row1 = GameObject.FindGameObjectWithTag("Row1");
+        row1Collider = row1.GetComponent<BoxCollider>();
         //InvokeRepeating("SpawnRandomSymbol", startDelay, spawnInterval);
         SpawnRandomSymbol();
         StartCoroutine(ReelSpinCountdownRoutine());
@@ -24,20 +28,18 @@ public class ReelController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && !pullingHandle)
         {
-            var row1 = GameObject.FindGameObjectWithTag("Row1");
-            var row1Collider = row1.GetComponent<BoxCollider>();
-            //if (lastEnabled != row1Collider.enabled)
-            //{
-                row1Collider.enabled = !row1Collider.enabled;
-            //}
+             
+             
+            
+            row1Collider.enabled = false;            
 
-            //pullingHandle = true;
-            //var symbols = gameObject.GetComponentsInChildren<MoveDown>();
-            //foreach (var sym in symbols)
-            //{
-            //    sym.pullingHandle = true;
-            //}
-            //StartCoroutine(ReelSpinCountdownRoutine());
+            pullingHandle = true;
+            var symbols = gameObject.GetComponentsInChildren<SymbolController>();
+            foreach (var sym in symbols)
+            {
+                sym.pullingHandle = true;
+            }
+            StartCoroutine(ReelSpinCountdownRoutine());
 
         }
     }
@@ -54,7 +56,8 @@ public class ReelController : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         pullingHandle = false;
-        var symbols = gameObject.GetComponentsInChildren<MoveDown>();
+        row1Collider.enabled = true;
+        var symbols = gameObject.GetComponentsInChildren<SymbolController>();
         foreach(var sym in symbols)
         {
             sym.pullingHandle = false;
