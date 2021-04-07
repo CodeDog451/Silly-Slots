@@ -38,4 +38,9 @@ public class SymbolController : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log("got a collision");
+    }
 }

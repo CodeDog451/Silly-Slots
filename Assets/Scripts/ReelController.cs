@@ -12,10 +12,13 @@ public class ReelController : MonoBehaviour
     private bool lastEnabled = false;
     private GameObject row1;
     private BoxCollider row1Collider;
+    private List<GameObject> symbols;
+    public GameObject cell;
 
     // Start is called before the first frame update
     void Start()
     {
+        symbols = new List<GameObject>();
         row1 = GameObject.FindGameObjectWithTag("Row1");
         row1Collider = row1.GetComponent<BoxCollider>();
         //InvokeRepeating("SpawnRandomSymbol", startDelay, spawnInterval);
@@ -27,10 +30,7 @@ public class ReelController : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.Space) && !pullingHandle)
-        {
-             
-             
-            
+        { 
             row1Collider.enabled = false;            
 
             pullingHandle = true;
@@ -62,6 +62,10 @@ public class ReelController : MonoBehaviour
         {
             sym.pullingHandle = false;
         }
+        var symbol1 = cell.GetComponent<CellController>();
+        var symbolName = symbol1.SymbolName;
+        Debug.Log("cell 1: " + symbolName);
+
 
     }
 

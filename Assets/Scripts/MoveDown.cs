@@ -44,7 +44,7 @@ public class MoveDown : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("got a collision");
+        //Debug.Log("got a collision");
     }
 
 
