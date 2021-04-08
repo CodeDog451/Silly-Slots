@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ReelController : MonoBehaviour
@@ -13,7 +14,8 @@ public class ReelController : MonoBehaviour
     private GameObject row1;
     private BoxCollider row1Collider;
     private List<GameObject> symbols;
-    public GameObject cell;
+    public GameObject[] cells;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -62,9 +64,36 @@ public class ReelController : MonoBehaviour
         {
             sym.pullingHandle = false;
         }
-        var symbol1 = cell.GetComponent<CellController>();
-        var symbolName = symbol1.SymbolName;
-        Debug.Log("cell 1: " + symbolName);
+        StartCoroutine(ReelSpinStopRoutine());
+        //int index = 0;
+        //foreach (var cell in cells)
+        //{
+        //    //var allChildren = cell.transform.GetComponentsInChildren<Transform>();
+        //    //var frame = allChildren.Where(k => k.gameObject.name == "frame").FirstOrDefault();
+        //    var symbol1 = cell.GetComponent<CellController>();
+        //    symbol1.ShowFrame(false);
+        //    var symbolName = symbol1.SymbolName;
+        //    //Debug.Log("cell: " + index + " : " + symbolName);
+        //    index++;
+        //}
+    }
+
+    private IEnumerator ReelSpinStopRoutine()
+    {
+        yield return new WaitForSeconds(1);
+       
+       
+        int index = 0;
+        foreach (var cell in cells)
+        {
+            //var allChildren = cell.transform.GetComponentsInChildren<Transform>();
+            //var frame = allChildren.Where(k => k.gameObject.name == "frame").FirstOrDefault();
+            var symbol1 = cell.GetComponent<CellController>();
+            symbol1.ShowFrame(false);
+            var symbolName = symbol1.SymbolName;
+            //Debug.Log("cell: " + index + " : " + symbolName);
+            index++;
+        }
 
 
     }

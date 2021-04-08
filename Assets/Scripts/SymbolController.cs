@@ -41,6 +41,9 @@ public class SymbolController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("got a collision");
+        if (!pullingHandle)
+        {
+            //Debug.Log("got a Symbol collider with: " + other);
+        }
     }
 }
