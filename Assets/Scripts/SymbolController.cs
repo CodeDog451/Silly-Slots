@@ -4,19 +4,38 @@ using UnityEngine;
 
 public class SymbolController : MonoBehaviour
 {
-    public bool pullingHandle = true;
+
+    private bool _pullingHandle = true;
+    private bool _stopping = false;
+    public bool PullingHandle
+    {
+        get
+        {
+            return _pullingHandle;
+        }
+        set
+        {
+            _pullingHandle = value;
+            if (!_pullingHandle)
+            {
+                _stopping = true;
+            }
+        }
+    }
+
     public float spawnHeightTrigger;
     private bool hasSpawnNext = false;
     private float bottomLimit = 0;
     private ReelController reel;
     private float speed = 20f;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         reel = transform.parent.GetComponent<ReelController>();
-
-        pullingHandle = true;
+        rb = transform.GetComponent<Rigidbody>();
+        //PullingHandle = true;
 
     }
 
@@ -24,7 +43,7 @@ public class SymbolController : MonoBehaviour
     void Update()
     {
         
-        if (pullingHandle)
+        if (PullingHandle)
         {
             transform.Translate(Vector3.down * Time.deltaTime * speed);
             if (!hasSpawnNext && transform.position.y < spawnHeightTrigger)
@@ -37,13 +56,23 @@ public class SymbolController : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        //else if(_stopping)
+        //{
+        //    rb.velocity = Vector3.zero;
+        //    _stopping = false;
+        //}
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (!pullingHandle)
+        if (!PullingHandle)
         {
             //Debug.Log("got a Symbol collider with: " + other);
         }
+    }
+    void OnCollisionExit(Collision other)
+    {
+        rb.velocity = Vector3.zero;
+        //print("No longer in contact with " + other.transform.name);
     }
 }

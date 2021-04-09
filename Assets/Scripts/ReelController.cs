@@ -12,34 +12,60 @@ public class ReelController : MonoBehaviour
     private bool pullingHandle = false;
     private bool lastEnabled = false;
     private GameObject row1;
-    private BoxCollider row1Collider;
+    private List<BoxCollider> rowColliders = new List<BoxCollider>();
     private List<GameObject> symbols;
     public GameObject[] cells;
+    public float spinDuration;
+    public GameObject[] reelStops;
     
 
     // Start is called before the first frame update
     void Start()
     {
         symbols = new List<GameObject>();
-        row1 = GameObject.FindGameObjectWithTag("Row1");
-        row1Collider = row1.GetComponent<BoxCollider>();
+        //row1 = GameObject.FindGameObjectWithTag("Row1");
+        //row1 = reelStop;
+        foreach(var reelStop in reelStops)
+        {
+            rowColliders.Add(reelStop.GetComponent<BoxCollider>());
+        }
+        //if (row1 != null)
+        //{
+            
+        //}
         //InvokeRepeating("SpawnRandomSymbol", startDelay, spawnInterval);
         SpawnRandomSymbol();
         StartCoroutine(ReelSpinCountdownRoutine());
+    }
+
+    public void ReelRowCollider(bool state)
+    {
+        foreach (var rowCollider in rowColliders)
+        {
+            rowCollider.enabled = state;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.Space) && !pullingHandle)
-        { 
-            row1Collider.enabled = false;            
+        {
+            ReelRowCollider(false);
+            //foreach (var rowCollider in rowColliders)
+            //{
+            //    rowCollider.enabled = false;
+            //}
+            //if (rowCollider != null)
+            //{
+            //    rowCollider.enabled = false;
+            //}
 
             pullingHandle = true;
             var symbols = gameObject.GetComponentsInChildren<SymbolController>();
             foreach (var sym in symbols)
             {
-                sym.pullingHandle = true;
+                sym.PullingHandle = true;
             }
             StartCoroutine(ReelSpinCountdownRoutine());
 
@@ -56,13 +82,14 @@ public class ReelController : MonoBehaviour
 
     private IEnumerator ReelSpinCountdownRoutine()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(spinDuration);
         pullingHandle = false;
-        row1Collider.enabled = true;
+        ReelRowCollider(true);
+        //rowCollider.enabled = true;
         var symbols = gameObject.GetComponentsInChildren<SymbolController>();
         foreach(var sym in symbols)
         {
-            sym.pullingHandle = false;
+            sym.PullingHandle = false;
         }
         StartCoroutine(ReelSpinStopRoutine());
         //int index = 0;
