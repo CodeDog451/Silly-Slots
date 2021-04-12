@@ -23,8 +23,8 @@ public class SymbolController : MonoBehaviour
         }
     }
 
-    public float spawnHeightTrigger;
-    private bool hasSpawnNext = false;
+    private float spawnHeightTrigger = 9.8f;//6.4f;
+    public bool hasSpawnNext = false;
     private float bottomLimit = 0;
     private ReelController reel;
     private float speed = 20f;
@@ -42,20 +42,24 @@ public class SymbolController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         if (PullingHandle)
         {
             transform.Translate(Vector3.down * Time.deltaTime * speed);
+
+
             if (!hasSpawnNext && transform.position.y < spawnHeightTrigger)
             {
                 hasSpawnNext = true;
                 reel.SpawnRandomSymbol();
             }
+        }
+        
             if (transform.position.y < bottomLimit)
             {
                 Destroy(gameObject);
             }
-        }
+        
         //else if(_stopping)
         //{
         //    rb.velocity = Vector3.zero;
