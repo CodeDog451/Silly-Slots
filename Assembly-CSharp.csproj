@@ -66,7 +66,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CellController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\MoveDown.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PullHandle.cs" />
     <Compile Include="Assets\Scripts\ReelController.cs" />

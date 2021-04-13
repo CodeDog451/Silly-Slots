@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         foreach (var reel in reelControllers)
         {
             int rowIndex = 0;
-            foreach(var symbol in reel.symbols)
+            foreach(var symbol in reel.Cells)
             {
                 cells[rowIndex, reelIndex] = symbol.SymbolName;
                 rowIndex++;
