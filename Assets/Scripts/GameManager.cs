@@ -53,14 +53,15 @@ public class GameManager : MonoBehaviour
         foreach (var reel in reelControllers)
         {
             int rowIndex = 0;
-            foreach(var symbol in reel.Cells)
+            foreach(var cell in reel.Cells)
             {
-                cells[rowIndex, reelIndex] = symbol.SymbolName;
+                cells[rowIndex, reelIndex] = cell.SymbolName;
                 rowIndex++;
             }
             reelIndex++;
         }
-        Debug.Log(cells);
+        var payline1 = cells[0, 0] + "|" + cells[0, 1] + "|" + cells[0, 2] + "|" + cells[0, 3] + "|" + cells[0, 4];
+        Debug.Log(payline1);
 
     }
 }

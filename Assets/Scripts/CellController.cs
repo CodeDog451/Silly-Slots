@@ -18,6 +18,12 @@ public class CellController : MonoBehaviour
         get;
         set;
     }
+
+    public string SymbolId
+    {
+        get;
+        set;
+    }
     public void ShowFrame(bool show)
     {
         var allChildren = symbol.transform.GetComponentsInChildren<Transform>();

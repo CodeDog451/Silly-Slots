@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SymbolController : MonoBehaviour
 {
-
+    public int SymbolId;
     private bool _pullingHandle = true;
     private bool _stopping = false;
     public bool PullingHandle
@@ -22,6 +22,9 @@ public class SymbolController : MonoBehaviour
             }
         }
     }
+
+    
+    
 
     private float spawnHeightTrigger = 9.8f;//6.4f;
     public bool hasSpawnNext = false;
