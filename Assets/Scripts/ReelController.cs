@@ -13,7 +13,7 @@ public class ReelController : MonoBehaviour
     private bool lastEnabled = false;
     private GameObject row1;
     private List<BoxCollider> rowColliders = new List<BoxCollider>();
-    public List<CellController> Cells;
+    public List<CellController> CellControllers;
     public GameObject[] cells;
     public float spinDuration;
     public GameObject[] reelStops;
@@ -22,7 +22,7 @@ public class ReelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cells = new List<CellController>();
+        CellControllers = new List<CellController>();
         //row1 = GameObject.FindGameObjectWithTag("Row1");
         //row1 = reelStop;
         foreach(var reelStop in reelStops)
@@ -114,14 +114,14 @@ public class ReelController : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        Cells.Clear();
+        CellControllers.Clear();
         int index = 0;
         foreach (var cell in cells)
         {
             //var allChildren = cell.transform.GetComponentsInChildren<Transform>();
             //var frame = allChildren.Where(k => k.gameObject.name == "frame").FirstOrDefault();
             var symbol1 = cell.GetComponent<CellController>();
-            Cells.Add(symbol1);
+            CellControllers.Add(symbol1);
             symbol1.ShowFrame(false);
             var symbolName = symbol1.SymbolName;
             //Debug.Log("cell: " + index + " : " + symbolName);

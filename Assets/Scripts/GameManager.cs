@@ -5,15 +5,29 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
+    public class Symbol
+    {
+        public string SymbolName
+        {
+            get;
+            set;
+        }
+
+        public string SymbolId
+        {
+            get;
+            set;
+        }
+    }
     public GameObject[] reels;
     private List<ReelController> reelControllers;
-    private string[,] cells;
+    private Symbol[,] cells;
     private bool pullingHandle = false;
     public float spinDuration;
     // Start is called before the first frame update
     void Start()
     {
-        cells = new string[3, 5];
+        cells = new Symbol[3, 5];
         reelControllers = new List<ReelController>();
         //int reelIndex = 0;
         foreach (var reelGameObject in reels)
@@ -45,6 +59,40 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Find the sequence of matching symbols from left to right
+    /// Return the list of matching symbols and the list length is the number of matching.
+    /// No mismatched symbols should be in this returned list
+    /// </summary>
+    /// <returns></returns>
+    private List<Symbol> GetPayLine()
+    {
+        List<Symbol> line = new List<Symbol>();
+        int reelIndex = 0;        
+        int[] paylineIndexes = new int[] { 1, 1, 1, 1, 1 }; //payline 1
+        foreach (var reel in reelControllers)
+        {
+            int rowIndex = paylineIndexes[reelIndex];
+            var cell = reel.CellControllers[rowIndex];
+            if (!line.Any() || line.Exists(d => d.SymbolId == cell.SymbolId))
+            {
+                var sym = new Symbol()
+                {
+                    SymbolId = cell.SymbolId,
+                    SymbolName = cell.SymbolName
+                };
+                line.Add(sym);
+            }
+            else
+            {
+                break; //get out of the loop
+            }
+            reelIndex++;
+        }  
+
+        return line;
+    }
+
     private IEnumerator ReelSpinCountdownRoutine()
     {
         yield return new WaitForSeconds(spinDuration);
@@ -53,9 +101,14 @@ public class GameManager : MonoBehaviour
         foreach (var reel in reelControllers)
         {
             int rowIndex = 0;
-            foreach(var cell in reel.Cells)
+            foreach(var cell in reel.CellControllers)
             {
-                cells[rowIndex, reelIndex] = cell.SymbolName;
+                var sym = new Symbol()
+                {
+                    SymbolId = cell.SymbolId,
+                    SymbolName = cell.SymbolName
+                };
+                cells[rowIndex, reelIndex] = sym;
                 rowIndex++;
             }
             reelIndex++;
