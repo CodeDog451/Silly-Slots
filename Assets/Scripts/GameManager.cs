@@ -7,17 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public class Symbol
     {
-        public string SymbolName
-        {
-            get;
-            set;
-        }
-
-        public string SymbolId
-        {
-            get;
-            set;
-        }
+        public string SymbolName { get; set; }
+        public int SymbolId { get; set; }
+        //public Transform Frame { get; set; }
+        public System.Action<bool> ShowFrame { get; set; }
     }
     public GameObject[] reels;
     private List<ReelController> reelControllers;
@@ -65,11 +58,21 @@ public class GameManager : MonoBehaviour
     /// No mismatched symbols should be in this returned list
     /// </summary>
     /// <returns></returns>
-    private List<Symbol> GetPayLine()
+    private List<Symbol> GetPayLine(int index)
     {
         List<Symbol> line = new List<Symbol>();
-        int reelIndex = 0;        
-        int[] paylineIndexes = new int[] { 1, 1, 1, 1, 1 }; //payline 1
+        
+        int[][] paylineDef = new int[][]
+        {
+            new int[] { 0, 0, 0, 0, 0 }, //payline 1
+            new int[] { 1, 1, 1, 1, 1 }, //payline 2
+            new int[] { 2, 2, 2, 2, 2 }, //payline 3
+        };
+        //paylineDef.Length
+
+        int[] paylineIndexes = paylineDef[index];
+
+        int reelIndex = 0;
         foreach (var reel in reelControllers)
         {
             int rowIndex = paylineIndexes[reelIndex];
@@ -79,7 +82,9 @@ public class GameManager : MonoBehaviour
                 var sym = new Symbol()
                 {
                     SymbolId = cell.SymbolId,
-                    SymbolName = cell.SymbolName
+                    SymbolName = cell.SymbolName,
+                    //Frame = cell.Frame,
+                    ShowFrame = cell.ShowFrame
                 };
                 line.Add(sym);
             }
@@ -113,8 +118,19 @@ public class GameManager : MonoBehaviour
             }
             reelIndex++;
         }
-        var payline1 = cells[0, 0] + "|" + cells[0, 1] + "|" + cells[0, 2] + "|" + cells[0, 3] + "|" + cells[0, 4];
-        Debug.Log(payline1);
+        for (int x = 0; x < 3; x++)
+        {
+            var payLine1 = GetPayLine(x);
+            if (payLine1.Count() > 1)
+            {
+                foreach (var sym in payLine1)
+                {
+                    sym.ShowFrame(true);
+                }
+            }
+        }
+        //var payline1 = cells[0, 0] + "|" + cells[0, 1] + "|" + cells[0, 2] + "|" + cells[0, 3] + "|" + cells[0, 4];
+        //Debug.Log(payLine1);
 
     }
 }

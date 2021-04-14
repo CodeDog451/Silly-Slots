@@ -19,7 +19,7 @@ public class CellController : MonoBehaviour
         set;
     }
 
-    public string SymbolId
+    public int SymbolId
     {
         get;
         set;
@@ -45,10 +45,12 @@ public class CellController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         symbol = other.gameObject;
+        var symbolController =  symbol.GetComponent<SymbolController>();
         //var allChildren = symbol.transform.GetComponentsInChildren<Transform>();
         //Frame = allChildren.Where(k => k.gameObject.name == "frame").FirstOrDefault();
         //var frame = symbol.transform.Find("iconBonus/frame");
         SymbolName = symbol.name;
+        SymbolId = symbolController.SymbolId;
         //Debug.Log("got a Cell collision: " + SymbolName);
     }
 }
