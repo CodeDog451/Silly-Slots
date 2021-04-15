@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
         for (int x = 0; x < 3; x++)
         {
             var payLine1 = GetPayLine(x);
-            if (payLine1.Count() > 1)
+            if (payLine1.Count() > 2)
             {
                 foreach (var sym in payLine1)
                 {
