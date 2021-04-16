@@ -17,6 +17,20 @@ public class GameManager : MonoBehaviour
     private Symbol[,] cells;
     private bool pullingHandle = false;
     public float spinDuration;
+
+    private int[][] PaylineDef = new int[][]
+        {
+            new int[] { 0, 0, 0, 0, 0 }, //payline 1
+            new int[] { 0, 0, 1, 0, 0 }, //payline 2
+            new int[] { 0, 1, 2, 1, 0 }, //payline 3
+            new int[] { 1, 0, 0, 0, 1 }, //payline 4
+            new int[] { 1, 1, 1, 1, 1 }, //payline 5
+            new int[] { 1, 2, 2, 2, 1 }, //payline 6
+            new int[] { 2, 1, 0, 1, 2 }, //payline 7
+            new int[] { 2, 2, 1, 2, 2 }, //payline 8
+            new int[] { 2, 2, 2, 2, 2 }, //payline 9
+        };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,15 +76,10 @@ public class GameManager : MonoBehaviour
     {
         List<Symbol> line = new List<Symbol>();
         
-        int[][] paylineDef = new int[][]
-        {
-            new int[] { 0, 0, 0, 0, 0 }, //payline 1
-            new int[] { 1, 1, 1, 1, 1 }, //payline 2
-            new int[] { 2, 2, 2, 2, 2 }, //payline 3
-        };
+        
         //paylineDef.Length
 
-        int[] paylineIndexes = paylineDef[index];
+        int[] paylineIndexes = PaylineDef[index];
 
         int reelIndex = 0;
         foreach (var reel in reelControllers)
@@ -118,7 +127,7 @@ public class GameManager : MonoBehaviour
             }
             reelIndex++;
         }
-        for (int x = 0; x < 3; x++)
+        for (int x = 0; x < PaylineDef.Length; x++)
         {
             var payLine1 = GetPayLine(x);
             if (payLine1.Count() > 2)
