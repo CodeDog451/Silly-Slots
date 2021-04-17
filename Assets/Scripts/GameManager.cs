@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     private Symbol[,] cells;
     private bool pullingHandle = false;
     public float spinDuration;
+    public GameObject[] PayLines;
+    private List<PayLineController> PayLineControllers;
 
     private int[][] PaylineDef = new int[][]
         {
@@ -35,20 +37,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         cells = new Symbol[3, 5];
-        reelControllers = new List<ReelController>();
-        //int reelIndex = 0;
+        reelControllers = new List<ReelController>();        
         foreach (var reelGameObject in reels)
         {
             var reel = reelGameObject.GetComponent<ReelController>();
-            reelControllers.Add(reel);
-            //int rowIndex = 0;
-            //foreach (var symbol in reel.symbols)
-            //{
-            //    cells[rowIndex, reelIndex] = symbol;
-            //    rowIndex++;
-            //}
-
-            //reelIndex++;
+            reelControllers.Add(reel);            
+        }
+        PayLineControllers = new List<PayLineController>();
+        foreach(var payline in PayLines)
+        {
+            var controller = payline.GetComponent<PayLineController>();
+            PayLineControllers.Add(controller);
         }
     }
 
@@ -61,6 +60,10 @@ public class GameManager : MonoBehaviour
             foreach (var reel in reelControllers)
             {
                 reel.SpinReel();
+            }
+            foreach (var controller in PayLineControllers)
+            {
+                controller.ShowLine(false);
             }
             StartCoroutine(ReelSpinCountdownRoutine());
         }
@@ -132,6 +135,7 @@ public class GameManager : MonoBehaviour
             var payLine1 = GetPayLine(x);
             if (payLine1.Count() > 2)
             {
+                PayLineControllers[x].ShowLine(true);
                 foreach (var sym in payLine1)
                 {
                     sym.ShowFrame(true);

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.4506119, g: 0.50058454, b: 0.57500845, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3122,6 +3122,16 @@ MonoBehaviour:
   - {fileID: 483788035}
   - {fileID: 1569321816}
   spinDuration: 5.1
+  PayLines:
+  - {fileID: 176864852}
+  - {fileID: 2102501678}
+  - {fileID: 1641090929}
+  - {fileID: 563734397}
+  - {fileID: 954690887}
+  - {fileID: 964965871}
+  - {fileID: 108886710}
+  - {fileID: 7191615}
+  - {fileID: 1263076884}
 --- !u!4 &1664008587
 Transform:
   m_ObjectHideFlags: 0
