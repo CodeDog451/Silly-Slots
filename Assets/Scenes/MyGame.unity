@@ -3690,6 +3690,7 @@ MonoBehaviour:
   - {fileID: 108886710}
   - {fileID: 7191615}
   - {fileID: 1263076884}
+  scoreText: {fileID: 1228506992}
 --- !u!4 &1664008587
 Transform:
   m_ObjectHideFlags: 0

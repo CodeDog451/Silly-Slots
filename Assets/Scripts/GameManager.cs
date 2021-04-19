@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     public class Symbol
@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public float spinDuration;
     public GameObject[] PayLines;
     private List<PayLineController> PayLineControllers;
+    public TextMeshProUGUI scoreText;
+    private int score;
 
     private int[][] PaylineDef = new int[][]
         {
@@ -33,9 +35,24 @@ public class GameManager : MonoBehaviour
             new int[] { 2, 2, 2, 2, 2 }, //payline 9
         };
 
+    private int[][] PayTable = new int[][]
+    {
+        new int[] { 0, 0, 0, 0,  0,   0 },       //no symbol id = 0
+        new int[] { 0, 0, 0, 15, 45,  200 },     //helmet id = 1
+        new int[] { 0, 0, 0, 5,  20,  100 },     //pick id = 2
+        new int[] { 0, 0, 0, 45, 200, 1200 },    //climber id = 3
+        new int[] { 0, 0, 0, 15, 45,  200 },     //boots id = 4
+        new int[] { 0, 0, 0, 10, 30,  150 },     //hook id = 5
+        new int[] { 0, 0, 0, 5,  20,  100 },     //tent id = 6
+        new int[] { 0, 0, 0, 10, 30,  150 },     //rock climber id = 7
+        new int[] { 0, 0, 0, 45, 200, 1200 },    //yeti id = 8
+    };
+
     // Start is called before the first frame update
     void Start()
     {
+        score = 10000;
+        scoreText.text = score.ToString();
         cells = new Symbol[3, 5];
         reelControllers = new List<ReelController>();        
         foreach (var reelGameObject in reels)
@@ -56,7 +73,8 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && !pullingHandle)
         { 
-            pullingHandle = true;            
+            pullingHandle = true;
+            UpdateScore(-9);//one token per payline
             foreach (var reel in reelControllers)
             {
                 reel.SpinReel();
@@ -67,6 +85,12 @@ public class GameManager : MonoBehaviour
             }
             StartCoroutine(ReelSpinCountdownRoutine());
         }
+    }
+
+    private void UpdateScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = score.ToString();
     }
 
     /// <summary>
@@ -132,14 +156,19 @@ public class GameManager : MonoBehaviour
         }
         for (int x = 0; x < PaylineDef.Length; x++)
         {
+            //PayTable
             var payLine1 = GetPayLine(x);
             if (payLine1.Count() > 2)
             {
+                var symbolId = payLine1.First().SymbolId;
+                var payAmount = PayTable[symbolId][payLine1.Count()];
+
                 PayLineControllers[x].ShowLine(true);
                 foreach (var sym in payLine1)
                 {
                     sym.ShowFrame(true);
                 }
+                UpdateScore(payAmount);
             }
         }
         //var payline1 = cells[0, 0] + "|" + cells[0, 1] + "|" + cells[0, 2] + "|" + cells[0, 3] + "|" + cells[0, 4];
