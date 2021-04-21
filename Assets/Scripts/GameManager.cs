@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     private List<PayLineController> PayLineControllers;
     public TextMeshProUGUI scoreText;
     private int score;
+    public TextMeshProUGUI wonText;
 
     private int[][] PaylineDef = new int[][]
         {
@@ -89,6 +90,14 @@ public class GameManager : MonoBehaviour
 
     private void UpdateScore(int scoreToAdd)
     {
+        if (scoreToAdd >= 0)
+        {
+            wonText.text = scoreToAdd.ToString();
+        }
+        else
+        {
+            //wonText.text = "0";
+        }
         score += scoreToAdd;
         scoreText.text = score.ToString();
     }
@@ -154,6 +163,7 @@ public class GameManager : MonoBehaviour
             }
             reelIndex++;
         }
+        int won = 0;
         for (int x = 0; x < PaylineDef.Length; x++)
         {
             //PayTable
@@ -168,9 +178,11 @@ public class GameManager : MonoBehaviour
                 {
                     sym.ShowFrame(true);
                 }
-                UpdateScore(payAmount);
+                won += payAmount;
+                //UpdateScore(payAmount);
             }
         }
+        UpdateScore(won);
         //var payline1 = cells[0, 0] + "|" + cells[0, 1] + "|" + cells[0, 2] + "|" + cells[0, 3] + "|" + cells[0, 4];
         //Debug.Log(payLine1);
 
