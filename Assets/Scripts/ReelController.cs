@@ -17,7 +17,8 @@ public class ReelController : MonoBehaviour
     public GameObject[] cells;
     public float spinDuration;
     public GameObject[] reelStops;
-    
+    //private AudioSource audio;
+
 
     // Start is called before the first frame update
     void Start()
@@ -123,6 +124,7 @@ public class ReelController : MonoBehaviour
             var symbol1 = cell.GetComponent<CellController>();
             CellControllers.Add(symbol1);
             symbol1.ShowFrame(false);
+            symbol1.ShowWinEffect(false);
             var symbolName = symbol1.SymbolName;
             //Debug.Log("cell: " + index + " : " + symbolName);
             index++;

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
         public int SymbolId { get; set; }
         //public Transform Frame { get; set; }
         public System.Action<bool> ShowFrame { get; set; }
+        public System.Action<bool> ShowWinEffect { get; set; }
     }
     public GameObject[] reels;
     private List<ReelController> reelControllers;
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     private int score;
     public TextMeshProUGUI wonText;
+    public AudioClip spinSound;
+    private AudioSource audio;
 
     private int[][] PaylineDef = new int[][]
         {
@@ -52,6 +55,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         score = 10000;
         scoreText.text = score.ToString();
         cells = new Symbol[3, 5];
@@ -129,7 +133,9 @@ public class GameManager : MonoBehaviour
                     SymbolId = cell.SymbolId,
                     SymbolName = cell.SymbolName,
                     //Frame = cell.Frame,
-                    ShowFrame = cell.ShowFrame
+                    ShowFrame = cell.ShowFrame,
+                    ShowWinEffect = cell.ShowWinEffect
+
                 };
                 line.Add(sym);
             }
@@ -145,7 +151,11 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator ReelSpinCountdownRoutine()
     {
+        audio.volume = 1.0f;
+        audio.Play();
         yield return new WaitForSeconds(spinDuration);
+        audio.volume = 0.0f;
+        //audio.Stop();
         pullingHandle = false;
         int reelIndex = 0;
         foreach (var reel in reelControllers)
@@ -177,12 +187,14 @@ public class GameManager : MonoBehaviour
                 foreach (var sym in payLine1)
                 {
                     sym.ShowFrame(true);
+                    sym.ShowWinEffect(true);
                 }
                 won += payAmount;
                 //UpdateScore(payAmount);
             }
         }
         UpdateScore(won);
+        
         //var payline1 = cells[0, 0] + "|" + cells[0, 1] + "|" + cells[0, 2] + "|" + cells[0, 3] + "|" + cells[0, 4];
         //Debug.Log(payLine1);
 

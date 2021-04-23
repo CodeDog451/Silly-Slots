@@ -28,8 +28,16 @@ public class CellController : MonoBehaviour
     {
         var allChildren = symbol.transform.GetComponentsInChildren<Transform>();
         var frame = allChildren.Where(k => k.gameObject.name == "frame").FirstOrDefault();
-        var sprintRender = frame.GetComponent<SpriteRenderer>();
-        sprintRender.enabled = show;
+        var spriteRender = frame.GetComponent<SpriteRenderer>();
+        spriteRender.enabled = show;
+    }
+
+    public void ShowWinEffect(bool show)
+    {
+        var allChildren = symbol.transform.GetComponentsInChildren<Transform>();
+        var item = allChildren.Where(k => k.gameObject.name == "WinEffect").FirstOrDefault();
+        var spriteRender = item.GetComponent<SpriteRenderer>();
+        spriteRender.enabled = show;
     }
     // Start is called before the first frame update
     void Start()
