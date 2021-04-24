@@ -91,6 +91,7 @@ public class ReelController : MonoBehaviour
         //audio.volume = 0.5f;
        // audio.Play();
         yield return new WaitForSeconds(spinDuration);
+        audio.Play();
         //audio.volume = 0.0f;
         pullingHandle = false;
         ReelRowCollider(true);
