@@ -17,12 +17,14 @@ public class ReelController : MonoBehaviour
     public GameObject[] cells;
     public float spinDuration;
     public GameObject[] reelStops;
+    private AudioSource audio;
     //private AudioSource audio;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         CellControllers = new List<CellController>();
         //row1 = GameObject.FindGameObjectWithTag("Row1");
         //row1 = reelStop;
@@ -86,7 +88,10 @@ public class ReelController : MonoBehaviour
 
     private IEnumerator ReelSpinCountdownRoutine()
     {
+        //audio.volume = 0.5f;
+       // audio.Play();
         yield return new WaitForSeconds(spinDuration);
+        //audio.volume = 0.0f;
         pullingHandle = false;
         ReelRowCollider(true);
         //rowCollider.enabled = true;

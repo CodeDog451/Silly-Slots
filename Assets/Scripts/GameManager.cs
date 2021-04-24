@@ -89,6 +89,8 @@ public class GameManager : MonoBehaviour
                 controller.ShowLine(false);
             }
             StartCoroutine(ReelSpinCountdownRoutine());
+            //StartCoroutine(ReelSpinSoundCountdownRoutine());
+            
         }
     }
 
@@ -149,12 +151,21 @@ public class GameManager : MonoBehaviour
         return line;
     }
 
-    private IEnumerator ReelSpinCountdownRoutine()
+    private IEnumerator ReelSpinSoundCountdownRoutine()
     {
         audio.volume = 1.0f;
         audio.Play();
-        yield return new WaitForSeconds(spinDuration);
+        yield return new WaitForSeconds(spinDuration-1);
         audio.volume = 0.0f;
+        
+
+    }
+    private IEnumerator ReelSpinCountdownRoutine()
+    {
+        //audio.volume = 1.0f;
+        //audio.Play();
+        yield return new WaitForSeconds(spinDuration);
+        //audio.volume = 0.0f;
         //audio.Stop();
         pullingHandle = false;
         int reelIndex = 0;
