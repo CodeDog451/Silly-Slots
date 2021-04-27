@@ -52,6 +52,16 @@ public class GameManager : MonoBehaviour
         new int[] { 0, 0, 0, 45, 200, 1200 },    //yeti id = 8
     };
 
+    public void OnSpinButtonClick()
+    {
+        SpinIfReady();
+    }
+
+    public void OnCloseButtonClick()
+    {
+        Application.Quit();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,11 +83,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SpinIfReady()
     {
-        if (Input.GetKey(KeyCode.Space) && !pullingHandle)
-        { 
+        if (!pullingHandle)
+        {
             pullingHandle = true;
             UpdateScore(-9);//one token per payline
             foreach (var reel in reelControllers)
@@ -89,8 +98,17 @@ public class GameManager : MonoBehaviour
                 controller.ShowLine(false);
             }
             StartCoroutine(ReelSpinCountdownRoutine());
-            //StartCoroutine(ReelSpinSoundCountdownRoutine());
-            
+            StartCoroutine(ReelSpinSoundCountdownRoutine());
+
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter))
+        {
+            SpinIfReady();  
         }
     }
 
@@ -155,7 +173,7 @@ public class GameManager : MonoBehaviour
     {
         audio.volume = 1.0f;
         audio.Play();
-        yield return new WaitForSeconds(spinDuration-1);
+        yield return new WaitForSeconds(spinDuration);
         audio.volume = 0.0f;
         
 

@@ -10,7 +10,7 @@ public class PayLineController : MonoBehaviour
     void Start()
     {
         lineRenderer = line.GetComponent<SpriteRenderer>();
-        Debug.Log(lineRenderer);
+        //Debug.Log(lineRenderer);
     }
 
     public void ShowLine(bool show)
