@@ -86,39 +86,39 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1526}
+      Script: {instanceID: 1530}
     - Class: 114
-      Script: {instanceID: 1792}
+      Script: {instanceID: 1798}
     - Class: 114
-      Script: {instanceID: 2012}
+      Script: {instanceID: 2026}
     - Class: 114
-      Script: {instanceID: 2046}
+      Script: {instanceID: 2060}
     - Class: 114
-      Script: {instanceID: 2076}
+      Script: {instanceID: 2090}
     - Class: 114
-      Script: {instanceID: 2194}
+      Script: {instanceID: 2198}
     - Class: 114
-      Script: {instanceID: 2270}
+      Script: {instanceID: 2212}
     - Class: 114
-      Script: {instanceID: 2418}
+      Script: {instanceID: 2290}
     - Class: 114
-      Script: {instanceID: 2514}
+      Script: {instanceID: 2438}
     - Class: 114
-      Script: {instanceID: 2546}
+      Script: {instanceID: 2536}
     - Class: 114
-      Script: {instanceID: 2592}
+      Script: {instanceID: 2570}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 2618}
     - Class: 114
-      Script: {instanceID: 3206}
+      Script: {instanceID: 2918}
     - Class: 114
-      Script: {instanceID: 3642}
+      Script: {instanceID: 3244}
     - Class: 114
-      Script: {instanceID: 3928}
+      Script: {instanceID: 3686}
     - Class: 114
-      Script: {instanceID: 4192}
+      Script: {instanceID: 3982}
     - Class: 114
-      Script: {instanceID: 23034}
+      Script: {instanceID: 4252}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -264,6 +264,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
     className: PlaymodeTestsController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CloseButtonController
   - hash:
       serializedVersion: 2
       Hash: c0eece9e59bd93be16b7a4d9a8092a0a
@@ -690,13 +696,7 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CloseButtonController
   platform: 20
   scenePathNames:
   - Assets/Scenes/MyGame.unity
-  playerPath: C:/Unity/Silly-Slots/Silly-Slots Builds
+  playerPath: C:/Unity/Silly-Slots/Silly-Slots

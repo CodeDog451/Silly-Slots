@@ -38,7 +38,7 @@ public class ReelController : MonoBehaviour
         //}
         //InvokeRepeating("SpawnRandomSymbol", startDelay, spawnInterval);
         SpawnRandomSymbol();
-        StartCoroutine(ReelSpinCountdownRoutine());
+        StartCoroutine(ReelSpinCountdownRoutine(0.5f));
     }
 
     public void ReelRowCollider(bool state)
@@ -86,11 +86,16 @@ public class ReelController : MonoBehaviour
         child.transform.SetParent(gameObject.transform);
     }
 
-    private IEnumerator ReelSpinCountdownRoutine()
+    private IEnumerator ReelSpinCountdownRoutine(float? init = null)
     {
         //audio.volume = 0.5f;
-       // audio.Play();
-        yield return new WaitForSeconds(spinDuration);
+        // audio.Play();
+        float spinTime = spinDuration;
+        if(init != null)
+        {
+            spinTime = init.Value;
+        }
+        yield return new WaitForSeconds(spinTime);
         audio.Play();
         //audio.volume = 0.0f;
         pullingHandle = false;
