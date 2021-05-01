@@ -15,14 +15,16 @@ public class GameManager : MonoBehaviour
     }
     public GameObject[] reels;
     private List<ReelController> reelControllers;
-    private Symbol[,] cells;
+    //private Symbol[,] cells;
     private bool pullingHandle = false;
     public float spinDuration;
     public GameObject[] PayLines;
     private List<PayLineController> PayLineControllers;
     public TextMeshProUGUI scoreText;
     private int score;
+    private int freeSpins;
     public TextMeshProUGUI wonText;
+    public TextMeshProUGUI spinsText;
     public AudioClip spinSound;
     private AudioSource audio;
 
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
         new int[] { 0, 0, 0, 5,  20,  100 },     //tent id = 6
         new int[] { 0, 0, 0, 10, 30,  150 },     //rock climber id = 7
         new int[] { 0, 0, 0, 45, 200, 1200 },    //yeti id = 8
+        new int[] { 0, 0, 0, 5,  10,  20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120 },     //free spins id = 9
     };
 
     public void OnSpinButtonClick()
@@ -68,7 +71,10 @@ public class GameManager : MonoBehaviour
         audio = GetComponent<AudioSource>();
         score = 10000;
         scoreText.text = score.ToString();
-        cells = new Symbol[3, 5];
+
+        freeSpins = 0;
+        spinsText.text = freeSpins.ToString();
+
         reelControllers = new List<ReelController>();        
         foreach (var reelGameObject in reels)
         {
@@ -88,7 +94,14 @@ public class GameManager : MonoBehaviour
         if (!pullingHandle)
         {
             pullingHandle = true;
-            UpdateScore(-9);//one token per payline
+            if (freeSpins > 0)
+            {
+                UpdateSpins(-1); 
+            }
+            else
+            {
+                UpdateScore(-9);//one token per payline
+            }
             foreach (var reel in reelControllers)
             {
                 reel.SpinReel();
@@ -126,6 +139,12 @@ public class GameManager : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
+    private void UpdateSpins(int spinsToAdd)
+    {
+        freeSpins += spinsToAdd;
+        spinsText.text = freeSpins.ToString();
+    }
+
     /// <summary>
     /// Find the sequence of matching symbols from left to right
     /// Return the list of matching symbols and the list length is the number of matching.
@@ -133,11 +152,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <returns></returns>
     private List<Symbol> GetPayLine(int index)
-    {
-        List<Symbol> line = new List<Symbol>();
-        
-        
-        //paylineDef.Length
+    {        
+
+        List<Symbol> line = new List<Symbol>();       
 
         int[] paylineIndexes = PaylineDef[index];
 
@@ -146,6 +163,7 @@ public class GameManager : MonoBehaviour
         {
             int rowIndex = paylineIndexes[reelIndex];
             var cell = reel.CellControllers[rowIndex];
+            
             if (!line.Any() || line.Exists(d => d.SymbolId == cell.SymbolId))
             {
                 var sym = new Symbol()
@@ -169,6 +187,32 @@ public class GameManager : MonoBehaviour
         return line;
     }
 
+    private List<Symbol> GetScatterLine(int symbolId)
+    {
+        List<Symbol> line = new List<Symbol>();        
+        foreach (var reel in reelControllers)
+        {
+            
+            foreach (var cell in reel.CellControllers)
+            {
+                
+                if (cell.SymbolId == symbolId)
+                {
+                    line.Add(new Symbol()
+                    {
+                        SymbolId = cell.SymbolId,
+                        SymbolName = cell.SymbolName,
+                        ShowFrame = cell.ShowFrame,
+                        ShowWinEffect = cell.ShowWinEffect
+
+                    });
+                }
+            }   
+        }
+
+        return line;
+    }
+
     private IEnumerator ReelSpinSoundCountdownRoutine()
     {
         audio.volume = 1.0f;
@@ -186,22 +230,7 @@ public class GameManager : MonoBehaviour
         //audio.volume = 0.0f;
         //audio.Stop();
         pullingHandle = false;
-        int reelIndex = 0;
-        foreach (var reel in reelControllers)
-        {
-            int rowIndex = 0;
-            foreach(var cell in reel.CellControllers)
-            {
-                var sym = new Symbol()
-                {
-                    SymbolId = cell.SymbolId,
-                    SymbolName = cell.SymbolName
-                };
-                cells[rowIndex, reelIndex] = sym;
-                rowIndex++;
-            }
-            reelIndex++;
-        }
+        
         int won = 0;
         for (int x = 0; x < PaylineDef.Length; x++)
         {
@@ -222,10 +251,19 @@ public class GameManager : MonoBehaviour
                 //UpdateScore(payAmount);
             }
         }
-        UpdateScore(won);
-        
-        //var payline1 = cells[0, 0] + "|" + cells[0, 1] + "|" + cells[0, 2] + "|" + cells[0, 3] + "|" + cells[0, 4];
-        //Debug.Log(payLine1);
+        var freeSpins = GetScatterLine(9);
+        if(freeSpins.Count > 2)
+        {
+            foreach (var sym in freeSpins)
+            {
+                sym.ShowFrame(true);
+                sym.ShowWinEffect(true);
+            }
+            //kmp
+            var awardSpins = PayTable[9][freeSpins.Count()];
+            UpdateSpins(awardSpins);
+        }
+        UpdateScore(won);    
 
     }
 }

@@ -134,8 +134,8 @@ public class ReelController : MonoBehaviour
             //var frame = allChildren.Where(k => k.gameObject.name == "frame").FirstOrDefault();
             var symbol1 = cell.GetComponent<CellController>();
             CellControllers.Add(symbol1);
-            symbol1.ShowFrame(false);
-            symbol1.ShowWinEffect(false);
+            //symbol1.ShowFrame(false);
+            //symbol1.ShowWinEffect(false);
             var symbolName = symbol1.SymbolName;
             //Debug.Log("cell: " + index + " : " + symbolName);
             index++;
