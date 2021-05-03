@@ -458,7 +458,7 @@ ScriptsOnlyBuild:
     className: AnalyticsEventTrackerEditor
   - hash:
       serializedVersion: 2
-      Hash: 1fd4c9114fc9619b51bcd7caa1be791e
+      Hash: 52c47356c30fe7956b6d82f0bdb2fe37
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager

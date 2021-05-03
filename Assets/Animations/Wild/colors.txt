@@ -1,0 +1,4 @@
+text gold: r253, g193, b2
+text side: r67, g25, b0
+text drop outline: r204, g25, b0
+text drop outline side: r82, g17, b0

@@ -363,3 +363,6 @@ Library/expandedItems
 *.dll
 *.dll
 *.bin
+Library/ArtifactDB
+Library/ArtifactDB
+Library/ArtifactDB
