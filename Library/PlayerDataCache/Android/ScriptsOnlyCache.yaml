@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CellController
+    - CloseButtonController
     - GameManager
     - PayLineController
     - PlayerController
@@ -57,6 +58,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 58
       Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
@@ -82,35 +85,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1530}
     - Class: 114
-      Script: {instanceID: 1796}
+      Script: {instanceID: 1798}
     - Class: 114
-      Script: {instanceID: 2048}
+      Script: {instanceID: 2026}
     - Class: 114
-      Script: {instanceID: 2078}
+      Script: {instanceID: 2060}
     - Class: 114
-      Script: {instanceID: 2196}
+      Script: {instanceID: 2090}
     - Class: 114
-      Script: {instanceID: 2272}
+      Script: {instanceID: 2198}
     - Class: 114
-      Script: {instanceID: 2420}
+      Script: {instanceID: 2212}
     - Class: 114
-      Script: {instanceID: 2516}
+      Script: {instanceID: 2290}
     - Class: 114
-      Script: {instanceID: 2548}
+      Script: {instanceID: 2438}
     - Class: 114
-      Script: {instanceID: 2594}
+      Script: {instanceID: 2536}
     - Class: 114
-      Script: {instanceID: 2888}
+      Script: {instanceID: 2570}
     - Class: 114
-      Script: {instanceID: 3208}
+      Script: {instanceID: 2618}
     - Class: 114
-      Script: {instanceID: 3644}
+      Script: {instanceID: 2918}
     - Class: 114
-      Script: {instanceID: 3930}
+      Script: {instanceID: 3244}
     - Class: 114
-      Script: {instanceID: 4194}
+      Script: {instanceID: 3686}
     - Class: 114
-      Script: {instanceID: 31054}
+      Script: {instanceID: 3982}
+    - Class: 114
+      Script: {instanceID: 4252}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -222,6 +227,12 @@ ScriptsOnlyBuild:
     className: AnalyticsTracker
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpinButtonController
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -250,6 +261,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
     className: PlaymodeTestsController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CloseButtonController
   - hash:
       serializedVersion: 2
       Hash: c0eece9e59bd93be16b7a4d9a8092a0a
@@ -438,7 +455,7 @@ ScriptsOnlyBuild:
     className: AnalyticsEventTrackerEditor
   - hash:
       serializedVersion: 2
-      Hash: 1fd4c9114fc9619b51bcd7caa1be791e
+      Hash: 52c47356c30fe7956b6d82f0bdb2fe37
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -676,13 +693,7 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SpinButtonController
   platform: 13
   scenePathNames:
   - Assets/Scenes/MyGame.unity
-  playerPath: C:/Unity/Silly-Slots/SillySlots.apk
+  playerPath: C:/Unity/Silly-Slots/Silly-Slots/SillySlots.apk

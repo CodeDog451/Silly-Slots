@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI spinsText;
     public AudioClip spinSound;
     private AudioSource audio;
+    public GameObject megaWin;
 
     private int[][] PaylineDef = new int[][]
         {
@@ -41,6 +42,19 @@ public class GameManager : MonoBehaviour
             new int[] { 2, 2, 2, 2, 2 }, //payline 9
         };
 
+    public class SymbolIds
+    {
+        public static int Helmet = 1;
+        public static int Pick = 2;
+        public static int Climber = 3;
+        public static int Boots = 4;
+        public static int Hook = 5;
+        public static int Tent = 6;
+        public static int RockClimber = 7;
+        public static int Yeti = 8;
+        public static int FreeSpins = 9;
+    }
+
     private int[][] PayTable = new int[][]
     {
         new int[] { 0, 0, 0, 0,  0,   0 },       //no symbol id = 0
@@ -51,7 +65,7 @@ public class GameManager : MonoBehaviour
         new int[] { 0, 0, 0, 10, 30,  150 },     //hook id = 5
         new int[] { 0, 0, 0, 5,  20,  100 },     //tent id = 6
         new int[] { 0, 0, 0, 10, 30,  150 },     //rock climber id = 7
-        new int[] { 0, 0, 0, 45, 200, 1200 },    //yeti id = 8
+        new int[] { 0, 0, 0, 45, 200, 1200 },    //yeti id = 8 //wild card
         new int[] { 0, 0, 0, 5,  10,  20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120 },     //free spins id = 9
     };
 
@@ -93,6 +107,7 @@ public class GameManager : MonoBehaviour
     {
         if (!pullingHandle)
         {
+            megaWin.SetActive(false);
             pullingHandle = true;
             if (freeSpins > 0)
             {
@@ -164,7 +179,7 @@ public class GameManager : MonoBehaviour
             int rowIndex = paylineIndexes[reelIndex];
             var cell = reel.CellControllers[rowIndex];
             
-            if (!line.Any() || line.Exists(d => d.SymbolId == cell.SymbolId))
+            if (!line.Any() || line.Exists(d => d.SymbolId == cell.SymbolId  || cell.SymbolId == SymbolIds.Yeti))
             {
                 var sym = new Symbol()
                 {
@@ -175,7 +190,14 @@ public class GameManager : MonoBehaviour
                     ShowWinEffect = cell.ShowWinEffect
 
                 };
-                line.Add(sym);
+                if (cell.SymbolId == SymbolIds.Yeti)
+                {
+                    line.Add(sym);
+                }
+                else
+                {
+                    line.Insert(0, sym);
+                }
             }
             else
             {
@@ -238,8 +260,13 @@ public class GameManager : MonoBehaviour
             var payLine1 = GetPayLine(x);
             if (payLine1.Count() > 2)
             {
+                
                 var symbolId = payLine1.First().SymbolId;
                 var payAmount = PayTable[symbolId][payLine1.Count()];
+                if(payAmount > 100)
+                {
+                    megaWin.SetActive(true);
+                }
 
                 PayLineControllers[x].ShowLine(true);
                 foreach (var sym in payLine1)

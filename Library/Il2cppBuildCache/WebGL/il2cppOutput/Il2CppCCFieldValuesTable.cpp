@@ -1522,19 +1522,20 @@ IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2467[3];
 IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2468[4];
 IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2469[1];
 IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2470[4];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2471[1];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2472[3];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2471[9];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2472[1];
 IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2473[3];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2474[15];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2475[2];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2476[1];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2477[4];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2478[3];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2479[12];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2480[1];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2481[9];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2485[11];
-IL2CPP_EXTERN_C_CONST int32_t* g_FieldOffsetTable[2486] = 
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2474[3];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2475[15];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2476[2];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2477[1];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2478[4];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2479[3];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2480[12];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2481[1];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2482[9];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2486[11];
+IL2CPP_EXTERN_C_CONST int32_t* g_FieldOffsetTable[2487] = 
 {
 	NULL,
 	NULL,
@@ -4018,8 +4019,9 @@ IL2CPP_EXTERN_C_CONST int32_t* g_FieldOffsetTable[2486] =
 	g_FieldOffsetTable2479,
 	g_FieldOffsetTable2480,
 	g_FieldOffsetTable2481,
+	g_FieldOffsetTable2482,
 	NULL,
 	NULL,
 	NULL,
-	g_FieldOffsetTable2485,
+	g_FieldOffsetTable2486,
 };
