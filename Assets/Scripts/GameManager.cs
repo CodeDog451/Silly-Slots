@@ -25,9 +25,16 @@ public class GameManager : MonoBehaviour
     private int freeSpins;
     public TextMeshProUGUI wonText;
     public TextMeshProUGUI spinsText;
-    public AudioClip spinSound;
+    //public AudioClip spinSound;
     private AudioSource audio;
     public GameObject megaWin;
+    public TextMeshProUGUI megaWinText;
+    public GameObject coinDropSound;
+
+    private AudioSource audioCoinDrop;
+
+    int won = 0;
+    int animateWon = 0;
 
     private int[][] PaylineDef = new int[][]
         {
@@ -82,6 +89,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        audioCoinDrop = coinDropSound.GetComponent<AudioSource>();
         audio = GetComponent<AudioSource>();
         score = 10000;
         scoreText.text = score.ToString();
@@ -108,6 +117,7 @@ public class GameManager : MonoBehaviour
         if (!pullingHandle)
         {
             megaWin.SetActive(false);
+            coinDropSound.SetActive(false);
             pullingHandle = true;
             if (freeSpins > 0)
             {
@@ -134,6 +144,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if(animateWon < won)
+        //{
+        //    animateWon++;
+        //    megaWinText.text = animateWon.ToString();
+        //};
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter))
         {
             SpinIfReady();  
@@ -145,6 +160,7 @@ public class GameManager : MonoBehaviour
         if (scoreToAdd >= 0)
         {
             wonText.text = scoreToAdd.ToString();
+            //megaWinText.text = scoreToAdd.ToString();
         }
         else
         {
@@ -235,6 +251,28 @@ public class GameManager : MonoBehaviour
         return line;
     }
 
+    private IEnumerator WonCountUpRoutine()
+    {
+        
+        yield return new WaitForSeconds(0.1f);
+        if (animateWon < won && coinDropSound.activeSelf)
+        {
+            audioCoinDrop.Play();
+            animateWon++;
+            megaWinText.text = animateWon.ToString();
+            StartCoroutine(WonCountUpRoutine());
+        }
+        else
+        {
+            StartCoroutine(WonCountUpFinishRoutine());
+        }
+    }
+
+    private IEnumerator WonCountUpFinishRoutine()
+    {
+        yield return new WaitForSeconds(1.0f);
+        megaWin.SetActive(false);
+    }
     private IEnumerator ReelSpinSoundCountdownRoutine()
     {
         audio.volume = 1.0f;
@@ -253,7 +291,8 @@ public class GameManager : MonoBehaviour
         //audio.Stop();
         pullingHandle = false;
         
-        int won = 0;
+        won = 0;
+        animateWon = 0;
         for (int x = 0; x < PaylineDef.Length; x++)
         {
             //PayTable
@@ -263,10 +302,7 @@ public class GameManager : MonoBehaviour
                 
                 var symbolId = payLine1.First().SymbolId;
                 var payAmount = PayTable[symbolId][payLine1.Count()];
-                if(payAmount > 100)
-                {
-                    megaWin.SetActive(true);
-                }
+                
 
                 PayLineControllers[x].ShowLine(true);
                 foreach (var sym in payLine1)
@@ -289,6 +325,15 @@ public class GameManager : MonoBehaviour
             //kmp
             var awardSpins = PayTable[9][freeSpins.Count()];
             UpdateSpins(awardSpins);
+        }
+        if (won > 0)
+        {
+            animateWon++;
+            megaWinText.text = animateWon.ToString();
+            megaWin.SetActive(true);
+            coinDropSound.SetActive(true);
+
+            StartCoroutine(WonCountUpRoutine());
         }
         UpdateScore(won);    
 
