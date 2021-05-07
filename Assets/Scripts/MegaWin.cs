@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MegaWin : MonoBehaviour
 {
-    //private AudioSource audio;
+    private AudioSource megaWinAudio;
     // Start is called before the first frame update
     void Start()
     {
-        //audio = GetComponent<AudioSource>();
+        megaWinAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

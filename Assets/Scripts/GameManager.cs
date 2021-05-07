@@ -28,10 +28,13 @@ public class GameManager : MonoBehaviour
     //public AudioClip spinSound;
     private AudioSource audio;
     public GameObject megaWin;
+    private AudioSource megaWinAudio;
     public TextMeshProUGUI megaWinText;
     public GameObject coinDropSound;
 
     private AudioSource audioCoinDrop;
+
+    private int megaWinLimit = 100;
 
     int won = 0;
     int animateWon = 0;
@@ -92,6 +95,7 @@ public class GameManager : MonoBehaviour
         
         audioCoinDrop = coinDropSound.GetComponent<AudioSource>();
         audio = GetComponent<AudioSource>();
+        megaWinAudio = megaWin.GetComponent<AudioSource>();
         score = 10000;
         scoreText.text = score.ToString();
 
@@ -117,6 +121,7 @@ public class GameManager : MonoBehaviour
         if (!pullingHandle)
         {
             megaWin.SetActive(false);
+            megaWinAudio.Stop();
             coinDropSound.SetActive(false);
             pullingHandle = true;
             if (freeSpins > 0)
@@ -157,9 +162,13 @@ public class GameManager : MonoBehaviour
 
     private void UpdateScore(int scoreToAdd)
     {
-        if (scoreToAdd >= 0)
+        if(scoreToAdd == 0)
         {
             wonText.text = scoreToAdd.ToString();
+        }
+        else if (scoreToAdd > 0)
+        {
+            //wonText.text = scoreToAdd.ToString();
             //megaWinText.text = scoreToAdd.ToString();
         }
         else
@@ -260,10 +269,12 @@ public class GameManager : MonoBehaviour
             audioCoinDrop.Play();
             animateWon++;
             megaWinText.text = animateWon.ToString();
+            wonText.text = animateWon.ToString();
             StartCoroutine(WonCountUpRoutine());
         }
         else
         {
+            wonText.text = won.ToString();
             StartCoroutine(WonCountUpFinishRoutine());
         }
     }
@@ -271,6 +282,8 @@ public class GameManager : MonoBehaviour
     private IEnumerator WonCountUpFinishRoutine()
     {
         yield return new WaitForSeconds(1.0f);
+        //UpdateScore(won);
+        megaWinAudio.Stop();
         megaWin.SetActive(false);
     }
     private IEnumerator ReelSpinSoundCountdownRoutine()
@@ -330,7 +343,11 @@ public class GameManager : MonoBehaviour
         {
             animateWon++;
             megaWinText.text = animateWon.ToString();
-            megaWin.SetActive(true);
+            if (won >= megaWinLimit)
+            {
+                megaWin.SetActive(true);
+                megaWinAudio.Play();
+            }
             coinDropSound.SetActive(true);
 
             StartCoroutine(WonCountUpRoutine());
