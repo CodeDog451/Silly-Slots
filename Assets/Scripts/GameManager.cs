@@ -29,8 +29,12 @@ public class GameManager : MonoBehaviour
     private AudioSource audio;
     public GameObject megaWin;
     private AudioSource megaWinAudio;
+    
     public TextMeshProUGUI megaWinText;
     public GameObject coinDropSound;
+
+    public GameObject winSound;
+    private AudioSource winAudio;
 
     private AudioSource audioCoinDrop;
 
@@ -92,11 +96,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        score = PlayerPrefs.GetInt("score", score);
+
+        winAudio = winSound.GetComponent<AudioSource>();
+
         audioCoinDrop = coinDropSound.GetComponent<AudioSource>();
         audio = GetComponent<AudioSource>();
         megaWinAudio = megaWin.GetComponent<AudioSource>();
-        score = 10000;
+        score = PlayerPrefs.GetInt("score", score);
+        if (!(score > 0))
+        {
+            score = 10000;
+        }
         scoreText.text = score.ToString();
 
         freeSpins = 0;
@@ -168,6 +179,7 @@ public class GameManager : MonoBehaviour
         }
         else if (scoreToAdd > 0)
         {
+            winAudio.Play();
             //wonText.text = scoreToAdd.ToString();
             //megaWinText.text = scoreToAdd.ToString();
         }
@@ -176,6 +188,7 @@ public class GameManager : MonoBehaviour
             //wonText.text = "0";
         }
         score += scoreToAdd;
+        PlayerPrefs.SetInt("score", score);
         scoreText.text = score.ToString();
     }
 

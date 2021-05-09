@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\CellController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\SymbolController.cs" />
+    <Compile Include="Assets\Scripts\ShineAnimatedLogoController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -78,6 +79,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\Animations\Wild\colors.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\Casual SoundFX Pack\Documentation\Info.txt" />
      <None Include="Assets\SynthwaveSciFiMusicPack\Hey Dev!.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />

@@ -4,9 +4,11 @@ ScriptsOnlyBuild:
     - CellController
     - CloseButtonController
     - GameManager
+    - MegaWin
     - PayLineController
     - PlayerController
     - ReelController
+    - ShineAnimatedLogoController
     - SpinButtonController
     - SymbolController
     Unity.Play.Publisher.Editor.dll:
@@ -23,8 +25,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -88,37 +92,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1530}
     - Class: 114
-      Script: {instanceID: 1798}
+      Script: {instanceID: 1806}
     - Class: 114
-      Script: {instanceID: 2026}
+      Script: {instanceID: 1944}
     - Class: 114
-      Script: {instanceID: 2060}
+      Script: {instanceID: 2036}
     - Class: 114
-      Script: {instanceID: 2090}
+      Script: {instanceID: 2070}
     - Class: 114
-      Script: {instanceID: 2198}
+      Script: {instanceID: 2100}
     - Class: 114
-      Script: {instanceID: 2212}
+      Script: {instanceID: 2208}
     - Class: 114
-      Script: {instanceID: 2290}
+      Script: {instanceID: 2222}
     - Class: 114
-      Script: {instanceID: 2438}
+      Script: {instanceID: 2300}
     - Class: 114
-      Script: {instanceID: 2536}
+      Script: {instanceID: 2448}
     - Class: 114
-      Script: {instanceID: 2570}
+      Script: {instanceID: 2546}
     - Class: 114
-      Script: {instanceID: 2618}
+      Script: {instanceID: 2580}
     - Class: 114
-      Script: {instanceID: 2918}
+      Script: {instanceID: 2628}
     - Class: 114
-      Script: {instanceID: 3244}
+      Script: {instanceID: 2928}
     - Class: 114
-      Script: {instanceID: 3686}
+      Script: {instanceID: 3254}
     - Class: 114
-      Script: {instanceID: 3982}
+      Script: {instanceID: 3696}
     - Class: 114
-      Script: {instanceID: 4252}
+      Script: {instanceID: 3992}
+    - Class: 114
+      Script: {instanceID: 4262}
+    - Class: 114
+      Script: {instanceID: 37002}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -216,6 +224,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MegaWin
   - hash:
       serializedVersion: 2
       Hash: 303ad70ce203ad874efe2965d0fbcff9
@@ -458,7 +472,7 @@ ScriptsOnlyBuild:
     className: AnalyticsEventTrackerEditor
   - hash:
       serializedVersion: 2
-      Hash: 52c47356c30fe7956b6d82f0bdb2fe37
+      Hash: 31daafbb3f0f36a4cb182c60ea509f01
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -696,6 +710,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 83540cc1c8ca8130c1d73cb8a25d1a02
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShineAnimatedLogoController
   platform: 20
   scenePathNames:
   - Assets/Scenes/MyGame.unity
