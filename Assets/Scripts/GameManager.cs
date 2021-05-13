@@ -13,19 +13,24 @@ public class GameManager : MonoBehaviour
         public System.Action<bool> ShowFrame { get; set; }
         public System.Action<bool> ShowWinEffect { get; set; }
     }
+
+    public GameObject scoreTextObject;
+    private TextController scoreText1;
+
     public GameObject[] reels;
     private List<ReelController> reelControllers;
-    //private Symbol[,] cells;
+    
     private bool pullingHandle = false;
     public float spinDuration;
     public GameObject[] PayLines;
     private List<PayLineController> PayLineControllers;
-    public TextMeshProUGUI scoreText;
+    //public TextMeshProUGUI scoreText;
     private int score;
     private int freeSpins;
+
     public TextMeshProUGUI wonText;
     public TextMeshProUGUI spinsText;
-    //public AudioClip spinSound;
+    
     private AudioSource audio;
     public GameObject megaWin;
     private AudioSource megaWinAudio;
@@ -42,6 +47,8 @@ public class GameManager : MonoBehaviour
 
     int won = 0;
     int animateWon = 0;
+
+    
 
     private int[][] PaylineDef = new int[][]
         {
@@ -96,6 +103,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreText1 = scoreTextObject.GetComponent<TextController>();
         score = PlayerPrefs.GetInt("score", score);
 
         winAudio = winSound.GetComponent<AudioSource>();
@@ -108,7 +116,8 @@ public class GameManager : MonoBehaviour
         {
             score = 10000;
         }
-        scoreText.text = score.ToString();
+        //scoreText.text = score.ToString();
+        scoreText1.SetText(score);
 
         freeSpins = 0;
         spinsText.text = freeSpins.ToString();
@@ -189,7 +198,8 @@ public class GameManager : MonoBehaviour
         }
         score += scoreToAdd;
         PlayerPrefs.SetInt("score", score);
-        scoreText.text = score.ToString();
+        //scoreText.text = score.ToString();
+        scoreText1.SetText(score, scoreToAdd > 0);
     }
 
     private void UpdateSpins(int spinsToAdd)

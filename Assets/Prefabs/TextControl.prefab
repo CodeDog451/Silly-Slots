@@ -303,8 +303,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4366307352004246343}
   - component: {fileID: 4366307352004246342}
+  - component: {fileID: -5641620792291459147}
   m_Layer: 0
-  m_Name: TextBackground
+  m_Name: TextControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,6 +379,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-5641620792291459147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4366307352004246341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce9f621dc6bf7274dbdc6dc1a88b0229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextElement: {fileID: 551150547347844544}
 --- !u!1 &4366307352442850189
 GameObject:
   m_ObjectHideFlags: 0
