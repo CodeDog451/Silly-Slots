@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,12 +13,12 @@ public class TextController : MonoBehaviour
     {
         TextElement.text = text;
     }
-    public void SetText(int num, bool animate = false)
+    public void SetText(int num, bool animate = false, Action<string> callback = null)
     {
         if (animate)
-        {
+        {            
             newValue = num;
-            StartCoroutine(CountUpRoutine());
+            StartCoroutine(CountUpRoutine(callback));
         }
         else
         {
@@ -25,7 +26,12 @@ public class TextController : MonoBehaviour
             newValue = num;
             SetText(num.ToString());
         }
-        
+
+    }
+
+    public void FinishAnimationEarly()
+    {
+        animateValue = newValue;
     }
 
     // Start is called before the first frame update
@@ -41,7 +47,7 @@ public class TextController : MonoBehaviour
         
     }
 
-    private IEnumerator CountUpRoutine()
+    private IEnumerator CountUpRoutine(Action<string> callback)
     {
 
         yield return new WaitForSeconds(0.1f);
@@ -49,18 +55,22 @@ public class TextController : MonoBehaviour
         {
             animateValue++;
             SetText(animateValue.ToString());            
-            StartCoroutine(CountUpRoutine());
+            StartCoroutine(CountUpRoutine(callback));
         }
         else if (newValue < animateValue)
         {
             animateValue--;
             SetText(animateValue.ToString());
-            StartCoroutine(CountUpRoutine());
+            StartCoroutine(CountUpRoutine(callback));
         }
         else
         {
             animateValue = newValue;
-            SetText(animateValue.ToString());            
+            SetText(animateValue.ToString());    
+            if(callback != null)
+            {
+                callback(animateValue.ToString());
+            }
         }
     }
 }

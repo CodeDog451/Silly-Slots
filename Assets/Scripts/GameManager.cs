@@ -15,7 +15,13 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject scoreTextObject;
-    private TextController scoreText1;
+    private TextController scoreText;
+
+    public GameObject wonTextObject;
+    private TextController wonText1;
+
+    public GameObject winSound;
+    private AudioSource winAudio;
 
     public GameObject[] reels;
     private List<ReelController> reelControllers;
@@ -38,8 +44,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI megaWinText;
     public GameObject coinDropSound;
 
-    public GameObject winSound;
-    private AudioSource winAudio;
+    
 
     private AudioSource audioCoinDrop;
 
@@ -103,7 +108,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText1 = scoreTextObject.GetComponent<TextController>();
+        scoreText = scoreTextObject.GetComponent<TextController>();
+        wonText1 = wonTextObject.GetComponent<TextController>();
+
+
         score = PlayerPrefs.GetInt("score", score);
 
         winAudio = winSound.GetComponent<AudioSource>();
@@ -117,7 +125,7 @@ public class GameManager : MonoBehaviour
             score = 10000;
         }
         //scoreText.text = score.ToString();
-        scoreText1.SetText(score);
+        scoreText.SetText(score);
 
         freeSpins = 0;
         spinsText.text = freeSpins.ToString();
@@ -140,6 +148,7 @@ public class GameManager : MonoBehaviour
     {
         if (!pullingHandle)
         {
+            wonText1.FinishAnimationEarly();
             megaWin.SetActive(false);
             megaWinAudio.Stop();
             coinDropSound.SetActive(false);
@@ -185,21 +194,16 @@ public class GameManager : MonoBehaviour
         if(scoreToAdd == 0)
         {
             wonText.text = scoreToAdd.ToString();
+            wonText1.SetText(scoreToAdd);
         }
         else if (scoreToAdd > 0)
         {
-            winAudio.Play();
-            //wonText.text = scoreToAdd.ToString();
-            //megaWinText.text = scoreToAdd.ToString();
+            winAudio.Play();            
         }
-        else
-        {
-            //wonText.text = "0";
-        }
+        
         score += scoreToAdd;
-        PlayerPrefs.SetInt("score", score);
-        //scoreText.text = score.ToString();
-        scoreText1.SetText(score, scoreToAdd > 0);
+        PlayerPrefs.SetInt("score", score);        
+        scoreText.SetText(score, scoreToAdd > 0);
     }
 
     private void UpdateSpins(int spinsToAdd)
@@ -227,7 +231,7 @@ public class GameManager : MonoBehaviour
             int rowIndex = paylineIndexes[reelIndex];
             var cell = reel.CellControllers[rowIndex];
             
-            if (!line.Any() || line.Exists(d => d.SymbolId == cell.SymbolId  || cell.SymbolId == SymbolIds.Yeti))
+            if (!line.Any() || line.Exists(d => d.SymbolId == cell.SymbolId || line.First().SymbolId == SymbolIds.Yeti || cell.SymbolId == SymbolIds.Yeti))
             {
                 var sym = new Symbol()
                 {
@@ -302,6 +306,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    
+
     private IEnumerator WonCountUpFinishRoutine()
     {
         yield return new WaitForSeconds(1.0f);
@@ -319,19 +325,15 @@ public class GameManager : MonoBehaviour
 
     }
     private IEnumerator ReelSpinCountdownRoutine()
-    {
-        //audio.volume = 1.0f;
-        //audio.Play();
-        yield return new WaitForSeconds(spinDuration);
-        //audio.volume = 0.0f;
-        //audio.Stop();
+    {        
+        yield return new WaitForSeconds(spinDuration);        
         pullingHandle = false;
         
         won = 0;
         animateWon = 0;
         for (int x = 0; x < PaylineDef.Length; x++)
         {
-            //PayTable
+            
             var payLine1 = GetPayLine(x);
             if (payLine1.Count() > 2)
             {
@@ -347,7 +349,7 @@ public class GameManager : MonoBehaviour
                     sym.ShowWinEffect(true);
                 }
                 won += payAmount;
-                //UpdateScore(payAmount);
+                
             }
         }
         var freeSpins = GetScatterLine(9);
@@ -358,12 +360,15 @@ public class GameManager : MonoBehaviour
                 sym.ShowFrame(true);
                 sym.ShowWinEffect(true);
             }
-            //kmp
+            
             var awardSpins = PayTable[9][freeSpins.Count()];
             UpdateSpins(awardSpins);
         }
         if (won > 0)
         {
+            wonText1.SetText(0);//count up from 0 the amount won
+            wonText1.SetText(won, true, (x) => { Debug.Log(x); });
+
             animateWon++;
             megaWinText.text = animateWon.ToString();
             if (won >= megaWinLimit)
