@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - ShineAnimatedLogoController
     - SpinButtonController
     - SymbolController
+    - TextController
     Unity.Play.Publisher.Editor.dll:
     - Unity.Play.Publisher.Editor.AnalyticsHelper
     - Unity.Play.Publisher.Editor.PublisherWindow
@@ -25,10 +26,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -92,41 +91,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1530}
     - Class: 114
-      Script: {instanceID: 1806}
+      Script: {instanceID: 1798}
     - Class: 114
-      Script: {instanceID: 1944}
+      Script: {instanceID: 1936}
     - Class: 114
-      Script: {instanceID: 2036}
+      Script: {instanceID: 2028}
     - Class: 114
-      Script: {instanceID: 2070}
+      Script: {instanceID: 2062}
     - Class: 114
-      Script: {instanceID: 2100}
+      Script: {instanceID: 2092}
     - Class: 114
-      Script: {instanceID: 2208}
+      Script: {instanceID: 2200}
     - Class: 114
-      Script: {instanceID: 2222}
+      Script: {instanceID: 2214}
     - Class: 114
-      Script: {instanceID: 2300}
+      Script: {instanceID: 2292}
     - Class: 114
-      Script: {instanceID: 2448}
+      Script: {instanceID: 2440}
     - Class: 114
-      Script: {instanceID: 2546}
+      Script: {instanceID: 2538}
     - Class: 114
-      Script: {instanceID: 2580}
+      Script: {instanceID: 2572}
     - Class: 114
-      Script: {instanceID: 2628}
+      Script: {instanceID: 2620}
     - Class: 114
-      Script: {instanceID: 2928}
+      Script: {instanceID: 2920}
     - Class: 114
-      Script: {instanceID: 3254}
+      Script: {instanceID: 2938}
     - Class: 114
-      Script: {instanceID: 3696}
+      Script: {instanceID: 3248}
     - Class: 114
-      Script: {instanceID: 3992}
+      Script: {instanceID: 3690}
     - Class: 114
-      Script: {instanceID: 4262}
+      Script: {instanceID: 3986}
     - Class: 114
-      Script: {instanceID: 37002}
+      Script: {instanceID: 4256}
+    - Class: 114
+      Script: {instanceID: 4488}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -430,6 +431,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
+      Hash: 83540cc1c8ca8130c1d73cb8a25d1a02
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShineAnimatedLogoController
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -472,7 +479,7 @@ ScriptsOnlyBuild:
     className: AnalyticsEventTrackerEditor
   - hash:
       serializedVersion: 2
-      Hash: 31daafbb3f0f36a4cb182c60ea509f01
+      Hash: f92250c2b11827102255bbe7a28d9ab4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -688,6 +695,12 @@ ScriptsOnlyBuild:
     className: AsyncWebUtil
   - hash:
       serializedVersion: 2
+      Hash: cb4d7640cc93769acb5288f6435233e8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TextController
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -710,12 +723,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 83540cc1c8ca8130c1d73cb8a25d1a02
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ShineAnimatedLogoController
   platform: 20
   scenePathNames:
   - Assets/Scenes/MyGame.unity

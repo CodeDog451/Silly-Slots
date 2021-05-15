@@ -102,161 +102,195 @@ extern void Symbol__ctor_m535DC72F060E66623F23D327127A118A1356FE37 (void);
 extern void SymbolIds__ctor_m0D709F8F69CA647EA10A980EF899A8F9A2895383 (void);
 // 0x0000002D System.Void GameManager/SymbolIds::.cctor()
 extern void SymbolIds__cctor_m5FA39E4309BDFC303CB7E33702B81598EF6C3F05 (void);
-// 0x0000002E System.Void GameManager/<>c__DisplayClass33_0::.ctor()
-extern void U3CU3Ec__DisplayClass33_0__ctor_m32A18807EA106888555852C4E7475C99D35BF6F2 (void);
-// 0x0000002F System.Boolean GameManager/<>c__DisplayClass33_0::<GetPayLine>b__0(GameManager/Symbol)
-extern void U3CU3Ec__DisplayClass33_0_U3CGetPayLineU3Eb__0_m327A91B9C3C1C290DC956964DFF380C9D89121A0 (void);
-// 0x00000030 System.Void GameManager/<WonCountUpRoutine>d__35::.ctor(System.Int32)
-extern void U3CWonCountUpRoutineU3Ed__35__ctor_m49974961B7AA41B533759EB86C030DF092FD6597 (void);
-// 0x00000031 System.Void GameManager/<WonCountUpRoutine>d__35::System.IDisposable.Dispose()
-extern void U3CWonCountUpRoutineU3Ed__35_System_IDisposable_Dispose_mDEA4D200B1ED66A0BF8A136CC7596FC3F54F7B4C (void);
-// 0x00000032 System.Boolean GameManager/<WonCountUpRoutine>d__35::MoveNext()
-extern void U3CWonCountUpRoutineU3Ed__35_MoveNext_mE5F369CA148C0781C5937A16C209AC1A7C275E46 (void);
-// 0x00000033 System.Object GameManager/<WonCountUpRoutine>d__35::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CWonCountUpRoutineU3Ed__35_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA882EF7168C69784FB339F5960EE94D1E25F61AB (void);
-// 0x00000034 System.Void GameManager/<WonCountUpRoutine>d__35::System.Collections.IEnumerator.Reset()
-extern void U3CWonCountUpRoutineU3Ed__35_System_Collections_IEnumerator_Reset_m74AD10B63623B27B74C7F5220DA7852FEC04F550 (void);
-// 0x00000035 System.Object GameManager/<WonCountUpRoutine>d__35::System.Collections.IEnumerator.get_Current()
-extern void U3CWonCountUpRoutineU3Ed__35_System_Collections_IEnumerator_get_Current_mCB30BA2035114408453B1C671BE69E1DE3EFAF35 (void);
-// 0x00000036 System.Void GameManager/<WonCountUpFinishRoutine>d__36::.ctor(System.Int32)
-extern void U3CWonCountUpFinishRoutineU3Ed__36__ctor_m0BB48316389449AF03E0F1598ACABFE03DDE4CA3 (void);
-// 0x00000037 System.Void GameManager/<WonCountUpFinishRoutine>d__36::System.IDisposable.Dispose()
-extern void U3CWonCountUpFinishRoutineU3Ed__36_System_IDisposable_Dispose_mEEE1987DC5C2AD3B06ADED5F0B77516B581FC54E (void);
-// 0x00000038 System.Boolean GameManager/<WonCountUpFinishRoutine>d__36::MoveNext()
-extern void U3CWonCountUpFinishRoutineU3Ed__36_MoveNext_m3FEB8AE0CE3DF64D6C23BCE8C59B601417F5305C (void);
-// 0x00000039 System.Object GameManager/<WonCountUpFinishRoutine>d__36::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CWonCountUpFinishRoutineU3Ed__36_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1C9B4EFA146CF9501C9A74EC712F49BFF51EE882 (void);
-// 0x0000003A System.Void GameManager/<WonCountUpFinishRoutine>d__36::System.Collections.IEnumerator.Reset()
-extern void U3CWonCountUpFinishRoutineU3Ed__36_System_Collections_IEnumerator_Reset_mFDDAF62E89326580938ADA3BA83AB67506B76E62 (void);
-// 0x0000003B System.Object GameManager/<WonCountUpFinishRoutine>d__36::System.Collections.IEnumerator.get_Current()
-extern void U3CWonCountUpFinishRoutineU3Ed__36_System_Collections_IEnumerator_get_Current_mB57B9E48C2D6E10063B60E1020156C685DF2135A (void);
-// 0x0000003C System.Void GameManager/<ReelSpinSoundCountdownRoutine>d__37::.ctor(System.Int32)
-extern void U3CReelSpinSoundCountdownRoutineU3Ed__37__ctor_mE2E4B8284435C47AD4162C7F675D50C46F476E3A (void);
-// 0x0000003D System.Void GameManager/<ReelSpinSoundCountdownRoutine>d__37::System.IDisposable.Dispose()
-extern void U3CReelSpinSoundCountdownRoutineU3Ed__37_System_IDisposable_Dispose_m85EF432532F2D8A59C3CFF369C417F086155FC5E (void);
-// 0x0000003E System.Boolean GameManager/<ReelSpinSoundCountdownRoutine>d__37::MoveNext()
-extern void U3CReelSpinSoundCountdownRoutineU3Ed__37_MoveNext_m560EA7A08CEA7D578A5B19378F2F6D4E648CBEE9 (void);
-// 0x0000003F System.Object GameManager/<ReelSpinSoundCountdownRoutine>d__37::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CReelSpinSoundCountdownRoutineU3Ed__37_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mEBFB1F15D002E9CC89DA4BBE71D024544C97240A (void);
-// 0x00000040 System.Void GameManager/<ReelSpinSoundCountdownRoutine>d__37::System.Collections.IEnumerator.Reset()
-extern void U3CReelSpinSoundCountdownRoutineU3Ed__37_System_Collections_IEnumerator_Reset_m6483A34BB1F9A35AA91ADD2E7530FA6D42C12A34 (void);
-// 0x00000041 System.Object GameManager/<ReelSpinSoundCountdownRoutine>d__37::System.Collections.IEnumerator.get_Current()
-extern void U3CReelSpinSoundCountdownRoutineU3Ed__37_System_Collections_IEnumerator_get_Current_m70338BD9E22974D47E67036828A7E07B47AF8224 (void);
-// 0x00000042 System.Void GameManager/<ReelSpinCountdownRoutine>d__38::.ctor(System.Int32)
-extern void U3CReelSpinCountdownRoutineU3Ed__38__ctor_mFBA1A8B54E26EE041DCB2EEA08C8795232C51985 (void);
-// 0x00000043 System.Void GameManager/<ReelSpinCountdownRoutine>d__38::System.IDisposable.Dispose()
-extern void U3CReelSpinCountdownRoutineU3Ed__38_System_IDisposable_Dispose_m1F37B9419E50E9652C1B7364E12E20B2966E0DEF (void);
-// 0x00000044 System.Boolean GameManager/<ReelSpinCountdownRoutine>d__38::MoveNext()
-extern void U3CReelSpinCountdownRoutineU3Ed__38_MoveNext_m11D012082E4554D9BBB97A47F034A8E272F7B4BA (void);
-// 0x00000045 System.Object GameManager/<ReelSpinCountdownRoutine>d__38::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CReelSpinCountdownRoutineU3Ed__38_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m573BEDADC6A4F43AE4AEC0B80F63F32D91CAD24C (void);
-// 0x00000046 System.Void GameManager/<ReelSpinCountdownRoutine>d__38::System.Collections.IEnumerator.Reset()
-extern void U3CReelSpinCountdownRoutineU3Ed__38_System_Collections_IEnumerator_Reset_m582C3C71468BAC94477D0961B87979AA837EBF12 (void);
-// 0x00000047 System.Object GameManager/<ReelSpinCountdownRoutine>d__38::System.Collections.IEnumerator.get_Current()
-extern void U3CReelSpinCountdownRoutineU3Ed__38_System_Collections_IEnumerator_get_Current_m419DB67FB7E6789060E7A493BB60A801E7C71D07 (void);
-// 0x00000048 System.Void MegaWin::Start()
+// 0x0000002E System.Void GameManager/<>c__DisplayClass36_0::.ctor()
+extern void U3CU3Ec__DisplayClass36_0__ctor_mDE08DE19D4E51E62BD8A6C531A77B0D21E953150 (void);
+// 0x0000002F System.Void GameManager/<>c__DisplayClass36_1::.ctor()
+extern void U3CU3Ec__DisplayClass36_1__ctor_m185BEB6743CA4783D0DBD1CB5B0DADB9B2DDE920 (void);
+// 0x00000030 System.Boolean GameManager/<>c__DisplayClass36_1::<GetPayLine>b__0(GameManager/Symbol)
+extern void U3CU3Ec__DisplayClass36_1_U3CGetPayLineU3Eb__0_m058259CC761133FDDFF0BEE9A93F45961005BFFF (void);
+// 0x00000031 System.Void GameManager/<WonCountUpRoutine>d__38::.ctor(System.Int32)
+extern void U3CWonCountUpRoutineU3Ed__38__ctor_m7AD6B57C32F66CAEAAC474D52EA31EB5DDB9B2BE (void);
+// 0x00000032 System.Void GameManager/<WonCountUpRoutine>d__38::System.IDisposable.Dispose()
+extern void U3CWonCountUpRoutineU3Ed__38_System_IDisposable_Dispose_mAEB11C86C499FE9B34E8123800EC28E26B03A122 (void);
+// 0x00000033 System.Boolean GameManager/<WonCountUpRoutine>d__38::MoveNext()
+extern void U3CWonCountUpRoutineU3Ed__38_MoveNext_m3207A7373803E0330997E603BEC499AAB53722CD (void);
+// 0x00000034 System.Object GameManager/<WonCountUpRoutine>d__38::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CWonCountUpRoutineU3Ed__38_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mE6C953E71D5BAC224E0630505C9B5324B99D939E (void);
+// 0x00000035 System.Void GameManager/<WonCountUpRoutine>d__38::System.Collections.IEnumerator.Reset()
+extern void U3CWonCountUpRoutineU3Ed__38_System_Collections_IEnumerator_Reset_m06B547FA6E0B1EC81A1434C6160F9A517A6C92A1 (void);
+// 0x00000036 System.Object GameManager/<WonCountUpRoutine>d__38::System.Collections.IEnumerator.get_Current()
+extern void U3CWonCountUpRoutineU3Ed__38_System_Collections_IEnumerator_get_Current_m16E4AD915888E50C426227633BBB689E37D3C04C (void);
+// 0x00000037 System.Void GameManager/<WonCountUpFinishRoutine>d__39::.ctor(System.Int32)
+extern void U3CWonCountUpFinishRoutineU3Ed__39__ctor_m9892027782DC5DD0B57475A5A28C58E758908241 (void);
+// 0x00000038 System.Void GameManager/<WonCountUpFinishRoutine>d__39::System.IDisposable.Dispose()
+extern void U3CWonCountUpFinishRoutineU3Ed__39_System_IDisposable_Dispose_mA7D3A5ADA39A02D87CE7D6D86007332DD9282FA9 (void);
+// 0x00000039 System.Boolean GameManager/<WonCountUpFinishRoutine>d__39::MoveNext()
+extern void U3CWonCountUpFinishRoutineU3Ed__39_MoveNext_m136F67B528E9322B22BE5971486215FDBD4206B2 (void);
+// 0x0000003A System.Object GameManager/<WonCountUpFinishRoutine>d__39::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CWonCountUpFinishRoutineU3Ed__39_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m6D6677E16768F61E03E04BB84ACA1A6FB124F7EE (void);
+// 0x0000003B System.Void GameManager/<WonCountUpFinishRoutine>d__39::System.Collections.IEnumerator.Reset()
+extern void U3CWonCountUpFinishRoutineU3Ed__39_System_Collections_IEnumerator_Reset_m9623FAA0219D221623D9AEAC50B5F7DFFE01EF6F (void);
+// 0x0000003C System.Object GameManager/<WonCountUpFinishRoutine>d__39::System.Collections.IEnumerator.get_Current()
+extern void U3CWonCountUpFinishRoutineU3Ed__39_System_Collections_IEnumerator_get_Current_m9E3513E19A9C62574AC1F9E67967AF35684D4544 (void);
+// 0x0000003D System.Void GameManager/<ReelSpinSoundCountdownRoutine>d__40::.ctor(System.Int32)
+extern void U3CReelSpinSoundCountdownRoutineU3Ed__40__ctor_m536B082C8117C22CF8306C1D5DD2ADFECD4F56A0 (void);
+// 0x0000003E System.Void GameManager/<ReelSpinSoundCountdownRoutine>d__40::System.IDisposable.Dispose()
+extern void U3CReelSpinSoundCountdownRoutineU3Ed__40_System_IDisposable_Dispose_m90483D64D0BC25F90C104AF1BF3AFEFD6DF8A5A7 (void);
+// 0x0000003F System.Boolean GameManager/<ReelSpinSoundCountdownRoutine>d__40::MoveNext()
+extern void U3CReelSpinSoundCountdownRoutineU3Ed__40_MoveNext_m59F4B42A594D66292DAFC7E9635558B33E3B755B (void);
+// 0x00000040 System.Object GameManager/<ReelSpinSoundCountdownRoutine>d__40::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CReelSpinSoundCountdownRoutineU3Ed__40_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m22C95523E4124086C498919DA2CA1B7224251E4C (void);
+// 0x00000041 System.Void GameManager/<ReelSpinSoundCountdownRoutine>d__40::System.Collections.IEnumerator.Reset()
+extern void U3CReelSpinSoundCountdownRoutineU3Ed__40_System_Collections_IEnumerator_Reset_m3F9E829EF7F20BFB15CD51F2E41B2465372C9A41 (void);
+// 0x00000042 System.Object GameManager/<ReelSpinSoundCountdownRoutine>d__40::System.Collections.IEnumerator.get_Current()
+extern void U3CReelSpinSoundCountdownRoutineU3Ed__40_System_Collections_IEnumerator_get_Current_m5F34FC1994ECB5D3D74C90550975AFD4A2E0980C (void);
+// 0x00000043 System.Void GameManager/<>c::.cctor()
+extern void U3CU3Ec__cctor_m98B52F6DFB9B80EDB1056974AB4C8E5BEFA58072 (void);
+// 0x00000044 System.Void GameManager/<>c::.ctor()
+extern void U3CU3Ec__ctor_m32C667B9723029A3D406CF2D437E88EAEFC906B9 (void);
+// 0x00000045 System.Void GameManager/<>c::<ReelSpinCountdownRoutine>b__41_0(System.String)
+extern void U3CU3Ec_U3CReelSpinCountdownRoutineU3Eb__41_0_mA20408E471F09B5AB5E403B51C223750E74F5C41 (void);
+// 0x00000046 System.Void GameManager/<ReelSpinCountdownRoutine>d__41::.ctor(System.Int32)
+extern void U3CReelSpinCountdownRoutineU3Ed__41__ctor_mE26AB7BBD770B37C9411728062544E5C21A7525C (void);
+// 0x00000047 System.Void GameManager/<ReelSpinCountdownRoutine>d__41::System.IDisposable.Dispose()
+extern void U3CReelSpinCountdownRoutineU3Ed__41_System_IDisposable_Dispose_m7BE8F7E354721935F273757FF5E5B57ACD238D9E (void);
+// 0x00000048 System.Boolean GameManager/<ReelSpinCountdownRoutine>d__41::MoveNext()
+extern void U3CReelSpinCountdownRoutineU3Ed__41_MoveNext_m512CC64A5B71F0BC77334E9C8CDB00E40D8081B0 (void);
+// 0x00000049 System.Object GameManager/<ReelSpinCountdownRoutine>d__41::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CReelSpinCountdownRoutineU3Ed__41_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m6F25EA08C56DBECF1F5688B2259DCA22484C4922 (void);
+// 0x0000004A System.Void GameManager/<ReelSpinCountdownRoutine>d__41::System.Collections.IEnumerator.Reset()
+extern void U3CReelSpinCountdownRoutineU3Ed__41_System_Collections_IEnumerator_Reset_mB0292611B30BFBF1B34A57D12C595A1E4604D68A (void);
+// 0x0000004B System.Object GameManager/<ReelSpinCountdownRoutine>d__41::System.Collections.IEnumerator.get_Current()
+extern void U3CReelSpinCountdownRoutineU3Ed__41_System_Collections_IEnumerator_get_Current_mD0D225D57BAB02440BFAB69E6436992576FF0177 (void);
+// 0x0000004C System.Void MegaWin::Start()
 extern void MegaWin_Start_mB858FC08B59720539C96F39AD6F7215625896332 (void);
-// 0x00000049 System.Void MegaWin::Update()
+// 0x0000004D System.Void MegaWin::Update()
 extern void MegaWin_Update_m3739DE89A7FCD67AEBDF8E1CED7874D276365BB9 (void);
-// 0x0000004A System.Void MegaWin::.ctor()
+// 0x0000004E System.Void MegaWin::.ctor()
 extern void MegaWin__ctor_m4038F55042EBC351472E7A1368AD612D569BF383 (void);
-// 0x0000004B System.Void PayLineController::Start()
+// 0x0000004F System.Void PayLineController::Start()
 extern void PayLineController_Start_m30C5CB8BDB1EB4247713C009911A28888364BCD3 (void);
-// 0x0000004C System.Void PayLineController::ShowLine(System.Boolean)
+// 0x00000050 System.Void PayLineController::ShowLine(System.Boolean)
 extern void PayLineController_ShowLine_m90A5CFD535677C3F7219443AEFA20111E02460C3 (void);
-// 0x0000004D System.Void PayLineController::Update()
+// 0x00000051 System.Void PayLineController::Update()
 extern void PayLineController_Update_m05AFB1F980D743A51DC331A2E65068B9C166E893 (void);
-// 0x0000004E System.Void PayLineController::.ctor()
+// 0x00000052 System.Void PayLineController::.ctor()
 extern void PayLineController__ctor_mE5695919D646E2C07A21FCC376604DA8F3F7AC74 (void);
-// 0x0000004F System.Void PlayerController::Start()
+// 0x00000053 System.Void PlayerController::Start()
 extern void PlayerController_Start_m9531F30EC892BDD1758A2EEC724E86EFBDA150A3 (void);
-// 0x00000050 System.Void PlayerController::Update()
+// 0x00000054 System.Void PlayerController::Update()
 extern void PlayerController_Update_mB31159CAD7DD2329859472554BC9154A83D8E794 (void);
-// 0x00000051 System.Void PlayerController::.ctor()
+// 0x00000055 System.Void PlayerController::.ctor()
 extern void PlayerController__ctor_mF30385729DAFDFCB895C4939F6051DCE6C0327FB (void);
-// 0x00000052 System.Void ReelController::Start()
+// 0x00000056 System.Void ReelController::Start()
 extern void ReelController_Start_m888B9D8A0B0F2DF6D6ECA859ABDD208FE4700EEB (void);
-// 0x00000053 System.Void ReelController::ReelRowCollider(System.Boolean)
+// 0x00000057 System.Void ReelController::ReelRowCollider(System.Boolean)
 extern void ReelController_ReelRowCollider_m9AC1DACCFDC14AFF43FA490363E41C10D97793D1 (void);
-// 0x00000054 System.Void ReelController::SpinReel()
+// 0x00000058 System.Void ReelController::SpinReel()
 extern void ReelController_SpinReel_mF625B613F30C5ADEE676FEEF0EAE4314D046D4BC (void);
-// 0x00000055 System.Void ReelController::Update()
+// 0x00000059 System.Void ReelController::Update()
 extern void ReelController_Update_mABDEF7CE93AA840E25E66712B913572769FB355E (void);
-// 0x00000056 System.Void ReelController::SpawnRandomSymbol()
+// 0x0000005A System.Void ReelController::SpawnRandomSymbol()
 extern void ReelController_SpawnRandomSymbol_mF1310131A33C1F37F7631D3CD6431FBE13BDA6CC (void);
-// 0x00000057 System.Collections.IEnumerator ReelController::ReelSpinCountdownRoutine(System.Nullable`1<System.Single>)
+// 0x0000005B System.Collections.IEnumerator ReelController::ReelSpinCountdownRoutine(System.Nullable`1<System.Single>)
 extern void ReelController_ReelSpinCountdownRoutine_m8155D8F805491D27DAE11E862DF3B37233184180 (void);
-// 0x00000058 System.Collections.IEnumerator ReelController::ReelSpinStopRoutine()
+// 0x0000005C System.Collections.IEnumerator ReelController::ReelSpinStopRoutine()
 extern void ReelController_ReelSpinStopRoutine_m3154C1E0366AB8C03FE4A60E852C2F55B65E483B (void);
-// 0x00000059 System.Void ReelController::.ctor()
+// 0x0000005D System.Void ReelController::.ctor()
 extern void ReelController__ctor_mE619787C1F388B1E07D760C9A206F017140EABDC (void);
-// 0x0000005A System.Void ReelController/<ReelSpinCountdownRoutine>d__17::.ctor(System.Int32)
+// 0x0000005E System.Void ReelController/<ReelSpinCountdownRoutine>d__17::.ctor(System.Int32)
 extern void U3CReelSpinCountdownRoutineU3Ed__17__ctor_mD47A7F33C893B7C3084C0004AA36EC08EA53361D (void);
-// 0x0000005B System.Void ReelController/<ReelSpinCountdownRoutine>d__17::System.IDisposable.Dispose()
+// 0x0000005F System.Void ReelController/<ReelSpinCountdownRoutine>d__17::System.IDisposable.Dispose()
 extern void U3CReelSpinCountdownRoutineU3Ed__17_System_IDisposable_Dispose_m22DD5009AF6039CC692922CE66665EE5FDCEBEE3 (void);
-// 0x0000005C System.Boolean ReelController/<ReelSpinCountdownRoutine>d__17::MoveNext()
+// 0x00000060 System.Boolean ReelController/<ReelSpinCountdownRoutine>d__17::MoveNext()
 extern void U3CReelSpinCountdownRoutineU3Ed__17_MoveNext_mB80DB7E064CB78BB86204A23ABDDF329BF610553 (void);
-// 0x0000005D System.Object ReelController/<ReelSpinCountdownRoutine>d__17::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000061 System.Object ReelController/<ReelSpinCountdownRoutine>d__17::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CReelSpinCountdownRoutineU3Ed__17_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m950EC433795542A018046BAB8400D5CD5C8E4D47 (void);
-// 0x0000005E System.Void ReelController/<ReelSpinCountdownRoutine>d__17::System.Collections.IEnumerator.Reset()
+// 0x00000062 System.Void ReelController/<ReelSpinCountdownRoutine>d__17::System.Collections.IEnumerator.Reset()
 extern void U3CReelSpinCountdownRoutineU3Ed__17_System_Collections_IEnumerator_Reset_m78819756F4EE589E6ECCE7AFA33ECAB31B2BD17D (void);
-// 0x0000005F System.Object ReelController/<ReelSpinCountdownRoutine>d__17::System.Collections.IEnumerator.get_Current()
+// 0x00000063 System.Object ReelController/<ReelSpinCountdownRoutine>d__17::System.Collections.IEnumerator.get_Current()
 extern void U3CReelSpinCountdownRoutineU3Ed__17_System_Collections_IEnumerator_get_Current_mBF3AD4EE6BE1C89961324A74E8137FBEEDA82753 (void);
-// 0x00000060 System.Void ReelController/<ReelSpinStopRoutine>d__18::.ctor(System.Int32)
+// 0x00000064 System.Void ReelController/<ReelSpinStopRoutine>d__18::.ctor(System.Int32)
 extern void U3CReelSpinStopRoutineU3Ed__18__ctor_m9B391289C4887EEE3F5AF1603E459761D0321D11 (void);
-// 0x00000061 System.Void ReelController/<ReelSpinStopRoutine>d__18::System.IDisposable.Dispose()
+// 0x00000065 System.Void ReelController/<ReelSpinStopRoutine>d__18::System.IDisposable.Dispose()
 extern void U3CReelSpinStopRoutineU3Ed__18_System_IDisposable_Dispose_m435B32389FA4751AE62CE9000AA2261F6A2C1B6F (void);
-// 0x00000062 System.Boolean ReelController/<ReelSpinStopRoutine>d__18::MoveNext()
+// 0x00000066 System.Boolean ReelController/<ReelSpinStopRoutine>d__18::MoveNext()
 extern void U3CReelSpinStopRoutineU3Ed__18_MoveNext_mE6A158D5AFB09DAF3C691A2F71A93AEA5D23542C (void);
-// 0x00000063 System.Object ReelController/<ReelSpinStopRoutine>d__18::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000067 System.Object ReelController/<ReelSpinStopRoutine>d__18::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CReelSpinStopRoutineU3Ed__18_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mB245882ECBC12CEC7596FCCD550AE1950A468C14 (void);
-// 0x00000064 System.Void ReelController/<ReelSpinStopRoutine>d__18::System.Collections.IEnumerator.Reset()
+// 0x00000068 System.Void ReelController/<ReelSpinStopRoutine>d__18::System.Collections.IEnumerator.Reset()
 extern void U3CReelSpinStopRoutineU3Ed__18_System_Collections_IEnumerator_Reset_m65A93647045F6FAD217CA6B8D26F7D008787FC96 (void);
-// 0x00000065 System.Object ReelController/<ReelSpinStopRoutine>d__18::System.Collections.IEnumerator.get_Current()
+// 0x00000069 System.Object ReelController/<ReelSpinStopRoutine>d__18::System.Collections.IEnumerator.get_Current()
 extern void U3CReelSpinStopRoutineU3Ed__18_System_Collections_IEnumerator_get_Current_m9214A8894982FE4A7A50A37DB12E1EC81C6B4CD8 (void);
-// 0x00000066 System.Void ShineAnimatedLogoController::Start()
+// 0x0000006A System.Void ShineAnimatedLogoController::Start()
 extern void ShineAnimatedLogoController_Start_m6E2FDFA842B68A6B1963455C6F178EA86CAA0B67 (void);
-// 0x00000067 System.Collections.IEnumerator ShineAnimatedLogoController::AnimationDelay()
+// 0x0000006B System.Collections.IEnumerator ShineAnimatedLogoController::AnimationDelay()
 extern void ShineAnimatedLogoController_AnimationDelay_m45EB36D68AF25FBD1D6F5962510465CE0113C4F4 (void);
-// 0x00000068 System.Void ShineAnimatedLogoController::Update()
+// 0x0000006C System.Void ShineAnimatedLogoController::Update()
 extern void ShineAnimatedLogoController_Update_m0E2AB1CA927F5C0146448C1026C1309B47BD3354 (void);
-// 0x00000069 System.Void ShineAnimatedLogoController::.ctor()
+// 0x0000006D System.Void ShineAnimatedLogoController::.ctor()
 extern void ShineAnimatedLogoController__ctor_m8B0F3726D4398F961A66DFC19CE95A27E220257C (void);
-// 0x0000006A System.Void ShineAnimatedLogoController/<AnimationDelay>d__3::.ctor(System.Int32)
+// 0x0000006E System.Void ShineAnimatedLogoController/<AnimationDelay>d__3::.ctor(System.Int32)
 extern void U3CAnimationDelayU3Ed__3__ctor_m99648EA3728CEDB5F6CE9193173FAF0BCB1BFB40 (void);
-// 0x0000006B System.Void ShineAnimatedLogoController/<AnimationDelay>d__3::System.IDisposable.Dispose()
+// 0x0000006F System.Void ShineAnimatedLogoController/<AnimationDelay>d__3::System.IDisposable.Dispose()
 extern void U3CAnimationDelayU3Ed__3_System_IDisposable_Dispose_mE3CA79DF4DB0AE1F4854B4C49BB4273451869719 (void);
-// 0x0000006C System.Boolean ShineAnimatedLogoController/<AnimationDelay>d__3::MoveNext()
+// 0x00000070 System.Boolean ShineAnimatedLogoController/<AnimationDelay>d__3::MoveNext()
 extern void U3CAnimationDelayU3Ed__3_MoveNext_m658B0FD21A9B59856F069616DBBADE10EBB0C1C3 (void);
-// 0x0000006D System.Object ShineAnimatedLogoController/<AnimationDelay>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000071 System.Object ShineAnimatedLogoController/<AnimationDelay>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CAnimationDelayU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA3B9B0A2441D7FB4CD2E5D79EB9CECE5DF95C7D0 (void);
-// 0x0000006E System.Void ShineAnimatedLogoController/<AnimationDelay>d__3::System.Collections.IEnumerator.Reset()
+// 0x00000072 System.Void ShineAnimatedLogoController/<AnimationDelay>d__3::System.Collections.IEnumerator.Reset()
 extern void U3CAnimationDelayU3Ed__3_System_Collections_IEnumerator_Reset_m5C429D0B3823C9C31097CCF20138669992211D84 (void);
-// 0x0000006F System.Object ShineAnimatedLogoController/<AnimationDelay>d__3::System.Collections.IEnumerator.get_Current()
+// 0x00000073 System.Object ShineAnimatedLogoController/<AnimationDelay>d__3::System.Collections.IEnumerator.get_Current()
 extern void U3CAnimationDelayU3Ed__3_System_Collections_IEnumerator_get_Current_m6CD3FB723160B051C442A36571520F3C98BF794C (void);
-// 0x00000070 System.Void SpinButtonController::Start()
+// 0x00000074 System.Void SpinButtonController::Start()
 extern void SpinButtonController_Start_m572F390C86C13EA5163B412475987E06D5835920 (void);
-// 0x00000071 System.Void SpinButtonController::OnMouseDown()
+// 0x00000075 System.Void SpinButtonController::OnMouseDown()
 extern void SpinButtonController_OnMouseDown_mD02C941C48FDE17404BA70006DA0276ACFDBD50F (void);
-// 0x00000072 System.Void SpinButtonController::Update()
+// 0x00000076 System.Void SpinButtonController::Update()
 extern void SpinButtonController_Update_mB1DAF3327A824B500A9D41025CEA936A497BCF04 (void);
-// 0x00000073 System.Void SpinButtonController::.ctor()
+// 0x00000077 System.Void SpinButtonController::.ctor()
 extern void SpinButtonController__ctor_mBCEB51B385D8F24BE3517EAD84115546B5DCD001 (void);
-// 0x00000074 System.Boolean SymbolController::get_PullingHandle()
+// 0x00000078 System.Boolean SymbolController::get_PullingHandle()
 extern void SymbolController_get_PullingHandle_mBE4DE11DCB7E0CF2088D8BB658901A1818920C3C (void);
-// 0x00000075 System.Void SymbolController::set_PullingHandle(System.Boolean)
+// 0x00000079 System.Void SymbolController::set_PullingHandle(System.Boolean)
 extern void SymbolController_set_PullingHandle_m2C99DEF1866A8FE852E6CEFDF8BF6C6E482487AC (void);
-// 0x00000076 System.Void SymbolController::Start()
+// 0x0000007A System.Void SymbolController::Start()
 extern void SymbolController_Start_mB79BE6CC2E5FA92B8AB99BCF17A0235D7F98F2AF (void);
-// 0x00000077 System.Void SymbolController::Update()
+// 0x0000007B System.Void SymbolController::Update()
 extern void SymbolController_Update_mDC5583A7FC219F5446C3C073ED52EE00BDD4D3D7 (void);
-// 0x00000078 System.Void SymbolController::OnTriggerEnter(UnityEngine.Collider)
+// 0x0000007C System.Void SymbolController::OnTriggerEnter(UnityEngine.Collider)
 extern void SymbolController_OnTriggerEnter_mCF67CED339C6D2F62E1A984FFB2C3909AE9FA650 (void);
-// 0x00000079 System.Void SymbolController::OnCollisionExit(UnityEngine.Collision)
+// 0x0000007D System.Void SymbolController::OnCollisionExit(UnityEngine.Collision)
 extern void SymbolController_OnCollisionExit_mBC782FFF5EA5FD57014C32BFEEFDBF657CD2C517 (void);
-// 0x0000007A System.Void SymbolController::.ctor()
+// 0x0000007E System.Void SymbolController::.ctor()
 extern void SymbolController__ctor_m0F5B24E9E719734E642915902F1538FEEA3467B0 (void);
-static Il2CppMethodPointer s_methodPointers[122] = 
+// 0x0000007F System.Void TextController::SetText(System.String)
+extern void TextController_SetText_mDB740491C71596B7703474A551ECF5B160A64232 (void);
+// 0x00000080 System.Void TextController::SetText(System.Int32,System.Boolean,System.Action`1<System.String>)
+extern void TextController_SetText_m1B26F10AA55DB400EF4F3DEFEA74FB85E972CADF (void);
+// 0x00000081 System.Void TextController::FinishAnimationEarly()
+extern void TextController_FinishAnimationEarly_m468481D7CF445545D6CC42C850539A53AAB936FE (void);
+// 0x00000082 System.Void TextController::Start()
+extern void TextController_Start_m15081F8F856BB0907FACB0F7655436F287A46319 (void);
+// 0x00000083 System.Void TextController::Update()
+extern void TextController_Update_m1E0250612056DC745E7ADBF3978B723C7A7854A3 (void);
+// 0x00000084 System.Collections.IEnumerator TextController::CountUpRoutine(System.Action`1<System.String>)
+extern void TextController_CountUpRoutine_m05C29F9D8C46604E605BD9CF1BF7104E331B9F65 (void);
+// 0x00000085 System.Void TextController::.ctor()
+extern void TextController__ctor_m62ECE2CB6D0A4F91F707E8FD0D9E288282EAF87D (void);
+// 0x00000086 System.Void TextController/<CountUpRoutine>d__8::.ctor(System.Int32)
+extern void U3CCountUpRoutineU3Ed__8__ctor_m9C080522FFC4CFFEAA495097E20E9D811960A8A8 (void);
+// 0x00000087 System.Void TextController/<CountUpRoutine>d__8::System.IDisposable.Dispose()
+extern void U3CCountUpRoutineU3Ed__8_System_IDisposable_Dispose_m694106E0DA6A2FC867172318EE2D2015D00BB046 (void);
+// 0x00000088 System.Boolean TextController/<CountUpRoutine>d__8::MoveNext()
+extern void U3CCountUpRoutineU3Ed__8_MoveNext_mD089021242C79C7618BEEB3C7939552088FAAA1E (void);
+// 0x00000089 System.Object TextController/<CountUpRoutine>d__8::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CCountUpRoutineU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m90466D2E5DD49EC16331DDE4A3B704743FF5BB78 (void);
+// 0x0000008A System.Void TextController/<CountUpRoutine>d__8::System.Collections.IEnumerator.Reset()
+extern void U3CCountUpRoutineU3Ed__8_System_Collections_IEnumerator_Reset_m0D1A5005CDCAD3892FAB62E3BF04BD5E55B12ED5 (void);
+// 0x0000008B System.Object TextController/<CountUpRoutine>d__8::System.Collections.IEnumerator.get_Current()
+extern void U3CCountUpRoutineU3Ed__8_System_Collections_IEnumerator_get_Current_m42E53BEEDD763F5CEDE72B1ECA92E08BBE598E10 (void);
+static Il2CppMethodPointer s_methodPointers[139] = 
 {
 	CellController_get_Frame_mEBE7EA310619C510F5EF2DE3715289756AED65EF,
 	CellController_set_Frame_mF3A47A98811DD296491F01803476033A2789847C,
@@ -303,32 +337,36 @@ static Il2CppMethodPointer s_methodPointers[122] =
 	Symbol__ctor_m535DC72F060E66623F23D327127A118A1356FE37,
 	SymbolIds__ctor_m0D709F8F69CA647EA10A980EF899A8F9A2895383,
 	SymbolIds__cctor_m5FA39E4309BDFC303CB7E33702B81598EF6C3F05,
-	U3CU3Ec__DisplayClass33_0__ctor_m32A18807EA106888555852C4E7475C99D35BF6F2,
-	U3CU3Ec__DisplayClass33_0_U3CGetPayLineU3Eb__0_m327A91B9C3C1C290DC956964DFF380C9D89121A0,
-	U3CWonCountUpRoutineU3Ed__35__ctor_m49974961B7AA41B533759EB86C030DF092FD6597,
-	U3CWonCountUpRoutineU3Ed__35_System_IDisposable_Dispose_mDEA4D200B1ED66A0BF8A136CC7596FC3F54F7B4C,
-	U3CWonCountUpRoutineU3Ed__35_MoveNext_mE5F369CA148C0781C5937A16C209AC1A7C275E46,
-	U3CWonCountUpRoutineU3Ed__35_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA882EF7168C69784FB339F5960EE94D1E25F61AB,
-	U3CWonCountUpRoutineU3Ed__35_System_Collections_IEnumerator_Reset_m74AD10B63623B27B74C7F5220DA7852FEC04F550,
-	U3CWonCountUpRoutineU3Ed__35_System_Collections_IEnumerator_get_Current_mCB30BA2035114408453B1C671BE69E1DE3EFAF35,
-	U3CWonCountUpFinishRoutineU3Ed__36__ctor_m0BB48316389449AF03E0F1598ACABFE03DDE4CA3,
-	U3CWonCountUpFinishRoutineU3Ed__36_System_IDisposable_Dispose_mEEE1987DC5C2AD3B06ADED5F0B77516B581FC54E,
-	U3CWonCountUpFinishRoutineU3Ed__36_MoveNext_m3FEB8AE0CE3DF64D6C23BCE8C59B601417F5305C,
-	U3CWonCountUpFinishRoutineU3Ed__36_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1C9B4EFA146CF9501C9A74EC712F49BFF51EE882,
-	U3CWonCountUpFinishRoutineU3Ed__36_System_Collections_IEnumerator_Reset_mFDDAF62E89326580938ADA3BA83AB67506B76E62,
-	U3CWonCountUpFinishRoutineU3Ed__36_System_Collections_IEnumerator_get_Current_mB57B9E48C2D6E10063B60E1020156C685DF2135A,
-	U3CReelSpinSoundCountdownRoutineU3Ed__37__ctor_mE2E4B8284435C47AD4162C7F675D50C46F476E3A,
-	U3CReelSpinSoundCountdownRoutineU3Ed__37_System_IDisposable_Dispose_m85EF432532F2D8A59C3CFF369C417F086155FC5E,
-	U3CReelSpinSoundCountdownRoutineU3Ed__37_MoveNext_m560EA7A08CEA7D578A5B19378F2F6D4E648CBEE9,
-	U3CReelSpinSoundCountdownRoutineU3Ed__37_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mEBFB1F15D002E9CC89DA4BBE71D024544C97240A,
-	U3CReelSpinSoundCountdownRoutineU3Ed__37_System_Collections_IEnumerator_Reset_m6483A34BB1F9A35AA91ADD2E7530FA6D42C12A34,
-	U3CReelSpinSoundCountdownRoutineU3Ed__37_System_Collections_IEnumerator_get_Current_m70338BD9E22974D47E67036828A7E07B47AF8224,
-	U3CReelSpinCountdownRoutineU3Ed__38__ctor_mFBA1A8B54E26EE041DCB2EEA08C8795232C51985,
-	U3CReelSpinCountdownRoutineU3Ed__38_System_IDisposable_Dispose_m1F37B9419E50E9652C1B7364E12E20B2966E0DEF,
-	U3CReelSpinCountdownRoutineU3Ed__38_MoveNext_m11D012082E4554D9BBB97A47F034A8E272F7B4BA,
-	U3CReelSpinCountdownRoutineU3Ed__38_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m573BEDADC6A4F43AE4AEC0B80F63F32D91CAD24C,
-	U3CReelSpinCountdownRoutineU3Ed__38_System_Collections_IEnumerator_Reset_m582C3C71468BAC94477D0961B87979AA837EBF12,
-	U3CReelSpinCountdownRoutineU3Ed__38_System_Collections_IEnumerator_get_Current_m419DB67FB7E6789060E7A493BB60A801E7C71D07,
+	U3CU3Ec__DisplayClass36_0__ctor_mDE08DE19D4E51E62BD8A6C531A77B0D21E953150,
+	U3CU3Ec__DisplayClass36_1__ctor_m185BEB6743CA4783D0DBD1CB5B0DADB9B2DDE920,
+	U3CU3Ec__DisplayClass36_1_U3CGetPayLineU3Eb__0_m058259CC761133FDDFF0BEE9A93F45961005BFFF,
+	U3CWonCountUpRoutineU3Ed__38__ctor_m7AD6B57C32F66CAEAAC474D52EA31EB5DDB9B2BE,
+	U3CWonCountUpRoutineU3Ed__38_System_IDisposable_Dispose_mAEB11C86C499FE9B34E8123800EC28E26B03A122,
+	U3CWonCountUpRoutineU3Ed__38_MoveNext_m3207A7373803E0330997E603BEC499AAB53722CD,
+	U3CWonCountUpRoutineU3Ed__38_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mE6C953E71D5BAC224E0630505C9B5324B99D939E,
+	U3CWonCountUpRoutineU3Ed__38_System_Collections_IEnumerator_Reset_m06B547FA6E0B1EC81A1434C6160F9A517A6C92A1,
+	U3CWonCountUpRoutineU3Ed__38_System_Collections_IEnumerator_get_Current_m16E4AD915888E50C426227633BBB689E37D3C04C,
+	U3CWonCountUpFinishRoutineU3Ed__39__ctor_m9892027782DC5DD0B57475A5A28C58E758908241,
+	U3CWonCountUpFinishRoutineU3Ed__39_System_IDisposable_Dispose_mA7D3A5ADA39A02D87CE7D6D86007332DD9282FA9,
+	U3CWonCountUpFinishRoutineU3Ed__39_MoveNext_m136F67B528E9322B22BE5971486215FDBD4206B2,
+	U3CWonCountUpFinishRoutineU3Ed__39_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m6D6677E16768F61E03E04BB84ACA1A6FB124F7EE,
+	U3CWonCountUpFinishRoutineU3Ed__39_System_Collections_IEnumerator_Reset_m9623FAA0219D221623D9AEAC50B5F7DFFE01EF6F,
+	U3CWonCountUpFinishRoutineU3Ed__39_System_Collections_IEnumerator_get_Current_m9E3513E19A9C62574AC1F9E67967AF35684D4544,
+	U3CReelSpinSoundCountdownRoutineU3Ed__40__ctor_m536B082C8117C22CF8306C1D5DD2ADFECD4F56A0,
+	U3CReelSpinSoundCountdownRoutineU3Ed__40_System_IDisposable_Dispose_m90483D64D0BC25F90C104AF1BF3AFEFD6DF8A5A7,
+	U3CReelSpinSoundCountdownRoutineU3Ed__40_MoveNext_m59F4B42A594D66292DAFC7E9635558B33E3B755B,
+	U3CReelSpinSoundCountdownRoutineU3Ed__40_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m22C95523E4124086C498919DA2CA1B7224251E4C,
+	U3CReelSpinSoundCountdownRoutineU3Ed__40_System_Collections_IEnumerator_Reset_m3F9E829EF7F20BFB15CD51F2E41B2465372C9A41,
+	U3CReelSpinSoundCountdownRoutineU3Ed__40_System_Collections_IEnumerator_get_Current_m5F34FC1994ECB5D3D74C90550975AFD4A2E0980C,
+	U3CU3Ec__cctor_m98B52F6DFB9B80EDB1056974AB4C8E5BEFA58072,
+	U3CU3Ec__ctor_m32C667B9723029A3D406CF2D437E88EAEFC906B9,
+	U3CU3Ec_U3CReelSpinCountdownRoutineU3Eb__41_0_mA20408E471F09B5AB5E403B51C223750E74F5C41,
+	U3CReelSpinCountdownRoutineU3Ed__41__ctor_mE26AB7BBD770B37C9411728062544E5C21A7525C,
+	U3CReelSpinCountdownRoutineU3Ed__41_System_IDisposable_Dispose_m7BE8F7E354721935F273757FF5E5B57ACD238D9E,
+	U3CReelSpinCountdownRoutineU3Ed__41_MoveNext_m512CC64A5B71F0BC77334E9C8CDB00E40D8081B0,
+	U3CReelSpinCountdownRoutineU3Ed__41_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m6F25EA08C56DBECF1F5688B2259DCA22484C4922,
+	U3CReelSpinCountdownRoutineU3Ed__41_System_Collections_IEnumerator_Reset_mB0292611B30BFBF1B34A57D12C595A1E4604D68A,
+	U3CReelSpinCountdownRoutineU3Ed__41_System_Collections_IEnumerator_get_Current_mD0D225D57BAB02440BFAB69E6436992576FF0177,
 	MegaWin_Start_mB858FC08B59720539C96F39AD6F7215625896332,
 	MegaWin_Update_m3739DE89A7FCD67AEBDF8E1CED7874D276365BB9,
 	MegaWin__ctor_m4038F55042EBC351472E7A1368AD612D569BF383,
@@ -380,8 +418,21 @@ static Il2CppMethodPointer s_methodPointers[122] =
 	SymbolController_OnTriggerEnter_mCF67CED339C6D2F62E1A984FFB2C3909AE9FA650,
 	SymbolController_OnCollisionExit_mBC782FFF5EA5FD57014C32BFEEFDBF657CD2C517,
 	SymbolController__ctor_m0F5B24E9E719734E642915902F1538FEEA3467B0,
+	TextController_SetText_mDB740491C71596B7703474A551ECF5B160A64232,
+	TextController_SetText_m1B26F10AA55DB400EF4F3DEFEA74FB85E972CADF,
+	TextController_FinishAnimationEarly_m468481D7CF445545D6CC42C850539A53AAB936FE,
+	TextController_Start_m15081F8F856BB0907FACB0F7655436F287A46319,
+	TextController_Update_m1E0250612056DC745E7ADBF3978B723C7A7854A3,
+	TextController_CountUpRoutine_m05C29F9D8C46604E605BD9CF1BF7104E331B9F65,
+	TextController__ctor_m62ECE2CB6D0A4F91F707E8FD0D9E288282EAF87D,
+	U3CCountUpRoutineU3Ed__8__ctor_m9C080522FFC4CFFEAA495097E20E9D811960A8A8,
+	U3CCountUpRoutineU3Ed__8_System_IDisposable_Dispose_m694106E0DA6A2FC867172318EE2D2015D00BB046,
+	U3CCountUpRoutineU3Ed__8_MoveNext_mD089021242C79C7618BEEB3C7939552088FAAA1E,
+	U3CCountUpRoutineU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m90466D2E5DD49EC16331DDE4A3B704743FF5BB78,
+	U3CCountUpRoutineU3Ed__8_System_Collections_IEnumerator_Reset_m0D1A5005CDCAD3892FAB62E3BF04BD5E55B12ED5,
+	U3CCountUpRoutineU3Ed__8_System_Collections_IEnumerator_get_Current_m42E53BEEDD763F5CEDE72B1ECA92E08BBE598E10,
 };
-static const int32_t s_InvokerIndices[122] = 
+static const int32_t s_InvokerIndices[139] = 
 {
 	1427,
 	1230,
@@ -429,6 +480,7 @@ static const int32_t s_InvokerIndices[122] =
 	1469,
 	2321,
 	1469,
+	1469,
 	1065,
 	1220,
 	1469,
@@ -448,6 +500,9 @@ static const int32_t s_InvokerIndices[122] =
 	1427,
 	1469,
 	1427,
+	2321,
+	1469,
+	1230,
 	1220,
 	1469,
 	1447,
@@ -505,13 +560,26 @@ static const int32_t s_InvokerIndices[122] =
 	1230,
 	1230,
 	1469,
+	1230,
+	456,
+	1469,
+	1469,
+	1469,
+	961,
+	1469,
+	1220,
+	1469,
+	1447,
+	1427,
+	1469,
+	1427,
 };
 extern const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	122,
+	139,
 	s_methodPointers,
 	0,
 	NULL,
