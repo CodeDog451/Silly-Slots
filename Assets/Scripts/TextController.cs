@@ -9,6 +9,11 @@ public class TextController : MonoBehaviour
     public TextMeshProUGUI TextElement;
     private int animateValue;
     private int newValue;
+    //private AudioSource audioAnimate;
+    public GameObject audioAnimateObject;
+    private AudioSource audioAnimate;
+
+
     public void SetText(string text)
     {
         TextElement.text = text;
@@ -18,7 +23,12 @@ public class TextController : MonoBehaviour
         if (animate)
         {            
             newValue = num;
+            //Debug.Log(num);
+            //Debug.Log(animate);
+            //Debug.Log(gameObject.activeSelf);
+           
             StartCoroutine(CountUpRoutine(callback));
+           
         }
         else
         {
@@ -34,11 +44,23 @@ public class TextController : MonoBehaviour
         animateValue = newValue;
     }
 
+    private void PlayAnimateSound()
+    {
+        if(audioAnimate != null)
+        {
+            audioAnimate.Play();
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         animateValue = 0;
         newValue = 0;
+        if (audioAnimateObject != null)
+        {
+            audioAnimate = audioAnimateObject.GetComponent<AudioSource>();
+        }
     }
 
     // Update is called once per frame
@@ -54,7 +76,9 @@ public class TextController : MonoBehaviour
         if (newValue > animateValue)
         {
             animateValue++;
-            SetText(animateValue.ToString());            
+            //Debug.Log(animateValue);
+            SetText(animateValue.ToString());
+            PlayAnimateSound();
             StartCoroutine(CountUpRoutine(callback));
         }
         else if (newValue < animateValue)
@@ -66,8 +90,9 @@ public class TextController : MonoBehaviour
         else
         {
             animateValue = newValue;
-            SetText(animateValue.ToString());    
-            if(callback != null)
+            SetText(animateValue.ToString());
+            PlayAnimateSound();
+            if (callback != null)
             {
                 callback(animateValue.ToString());
             }

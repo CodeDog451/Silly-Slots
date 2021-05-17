@@ -23,37 +23,30 @@ public class GameManager : MonoBehaviour
     public GameObject spinsTextObject;
     private TextController spinsText;
 
-    public GameObject winSound;
+    public GameObject megaWinTextObject;
+    private TextController megaWinText;
+    
+    public GameObject megaWinObject;
+    private MegaWinController megaWin;
+    private AudioSource megaWinAudio;
+
+    public GameObject winSoundObject;
     private AudioSource winAudio;
 
     public GameObject[] reels;
     private List<ReelController> reelControllers;
-    
+    private AudioSource audioReels;
+
     private bool pullingHandle = false;
     public float spinDuration;
     public GameObject[] PayLines;
     private List<PayLineController> PayLineControllers;
     
     private int score;
-    private int freeSpins;  
-    
-    private AudioSource audio;
-    public GameObject megaWin;
-    private AudioSource megaWinAudio;
-    
-    public TextMeshProUGUI megaWinText;
-    public GameObject coinDropSound;
-
-    
-
-    private AudioSource audioCoinDrop;
-
+    private int freeSpins; 
     private int megaWinLimit = 100;
-
-    int won = 0;
-    int animateWon = 0;
-
-    
+    private int won = 0;
+     
 
     private int[][] PaylineDef = new int[][]
         {
@@ -112,13 +105,14 @@ public class GameManager : MonoBehaviour
         wonText = wonTextObject.GetComponent<TextController>();
         spinsText = spinsTextObject.GetComponent<TextController>();
 
+        megaWinText = megaWinTextObject.GetComponent<TextController>();
+        megaWin = megaWinObject.GetComponent<MegaWinController>();
+        megaWinObject.SetActive(true);
+        megaWin.SetVisible(false);
         score = PlayerPrefs.GetInt("score", score);
-
-        winAudio = winSound.GetComponent<AudioSource>();
-
-        audioCoinDrop = coinDropSound.GetComponent<AudioSource>();
-        audio = GetComponent<AudioSource>();
-        megaWinAudio = megaWin.GetComponent<AudioSource>();
+        winAudio = winSoundObject.GetComponent<AudioSource>();        
+        audioReels = GetComponent<AudioSource>();
+        megaWinAudio = megaWinObject.GetComponent<AudioSource>();
         score = PlayerPrefs.GetInt("score", score);
         if (!(score > 0))
         {
@@ -149,10 +143,9 @@ public class GameManager : MonoBehaviour
     {
         if (!pullingHandle)
         {
-            wonText.FinishAnimationEarly();
-            megaWin.SetActive(false);
-            megaWinAudio.Stop();
-            coinDropSound.SetActive(false);
+            wonText.FinishAnimationEarly();            
+            megaWin.SetVisible(false);
+            megaWinAudio.Stop();            
             pullingHandle = true;
             if (freeSpins > 0)
             {
@@ -179,11 +172,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(animateWon < won)
-        //{
-        //    animateWon++;
-        //    megaWinText.text = animateWon.ToString();
-        //};
+        
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter))
         {
             SpinIfReady();  
@@ -204,6 +193,7 @@ public class GameManager : MonoBehaviour
         score += scoreToAdd;
         PlayerPrefs.SetInt("score", score);        
         scoreText.SetText(score, scoreToAdd > 0);
+        //scoreText.SetText(score);
     }
 
     private void UpdateSpins(int spinsToAdd)
@@ -237,8 +227,7 @@ public class GameManager : MonoBehaviour
                 var sym = new Symbol()
                 {
                     SymbolId = cell.SymbolId,
-                    SymbolName = cell.SymbolName,
-                    //Frame = cell.Frame,
+                    SymbolName = cell.SymbolName,                    
                     ShowFrame = cell.ShowFrame,
                     ShowWinEffect = cell.ShowWinEffect
 
@@ -286,43 +275,21 @@ public class GameManager : MonoBehaviour
         }
 
         return line;
-    }
-
-    private IEnumerator WonCountUpRoutine()
-    {
-        
-        yield return new WaitForSeconds(0.1f);
-        if (animateWon < won && coinDropSound.activeSelf)
-        {
-            audioCoinDrop.Play();
-            animateWon++;
-            megaWinText.text = animateWon.ToString();
-            
-            StartCoroutine(WonCountUpRoutine());
-        }
-        else
-        {
-            
-            StartCoroutine(WonCountUpFinishRoutine());
-        }
-    }
-
-    
+    }       
 
     private IEnumerator WonCountUpFinishRoutine()
     {
         yield return new WaitForSeconds(1.0f);
-        //UpdateScore(won);
-        megaWinAudio.Stop();
-        megaWin.SetActive(false);
+        
+        megaWinAudio.Stop();        
+        megaWin.SetVisible(false);
     }
     private IEnumerator ReelSpinSoundCountdownRoutine()
     {
-        audio.volume = 1.0f;
-        audio.Play();
+        audioReels.volume = 1.0f;
+        audioReels.Play();
         yield return new WaitForSeconds(spinDuration);
-        audio.volume = 0.0f;
-        
+        audioReels.volume = 0.0f;        
 
     }
     private IEnumerator ReelSpinCountdownRoutine()
@@ -330,8 +297,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(spinDuration);        
         pullingHandle = false;
         
-        won = 0;
-        animateWon = 0;
+        won = 0;        
         for (int x = 0; x < PaylineDef.Length; x++)
         {
             
@@ -368,20 +334,25 @@ public class GameManager : MonoBehaviour
         if (won > 0)
         {
             wonText.SetText(0);//count up from 0 the amount won
-            wonText.SetText(won, true, (x) => { 
-                //Debug.Log(x);
-                });
-
-            animateWon++;
-            megaWinText.text = animateWon.ToString();
-            if (won >= megaWinLimit)
+            //wonText.SetText(won);
+            wonText.SetText(won, true, (x) =>
             {
-                megaWin.SetActive(true);
+                //Debug.Log(x);
+                StartCoroutine(WonCountUpFinishRoutine());
+                
+            });
+            
+            if (won >= megaWinLimit)
+            {                
+                megaWin.SetVisible(true);
+                //Debug.Log("Mega Win Visable");
                 megaWinAudio.Play();
-            }
-            coinDropSound.SetActive(true);
-
-            StartCoroutine(WonCountUpRoutine());
+                megaWinText.SetText(0);
+                megaWinText.SetText(won, true, (x) =>
+                {
+                    //Debug.Log(x);
+                });
+            }            
         }
         UpdateScore(won);    
 

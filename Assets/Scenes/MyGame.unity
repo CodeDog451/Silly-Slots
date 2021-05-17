@@ -541,6 +541,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!223 &276606445 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5211460684128616693, guid: bdd4243e42d0b9a469aa7cafac90424b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1947007771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &319836724
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +718,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5641620792291459147, guid: bdd4243e42d0b9a469aa7cafac90424b,
+        type: 3}
+      propertyPath: audioAnimateObject
+      value: 
+      objectReference: {fileID: 1329087544}
     - target: {fileID: 551150547347844544, guid: bdd4243e42d0b9a469aa7cafac90424b,
         type: 3}
       propertyPath: m_text
@@ -886,6 +897,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &432821393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4366307352004246341, guid: bdd4243e42d0b9a469aa7cafac90424b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1947007771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &465976698
 GameObject:
   m_ObjectHideFlags: 0
@@ -4002,8 +4019,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1337525111}
-  - component: {fileID: 1337525112}
   - component: {fileID: 1337525113}
+  - component: {fileID: 1337525112}
   m_Layer: 0
   m_Name: MegaWin
   m_TagString: Untagged
@@ -4038,9 +4055,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1337525110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d10907392b5234c847577e16c41f6f, type: 3}
+  m_Script: {fileID: 11500000, guid: 42253f0ef38e32641af82defd5826637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TextCanvas: {fileID: 276606445}
 --- !u!82 &1337525113
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4580,18 +4598,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1491328822 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 551150547347844544, guid: bdd4243e42d0b9a469aa7cafac90424b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1180505661}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1509905711
 GameObject:
   m_ObjectHideFlags: 0
@@ -4950,7 +4956,9 @@ MonoBehaviour:
   scoreTextObject: {fileID: 1238508659}
   wonTextObject: {fileID: 417907288}
   spinsTextObject: {fileID: 1923897851}
-  winSound: {fileID: 417907288}
+  megaWinTextObject: {fileID: 432821393}
+  megaWinObject: {fileID: 1337525110}
+  winSoundObject: {fileID: 417907288}
   reels:
   - {fileID: 1446188853}
   - {fileID: 1304912477}
@@ -4968,10 +4976,6 @@ MonoBehaviour:
   - {fileID: 108886710}
   - {fileID: 7191615}
   - {fileID: 1263076884}
-  spinsText: {fileID: 1491328822}
-  megaWin: {fileID: 1337525110}
-  megaWinText: {fileID: 1706158110}
-  coinDropSound: {fileID: 1329087544}
 --- !u!4 &1664008587
 Transform:
   m_ObjectHideFlags: 0
@@ -5328,18 +5332,6 @@ Transform:
   m_Father: {fileID: 964965872}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1706158110 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 551150547347844544, guid: bdd4243e42d0b9a469aa7cafac90424b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1947007771}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1745170589
 GameObject:
   m_ObjectHideFlags: 0
@@ -5669,6 +5661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 695169339959816414, guid: bdd4243e42d0b9a469aa7cafac90424b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1293720595883116555, guid: bdd4243e42d0b9a469aa7cafac90424b,
         type: 3}
