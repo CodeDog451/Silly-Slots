@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     
     private int score;
     private int freeSpins; 
-    private int megaWinLimit = 100;
+    private int megaWinLimit = 10;
     private int won = 0;
      
 
@@ -143,39 +143,49 @@ public class GameManager : MonoBehaviour
     {
         if (!pullingHandle)
         {
-            wonText.FinishAnimationEarly();            
-            megaWin.SetVisible(false);
-            megaWinAudio.Stop();            
-            pullingHandle = true;
-            if (freeSpins > 0)
+            if (megaWin.IsVisable)
             {
-                UpdateSpins(-1); 
+                megaWin.SetVisible(false);
+                megaWinAudio.Stop();
             }
             else
             {
-                UpdateScore(-9);//one token per payline
+                wonText.FinishAnimationEarly();
+                
+                pullingHandle = true;
+                if (freeSpins > 0)
+                {
+                    UpdateSpins(-1);
+                }
+                else
+                {
+                    UpdateScore(-9);//one token per payline
+                }
+                foreach (var reel in reelControllers)
+                {
+                    reel.SpinReel();
+                }
+                foreach (var controller in PayLineControllers)
+                {
+                    controller.ShowLine(false);
+                }
+                StartCoroutine(ReelSpinCountdownRoutine());
+                StartCoroutine(ReelSpinSoundCountdownRoutine());
             }
-            foreach (var reel in reelControllers)
-            {
-                reel.SpinReel();
-            }
-            foreach (var controller in PayLineControllers)
-            {
-                controller.ShowLine(false);
-            }
-            StartCoroutine(ReelSpinCountdownRoutine());
-            StartCoroutine(ReelSpinSoundCountdownRoutine());
-
         }
     }
 
+    
     // Update is called once per frame
     void Update()
     {
         
-        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            SpinIfReady();  
+            
+            SpinIfReady();
+            
+                  
         }
     }
 
@@ -338,7 +348,7 @@ public class GameManager : MonoBehaviour
             wonText.SetText(won, true, (x) =>
             {
                 //Debug.Log(x);
-                StartCoroutine(WonCountUpFinishRoutine());
+                //StartCoroutine(WonCountUpFinishRoutine());
                 
             });
             

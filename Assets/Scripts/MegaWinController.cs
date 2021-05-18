@@ -6,9 +6,14 @@ public class MegaWinController : MonoBehaviour
 {
     // Start is called before the first frame update
     public Canvas TextCanvas;
-
+    private bool _isVisable;
+    public bool IsVisable
+    {
+        get { return _isVisable; }
+    }
     public void SetVisible(bool isVisable)
     {
+        _isVisable = isVisable;
         var renderers = GetComponentsInChildren<Renderer>();
         foreach (var item in renderers)
         {
