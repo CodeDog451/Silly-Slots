@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     
     private int score;
     private int freeSpins; 
-    private int megaWinLimit = 10;
+    private int megaWinLimit = 100;
     private int won = 0;
      
 
@@ -109,11 +109,11 @@ public class GameManager : MonoBehaviour
         megaWin = megaWinObject.GetComponent<MegaWinController>();
         megaWinObject.SetActive(true);
         megaWin.SetVisible(false);
-        score = PlayerPrefs.GetInt("score", score);
+        //score = PlayerPrefs.GetInt("score", score);
         winAudio = winSoundObject.GetComponent<AudioSource>();        
         audioReels = GetComponent<AudioSource>();
         megaWinAudio = megaWinObject.GetComponent<AudioSource>();
-        score = PlayerPrefs.GetInt("score", score);
+        score = PlayerPrefs.GetInt("score", 0);
         if (!(score > 0))
         {
             score = 10000;
@@ -122,7 +122,9 @@ public class GameManager : MonoBehaviour
         scoreText.SetText(score);
 
         freeSpins = 0;
-        
+
+        freeSpins = PlayerPrefs.GetInt("freeSpins", 0);
+
         spinsText.SetText(freeSpins);
 
         reelControllers = new List<ReelController>();        
@@ -209,7 +211,7 @@ public class GameManager : MonoBehaviour
     private void UpdateSpins(int spinsToAdd)
     {
         freeSpins += spinsToAdd;
-        
+        PlayerPrefs.SetInt("freeSpins", freeSpins);
         spinsText.SetText(freeSpins);
     }
 
