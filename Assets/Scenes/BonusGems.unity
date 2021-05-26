@@ -136,11 +136,11 @@ GameObject:
   - component: {fileID: 218659206}
   m_Layer: 0
   m_Name: red_breaking_51
-  m_TagString: Untagged
+  m_TagString: GemBreak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &218659205
 Transform:
   m_ObjectHideFlags: 0
@@ -238,11 +238,11 @@ GameObject:
   - component: {fileID: 224830607}
   m_Layer: 0
   m_Name: purple_breaking_51
-  m_TagString: Untagged
+  m_TagString: GemBreak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &224830607
 Animator:
   serializedVersion: 3
@@ -336,6 +336,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249762584}
+  - component: {fileID: 249762586}
+  - component: {fileID: 249762585}
   m_Layer: 0
   m_Name: YellowGem
   m_TagString: Untagged
@@ -359,6 +361,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &249762585
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249762583}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.06803125, y: 0.0975976}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1542463, y: 2.0103045}
+  m_EdgeRadius: 0
+--- !u!114 &249762586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249762583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9023a1f5d686414f88fc927fb3299e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &293263894
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +412,7 @@ GameObject:
   - component: {fileID: 293263895}
   m_Layer: 0
   m_Name: green_idle_00
-  m_TagString: Untagged
+  m_TagString: GemIdle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,11 +514,11 @@ GameObject:
   - component: {fileID: 516264807}
   m_Layer: 0
   m_Name: blue_breaking_51
-  m_TagString: Untagged
+  m_TagString: GemBreak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &516264806
 Transform:
   m_ObjectHideFlags: 0
@@ -576,7 +616,7 @@ GameObject:
   - component: {fileID: 547466352}
   m_Layer: 0
   m_Name: blue_idle_00
-  m_TagString: Untagged
+  m_TagString: GemIdle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -756,6 +796,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 822795518}
+  - component: {fileID: 822795519}
+  - component: {fileID: 822795520}
   m_Layer: 0
   m_Name: BlueGem
   m_TagString: Untagged
@@ -779,6 +821,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &822795519
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822795517}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06470609, y: -0.035784483}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6396861, y: 2.5449677}
+  m_EdgeRadius: 0
+--- !u!114 &822795520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822795517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9023a1f5d686414f88fc927fb3299e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827449552
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +968,7 @@ GameObject:
   - component: {fileID: 1049692360}
   m_Layer: 0
   m_Name: yellow_idle_00
-  m_TagString: Untagged
+  m_TagString: GemIdle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1073,11 +1153,11 @@ GameObject:
   - component: {fileID: 1145793676}
   m_Layer: 0
   m_Name: yellow_breaking_51
-  m_TagString: Untagged
+  m_TagString: GemBreak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1145793675
 Transform:
   m_ObjectHideFlags: 0
@@ -1175,7 +1255,7 @@ GameObject:
   - component: {fileID: 1199749132}
   m_Layer: 0
   m_Name: purple_idle_00
-  m_TagString: Untagged
+  m_TagString: GemIdle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1273,6 +1353,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1263154445}
+  - component: {fileID: 1263154447}
+  - component: {fileID: 1263154446}
   m_Layer: 0
   m_Name: GreenGem
   m_TagString: Untagged
@@ -1296,6 +1378,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1263154446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263154444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9023a1f5d686414f88fc927fb3299e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1263154447
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263154444}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.115199864, y: -0.09421301}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5892941, y: 2.4844842}
+  m_EdgeRadius: 0
 --- !u!1 &1605571274
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,6 +1425,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1605571275}
+  - component: {fileID: 1605571277}
+  - component: {fileID: 1605571276}
   m_Layer: 0
   m_Name: RedGem
   m_TagString: Untagged
@@ -1327,6 +1449,74 @@ Transform:
   - {fileID: 218659205}
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1605571276
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605571274}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02292502, y: 0.1253537}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.8760312, y: 1.9967577}
+  m_EdgeRadius: 0
+--- !u!114 &1605571277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605571274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9023a1f5d686414f88fc927fb3299e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1833596735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1833596736}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1833596736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833596735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1860870724
 GameObject:
@@ -1423,7 +1613,7 @@ GameObject:
   - component: {fileID: 2001481665}
   m_Layer: 0
   m_Name: red_idle_00
-  m_TagString: Untagged
+  m_TagString: GemIdle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1525,11 +1715,11 @@ GameObject:
   - component: {fileID: 2036163121}
   m_Layer: 0
   m_Name: green_breaking_51
-  m_TagString: Untagged
+  m_TagString: GemBreak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2036163120
 Transform:
   m_ObjectHideFlags: 0
@@ -1716,6 +1906,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2132487898}
+  - component: {fileID: 2132487900}
+  - component: {fileID: 2132487899}
   m_Layer: 0
   m_Name: PurpleGem
   m_TagString: Untagged
@@ -1739,3 +1931,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2132487899
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132487897}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.021963596, y: 0.15248758}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0073938, y: 1.7786359}
+  m_EdgeRadius: 0
+--- !u!114 &2132487900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132487897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9023a1f5d686414f88fc927fb3299e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
