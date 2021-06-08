@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
     public class Symbol
@@ -83,7 +85,7 @@ public class GameManager : MonoBehaviour
         new int[] { 0, 0, 0, 15, 45,  200 },     //boots id = 4
         new int[] { 0, 0, 0, 10, 30,  150 },     //hook id = 5
         new int[] { 0, 0, 0, 5,  20,  100 },     //tent id = 6
-        new int[] { 0, 0, 0, 10, 30,  150 },     //rock climber id = 7
+        new int[] { 0, 0, 0, 10, 30,  150 },     //bonus id = 7
         new int[] { 0, 0, 0, 45, 200, 1200 },    //yeti id = 8 //wild card
         new int[] { 0, 0, 0, 5,  10,  20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120 },     //free spins id = 9
     };
@@ -308,7 +310,7 @@ public class GameManager : MonoBehaviour
     {        
         yield return new WaitForSeconds(spinDuration);        
         pullingHandle = false;
-        
+        List<List<Symbol>> bonusLines = new List<List<Symbol>>();
         won = 0;        
         for (int x = 0; x < PaylineDef.Length; x++)
         {
@@ -318,6 +320,10 @@ public class GameManager : MonoBehaviour
             {
                 
                 var symbolId = payLine1.First().SymbolId;
+                if(symbolId == 7) //bonus
+                {
+                    bonusLines.Add(payLine1);
+                }
                 var payAmount = PayTable[symbolId][payLine1.Count()];
                 
 
@@ -330,6 +336,10 @@ public class GameManager : MonoBehaviour
                 won += payAmount;
                 
             }
+        }
+        if(bonusLines.Count() > 0)
+        {
+            SceneManager.LoadScene("BonusGems");
         }
         var freeSpins = GetScatterLine(9);
         if(freeSpins.Count > 2)
