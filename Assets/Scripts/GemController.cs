@@ -7,11 +7,13 @@ public class GemController : MonoBehaviour
     private GameObject gemIdle;
     private GameObject gemBreak;
     public GameObject TextObject;
+    private BonusGameManager gameManager;
     private TextFloatingControl textController;
     // Start is called before the first frame update
     void Start()
     {
-        if(TextObject != null)
+        gameManager = GameObject.Find("GameManager").GetComponent<BonusGameManager>();
+        if (TextObject != null)
         {
             textController = TextObject.GetComponent<TextFloatingControl>();
         }
@@ -40,6 +42,10 @@ public class GemController : MonoBehaviour
         if(textController != null)
         {
             textController.SetText(num);
+        }
+        if(gameManager != null)
+        {
+            gameManager.Win(num);
         }
     }
 
