@@ -116,6 +116,7 @@ public class GameManager : MonoBehaviour
         audioReels = GetComponent<AudioSource>();
         megaWinAudio = megaWinObject.GetComponent<AudioSource>();
         score = PlayerPrefs.GetInt("score", 0);
+        Debug.Log("Score start game: " + score.ToString());
         if (!(score > 0))
         {
             score = 10000;
@@ -206,6 +207,7 @@ public class GameManager : MonoBehaviour
         
         score += scoreToAdd;
         PlayerPrefs.SetInt("score", score);        
+
         scoreText.SetText(score, scoreToAdd > 0);
         //scoreText.SetText(score);
     }
