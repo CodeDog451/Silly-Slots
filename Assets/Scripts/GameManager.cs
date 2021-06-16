@@ -4,17 +4,20 @@ using UnityEngine;
 using System.Linq;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
+
+public class Symbol
+{
+    public string SymbolName { get; set; }
+    public int SymbolId { get; set; }
+    //public Transform Frame { get; set; }
+    public System.Action<bool> ShowFrame { get; set; }
+    public System.Action<bool> ShowWinEffect { get; set; }
+}
 
 public class GameManager : MonoBehaviour
 {
-    public class Symbol
-    {
-        public string SymbolName { get; set; }
-        public int SymbolId { get; set; }
-        //public Transform Frame { get; set; }
-        public System.Action<bool> ShowFrame { get; set; }
-        public System.Action<bool> ShowWinEffect { get; set; }
-    }
+    
 
     public GameObject scoreTextObject;
     private TextController scoreText;
@@ -339,10 +342,7 @@ public class GameManager : MonoBehaviour
                 
             }
         }
-        if(bonusLines.Count() > 0)
-        {
-            SceneManager.LoadScene("BonusGems");
-        }
+        
         var freeSpins = GetScatterLine(9);
         if(freeSpins.Count > 2)
         {
@@ -378,7 +378,19 @@ public class GameManager : MonoBehaviour
                 });
             }            
         }
-        UpdateScore(won);    
-
+        UpdateScore(won);
+        if (bonusLines.Count() > 0)
+        {
+            List<int> arrBonus = new List<int>();            
+            foreach(var line in bonusLines)
+            {
+                arrBonus.Add(line.Count());                
+            }
+            
+            PlayerPrefs.SetInt("score", score);
+            string bonusLinesJson = JsonConvert.SerializeObject(arrBonus);
+            PlayerPrefs.SetString("bonusLines", bonusLinesJson);
+            SceneManager.LoadScene("BonusGems");
+        }
     }
 }
