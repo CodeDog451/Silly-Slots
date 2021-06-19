@@ -315,7 +315,8 @@ public class GameManager : MonoBehaviour
     {        
         yield return new WaitForSeconds(spinDuration);        
         pullingHandle = false;
-        List<List<Symbol>> bonusLines = new List<List<Symbol>>();
+        //List<List<Symbol>> bonusLines = new List<List<Symbol>>();
+        List<int> bonusList = new List<int>();
         won = 0;        
         for (int x = 0; x < PaylineDef.Length; x++)
         {
@@ -327,7 +328,8 @@ public class GameManager : MonoBehaviour
                 var symbolId = payLine1.First().SymbolId;
                 if(symbolId == 7) //bonus
                 {
-                    bonusLines.Add(payLine1);
+                    //bonusLines.Add(payLine1);
+                    bonusList.Add(payLine1.Count());
                 }
                 var payAmount = PayTable[symbolId][payLine1.Count()];
                 
@@ -379,16 +381,16 @@ public class GameManager : MonoBehaviour
             }            
         }
         UpdateScore(won);
-        if (bonusLines.Count() > 0)
+        if (bonusList.Count() > 0)
         {
-            List<int> arrBonus = new List<int>();            
-            foreach(var line in bonusLines)
-            {
-                arrBonus.Add(line.Count());                
-            }
+            //List<int> arrBonus = new List<int>();            
+            //foreach(var line in bonusLines)
+            //{
+            //    arrBonus.Add(line.Count());                
+            //}
             
             PlayerPrefs.SetInt("score", score);
-            string bonusLinesJson = JsonConvert.SerializeObject(arrBonus);
+            string bonusLinesJson = JsonConvert.SerializeObject(bonusList);
             PlayerPrefs.SetString("bonusLines", bonusLinesJson);
             SceneManager.LoadScene("BonusGems");
         }
