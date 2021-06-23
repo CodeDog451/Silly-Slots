@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     private int freeSpins; 
     private int megaWinLimit = 100;
     private int won = 0;
+    private bool loadBonusScreen = false;
      
 
     private int[][] PaylineDef = new int[][]
@@ -151,34 +152,41 @@ public class GameManager : MonoBehaviour
     {
         if (!pullingHandle)
         {
-            if (megaWin.IsVisable)
+            if (loadBonusScreen)
             {
-                megaWin.SetVisible(false);
-                megaWinAudio.Stop();
+                SceneManager.LoadScene("BonusGems");
             }
             else
             {
-                wonText.FinishAnimationEarly();
-                
-                pullingHandle = true;
-                if (freeSpins > 0)
+                if (megaWin.IsVisable)
                 {
-                    UpdateSpins(-1);
+                    megaWin.SetVisible(false);
+                    megaWinAudio.Stop();
                 }
                 else
                 {
-                    UpdateScore(-9);//one token per payline
+                    wonText.FinishAnimationEarly();
+
+                    pullingHandle = true;
+                    if (freeSpins > 0)
+                    {
+                        UpdateSpins(-1);
+                    }
+                    else
+                    {
+                        UpdateScore(-9);//one token per payline
+                    }
+                    foreach (var reel in reelControllers)
+                    {
+                        reel.SpinReel();
+                    }
+                    foreach (var controller in PayLineControllers)
+                    {
+                        controller.ShowLine(false);
+                    }
+                    StartCoroutine(ReelSpinCountdownRoutine());
+                    StartCoroutine(ReelSpinSoundCountdownRoutine());
                 }
-                foreach (var reel in reelControllers)
-                {
-                    reel.SpinReel();
-                }
-                foreach (var controller in PayLineControllers)
-                {
-                    controller.ShowLine(false);
-                }
-                StartCoroutine(ReelSpinCountdownRoutine());
-                StartCoroutine(ReelSpinSoundCountdownRoutine());
             }
         }
     }
@@ -382,17 +390,13 @@ public class GameManager : MonoBehaviour
         }
         UpdateScore(won);
         if (bonusList.Count() > 0)
-        {
-            //List<int> arrBonus = new List<int>();            
-            //foreach(var line in bonusLines)
-            //{
-            //    arrBonus.Add(line.Count());                
-            //}
+        {           
             
             PlayerPrefs.SetInt("score", score);
             string bonusLinesJson = JsonConvert.SerializeObject(bonusList);
             PlayerPrefs.SetString("bonusLines", bonusLinesJson);
-            SceneManager.LoadScene("BonusGems");
+            loadBonusScreen = true;
+            //SceneManager.LoadScene("BonusGems");
         }
     }
 }
