@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
         audioReels = GetComponent<AudioSource>();
         megaWinAudio = megaWinObject.GetComponent<AudioSource>();
         score = PlayerPrefs.GetInt("score", 0);
-        Debug.Log("Score start game: " + score.ToString());
+        //Debug.Log("Score start game: " + score.ToString());
         if (!(score > 0))
         {
             score = 10000;
@@ -398,5 +398,14 @@ public class GameManager : MonoBehaviour
             loadBonusScreen = true;
             //SceneManager.LoadScene("BonusGems");
         }
+        int y = 1;
+        foreach(var reel in reelControllers)
+        {
+            Debug.Log("Reel: " + y.ToString());
+            y++;
+            var children = reel.GetSymbolChildren();
+        }
+        
+        
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Newtonsoft.Json;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -84,6 +85,28 @@ public class ReelController : MonoBehaviour
         Vector3 spawnPos = new Vector3(0, 11.0f, 0);//8.0f
         GameObject child = Instantiate(symbolsPrefabs[index], transform.position + spawnPos, symbolsPrefabs[index].transform.rotation);
         child.transform.SetParent(gameObject.transform);
+    }
+
+    public List<ReelSymbol> GetSymbolChildren()
+    {
+        List<ReelSymbol> children = new List<ReelSymbol>();
+        //var symbold = gameObject.transform.
+        foreach (Transform child in gameObject.transform)
+        {
+            if (child.tag == "Symbol")
+            {
+                var cell = child.GetComponent<SymbolController>();
+                var symbol = new ReelSymbol();
+                symbol.SymbolId = cell.SymbolId;
+                symbol.SymbolName = cell.name;
+                symbol.localPosition = child.localPosition;
+                string symbolJson = JsonConvert.SerializeObject(symbol);
+                Debug.Log(symbolJson);
+                children.Add(symbol);
+            }
+        }
+        //List<Transform> children = gameObject.transform.Cast<Transform>().ToList();
+        return children;
     }
 
     private IEnumerator ReelSpinCountdownRoutine(float? init = null)

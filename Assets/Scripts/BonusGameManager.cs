@@ -15,12 +15,12 @@ public class BonusGameManager : MonoBehaviour
     void Start()
     {
         score = PlayerPrefs.GetInt("score", 0);
-        Debug.Log("Score start bonus game: " + score.ToString());
+        //Debug.Log("Score start bonus game: " + score.ToString());
         string bonusLinesJson = PlayerPrefs.GetString("bonusLines");
         bonusLines = JsonConvert.DeserializeObject<List<int>>(bonusLinesJson);
         foreach (var item in bonusLines)
         {
-            Debug.Log("bonusLines item: " + item.ToString());
+            //Debug.Log("bonusLines item: " + item.ToString());
         }
     }
 
@@ -42,7 +42,7 @@ public class BonusGameManager : MonoBehaviour
                 bonusLines.RemoveAt(0);
             }
             score = score + won;
-            Debug.Log("Score end bonus game: " + score.ToString());
+            //Debug.Log("Score end bonus game: " + score.ToString());
             PlayerPrefs.SetInt("score", score);
             if (bonusLines.Count() > 0)
             {
