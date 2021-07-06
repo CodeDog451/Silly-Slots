@@ -146,6 +146,8 @@ public class GameManager : MonoBehaviour
             var controller = payline.GetComponent<PayLineController>();
             PayLineControllers.Add(controller);
         }
+        //kmp
+       LoadReels();
     }
 
     private void SpinIfReady()
@@ -398,14 +400,88 @@ public class GameManager : MonoBehaviour
             loadBonusScreen = true;
             //SceneManager.LoadScene("BonusGems");
         }
-        int y = 1;
-        foreach(var reel in reelControllers)
-        {
-            Debug.Log("Reel: " + y.ToString());
+
+        SaveReels();
+
+
+    }
+    public void SaveReels()
+    {
+        int y = 0;
+        foreach (var reel in reelControllers)
+        {            
             y++;
+            Debug.Log("Reel: " + y.ToString());
             var children = reel.GetSymbolChildren();
+            string childrenJson = JsonConvert.SerializeObject(children);
+            Debug.Log("children: " + childrenJson);
+            PlayerPrefs.SetString("reel" + y.ToString(), childrenJson);
         }
-        
-        
+    }
+    public void LoadReels()
+    {
+        int y = 0;
+        foreach (var reel in reelControllers)
+        {
+            
+            reel.ReelInit();
+            y++;            
+            var childrenJson = PlayerPrefs.GetString("reel" + y.ToString());
+            var children = JsonConvert.DeserializeObject<List<ReelSymbol>>(childrenJson);
+            if(children != null)
+            {
+                //kmp
+                if (y <= 5)
+                {
+                    Debug.Log("Reel: " + y.ToString());
+                    int length = children.Count();
+                    int row = 1;
+                    //for (int z = length - 1; z >= 0 && row <= 3; z--)
+                    for (int z = 0; row <= 5; z++)
+                    {
+                        var symbol = children[z];
+                        Debug.Log("symbol.SymbolId: " + symbol.SymbolId.ToString() + " symbol.SymbolName: " + symbol.SymbolName + " symbol.localPosition.y: " + symbol.localPosition.y);
+                        if (row == 5)
+                        {
+                            reel.SpawnSymbol(symbol, true);
+                        }
+                        else
+                        {
+
+
+                            reel.SpawnSymbol(symbol);
+                        }
+                        row++;
+                    }
+                }
+                //int x = 0;
+                //foreach(var child in children)
+                //{
+                //    x++;
+                //    //Debug.Log("child.SymbolId" + child.SymbolId.ToString());
+                //    //Debug.Log("child.SymbolName" + child.SymbolName);
+                //    //Debug.Log("child.localPosition.x" + child.localPosition.x);
+                //    //Debug.Log("child.localPosition.y" + child.localPosition.y);
+                //    //Debug.Log("child.localPosition.z" + child.localPosition.z);
+                //    if (x < 5 && y == 2)
+                //    {
+                //        //Debug.Log("child.SymbolId" + child.SymbolId.ToString());
+                //        Debug.Log("Reel: " + y.ToString());
+                //        reel.SpawnSymbol(child);
+                //    }
+                //}
+                //reel.ReelInit();
+                //testing remove later
+
+                //reel.StartupSpawn();
+                //////////////////////
+            }
+            else
+            {
+                Debug.Log("reel" + y.ToString() + " settings not found");
+                
+                reel.StartupSpawn();
+            }
+        }
     }
 }

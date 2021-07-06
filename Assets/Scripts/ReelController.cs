@@ -35,9 +35,19 @@ public class ReelController : MonoBehaviour
         }
         //if (row1 != null)
         //{
-            
+
         //}
         //InvokeRepeating("SpawnRandomSymbol", startDelay, spawnInterval);
+        //kmp
+        //StartupSpawn();
+        ReelRowCollider(true);
+
+    }
+
+    
+
+    public void StartupSpawn()
+    {
         SpawnRandomSymbol();
         StartCoroutine(ReelSpinCountdownRoutine(0.5f));
     }
@@ -79,8 +89,36 @@ public class ReelController : MonoBehaviour
         //}
     }
 
+    public void SpawnSymbol(ReelSymbol symbol, bool spawnNext = false)
+    {
+        //int index = symbol.SymbolId;
+        var first = symbolsPrefabs.First(d => d.gameObject.GetComponent<SymbolController>().SymbolId == symbol.SymbolId);
+        Vector3 spawnPos = new Vector3(symbol.localPosition.x, symbol.localPosition.y + 0.1f, symbol.localPosition.z);
+        GameObject child = Instantiate(first, transform.position + spawnPos, first.transform.rotation);
+        var sym = child.GetComponent<SymbolController>();
+        var rb = child.GetComponent<Rigidbody>();
+        rb.useGravity = true;
+        sym.PullingHandle = false;
+        sym.hasSpawnNext = !spawnNext;
+        child.transform.SetParent(gameObject.transform);
+    }
+    public void ReelInit()
+    {
+        //StartCoroutine(ReelSpinCountdownRoutine(0.5f));
+        //ReelSpinStopRoutine();
+        pullingHandle = false;
+        ReelRowCollider(true);
+
+        //var symbols = gameObject.GetComponentsInChildren<SymbolController>();
+        //foreach (var sym in symbols)
+        //{
+        //    sym.PullingHandle = false;
+        //}
+    }
+
     public void SpawnRandomSymbol()
     {
+        //Debug.Log("SpawnRandomSymbol");
         int index = Random.Range(0, symbolsPrefabs.Length);
         Vector3 spawnPos = new Vector3(0, 11.0f, 0);//8.0f
         GameObject child = Instantiate(symbolsPrefabs[index], transform.position + spawnPos, symbolsPrefabs[index].transform.rotation);
@@ -100,8 +138,8 @@ public class ReelController : MonoBehaviour
                 symbol.SymbolId = cell.SymbolId;
                 symbol.SymbolName = cell.name;
                 symbol.localPosition = child.localPosition;
-                string symbolJson = JsonConvert.SerializeObject(symbol);
-                Debug.Log(symbolJson);
+                //string symbolJson = JsonConvert.SerializeObject(symbol);
+                //Debug.Log(symbolJson);
                 children.Add(symbol);
             }
         }

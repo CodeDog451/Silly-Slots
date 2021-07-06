@@ -26,10 +26,13 @@ public class CellController : MonoBehaviour
     }
     public void ShowFrame(bool show)
     {
-        var allChildren = symbol.transform.GetComponentsInChildren<Transform>();
-        var frame = allChildren.Where(k => k.gameObject.name == "frame").FirstOrDefault();
-        var spriteRender = frame.GetComponent<SpriteRenderer>();
-        spriteRender.enabled = show;
+        if (symbol != null)
+        {
+            var allChildren = symbol.transform.GetComponentsInChildren<Transform>();
+            var frame = allChildren.Where(k => k.gameObject.name == "frame").FirstOrDefault();
+            var spriteRender = frame.GetComponent<SpriteRenderer>();
+            spriteRender.enabled = show;
+        }
     }
 
     public void ShowWinEffect(bool show)
