@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class BonusGameManager : MonoBehaviour
 {
+    public GameObject scoreTextObject;
+    private TextController scoreText;
+
     private int won = 0;
     private int opened = 0;
     private int score;
@@ -14,8 +17,12 @@ public class BonusGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreText = scoreTextObject.GetComponent<TextController>();
+
+        scoreText.SetText(won);
+
         score = PlayerPrefs.GetInt("score", 0);
-        //Debug.Log("Score start bonus game: " + score.ToString());
+        Debug.Log("Score start bonus game: " + score.ToString());
         string bonusLinesJson = PlayerPrefs.GetString("bonusLines");
         bonusLines = JsonConvert.DeserializeObject<List<int>>(bonusLinesJson);
         foreach (var item in bonusLines)
@@ -33,6 +40,7 @@ public class BonusGameManager : MonoBehaviour
     public void Win(int amount)
     {
         won = won + amount;
+        scoreText.SetText(won);
         opened++;
         var bonusGames = bonusLines.FirstOrDefault();
         if (opened >= bonusGames)
