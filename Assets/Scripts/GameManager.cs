@@ -248,31 +248,37 @@ public class GameManager : MonoBehaviour
         int reelIndex = 0;
         foreach (var reel in reelControllers)
         {
+            //Debug.Log("reelIndex: " + reelIndex.ToString());
             int rowIndex = paylineIndexes[reelIndex];
-            var cell = reel.CellControllers[rowIndex];
-            
-            if (!line.Any() || line.Exists(d => d.SymbolId == cell.SymbolId || line.First().SymbolId == SymbolIds.Yeti || cell.SymbolId == SymbolIds.Yeti))
+            //Debug.Log("reel.CellControllers count: " + reel.CellControllers.Count.ToString());
+            //Debug.Log("rowIndex: " + rowIndex.ToString());
+            if (rowIndex < reel.CellControllers.Count)
             {
-                var sym = new Symbol()
-                {
-                    SymbolId = cell.SymbolId,
-                    SymbolName = cell.SymbolName,                    
-                    ShowFrame = cell.ShowFrame,
-                    ShowWinEffect = cell.ShowWinEffect
+                var cell = reel.CellControllers[rowIndex];
 
-                };
-                if (cell.SymbolId == SymbolIds.Yeti)
+                if (!line.Any() || line.Exists(d => d.SymbolId == cell.SymbolId || line.First().SymbolId == SymbolIds.Yeti || cell.SymbolId == SymbolIds.Yeti))
                 {
-                    line.Add(sym);
+                    var sym = new Symbol()
+                    {
+                        SymbolId = cell.SymbolId,
+                        SymbolName = cell.SymbolName,
+                        ShowFrame = cell.ShowFrame,
+                        ShowWinEffect = cell.ShowWinEffect
+
+                    };
+                    if (cell.SymbolId == SymbolIds.Yeti)
+                    {
+                        line.Add(sym);
+                    }
+                    else
+                    {
+                        line.Insert(0, sym);
+                    }
                 }
                 else
                 {
-                    line.Insert(0, sym);
+                    break; //get out of the loop
                 }
-            }
-            else
-            {
-                break; //get out of the loop
             }
             reelIndex++;
         }  
@@ -411,10 +417,10 @@ public class GameManager : MonoBehaviour
         foreach (var reel in reelControllers)
         {            
             y++;
-            Debug.Log("Reel: " + y.ToString());
+            //Debug.Log("Reel: " + y.ToString());
             var children = reel.GetSymbolChildren();
             string childrenJson = JsonConvert.SerializeObject(children);
-            Debug.Log("children: " + childrenJson);
+            //Debug.Log("children: " + childrenJson);
             PlayerPrefs.SetString("reel" + y.ToString(), childrenJson);
         }
     }
@@ -428,19 +434,19 @@ public class GameManager : MonoBehaviour
             y++;            
             var childrenJson = PlayerPrefs.GetString("reel" + y.ToString());
             var children = JsonConvert.DeserializeObject<List<ReelSymbol>>(childrenJson);
-            if(children != null)
+            if(children != null && children.Count >= 5)
             {
                 //kmp
                 if (y <= 5)
                 {
-                    Debug.Log("Reel: " + y.ToString());
+                    //Debug.Log("Reel: " + y.ToString());
                     int length = children.Count();
                     int row = 1;
                     //for (int z = length - 1; z >= 0 && row <= 3; z--)
                     for (int z = 0; row <= 5; z++)
                     {
                         var symbol = children[z];
-                        Debug.Log("symbol.SymbolId: " + symbol.SymbolId.ToString() + " symbol.SymbolName: " + symbol.SymbolName + " symbol.localPosition.y: " + symbol.localPosition.y);
+                        //Debug.Log("symbol.SymbolId: " + symbol.SymbolId.ToString() + " symbol.SymbolName: " + symbol.SymbolName + " symbol.localPosition.y: " + symbol.localPosition.y);
                         if (row == 5)
                         {
                             reel.SpawnSymbol(symbol, true);

@@ -22,7 +22,7 @@ public class BonusGameManager : MonoBehaviour
         scoreText.SetText(won);
 
         score = PlayerPrefs.GetInt("score", 0);
-        Debug.Log("Score start bonus game: " + score.ToString());
+        //Debug.Log("Score start bonus game: " + score.ToString());
         string bonusLinesJson = PlayerPrefs.GetString("bonusLines");
         bonusLines = JsonConvert.DeserializeObject<List<int>>(bonusLinesJson);
         foreach (var item in bonusLines)
