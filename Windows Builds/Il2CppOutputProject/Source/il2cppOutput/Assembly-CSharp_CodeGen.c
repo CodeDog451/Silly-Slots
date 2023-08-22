@@ -1,0 +1,695 @@
+﻿#include "pch-c.h"
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+// 0x00000001 System.Void BonusGameManager::Start()
+extern void BonusGameManager_Start_m1EB261D01336A0F296BDB95D5E254AA8AC778A9F (void);
+// 0x00000002 System.Void BonusGameManager::Update()
+extern void BonusGameManager_Update_mE667B0A6E700AD1DEB503A6CF0F0F271D15F918E (void);
+// 0x00000003 System.Void BonusGameManager::Win(System.Int32)
+extern void BonusGameManager_Win_mD53BC80B25C2CE5B4166088EB97AD3FFE057AE7D (void);
+// 0x00000004 System.Void BonusGameManager::.ctor()
+extern void BonusGameManager__ctor_m07F5436DC6282502837C26CBB23A6C5E941B7786 (void);
+// 0x00000005 UnityEngine.Transform CellController::get_Frame()
+extern void CellController_get_Frame_mEBE7EA310619C510F5EF2DE3715289756AED65EF (void);
+// 0x00000006 System.Void CellController::set_Frame(UnityEngine.Transform)
+extern void CellController_set_Frame_mF3A47A98811DD296491F01803476033A2789847C (void);
+// 0x00000007 System.String CellController::get_SymbolName()
+extern void CellController_get_SymbolName_mBA30E26BBFC8969CB826DE838502909CBF94CAAC (void);
+// 0x00000008 System.Void CellController::set_SymbolName(System.String)
+extern void CellController_set_SymbolName_mFA579D7FB135E3A3ADC9A2B7D33EC5596A064135 (void);
+// 0x00000009 System.Int32 CellController::get_SymbolId()
+extern void CellController_get_SymbolId_mDFD57AC2B534AF244F86D8137A4AE0CD2C2E2177 (void);
+// 0x0000000A System.Void CellController::set_SymbolId(System.Int32)
+extern void CellController_set_SymbolId_m2E997CE0C04CF8615A1501292D50BA5985F8CB83 (void);
+// 0x0000000B System.Void CellController::ShowFrame(System.Boolean)
+extern void CellController_ShowFrame_m04EE27E0D4C341F3B852CF42643B9D1307860E6B (void);
+// 0x0000000C System.Void CellController::ShowWinEffect(System.Boolean)
+extern void CellController_ShowWinEffect_m2AC6B640EFFA78F42F958BF46A46093712ADCFC5 (void);
+// 0x0000000D System.Void CellController::Start()
+extern void CellController_Start_mD42F2462989A279A21E9BCF710ABAB6D57F47101 (void);
+// 0x0000000E System.Void CellController::Update()
+extern void CellController_Update_m9B6773860C11F760C65147B14743D89C3A5BC280 (void);
+// 0x0000000F System.Void CellController::OnTriggerEnter(UnityEngine.Collider)
+extern void CellController_OnTriggerEnter_m1820F08EA2EAA00AB74BB411E718CF2639417EA7 (void);
+// 0x00000010 System.Void CellController::.ctor()
+extern void CellController__ctor_m8B180FADBA32A5846BD63F8649666E916E8867D8 (void);
+// 0x00000011 System.Void CellController/<>c::.cctor()
+extern void U3CU3Ec__cctor_m086FEE1197C868E4EE83BC6ACF70BC6CD3F51FA9 (void);
+// 0x00000012 System.Void CellController/<>c::.ctor()
+extern void U3CU3Ec__ctor_m886CA44150A204218D2A0FFF4488328394483B67 (void);
+// 0x00000013 System.Boolean CellController/<>c::<ShowFrame>b__13_0(UnityEngine.Transform)
+extern void U3CU3Ec_U3CShowFrameU3Eb__13_0_mAF150647543439ABD53C75E056C0166206D381E8 (void);
+// 0x00000014 System.Boolean CellController/<>c::<ShowWinEffect>b__14_0(UnityEngine.Transform)
+extern void U3CU3Ec_U3CShowWinEffectU3Eb__14_0_mB496B087C17D9A16A16D2C5762C4E88411BABD76 (void);
+// 0x00000015 System.Void CloseButtonController::Start()
+extern void CloseButtonController_Start_m724696C29110CC8B43592AD79A5FA75AAF86F1C2 (void);
+// 0x00000016 System.Void CloseButtonController::OnMouseDown()
+extern void CloseButtonController_OnMouseDown_mF7EFF7C9204E3D68A1818AFDF3457579F855968B (void);
+// 0x00000017 System.Void CloseButtonController::Update()
+extern void CloseButtonController_Update_mDC87E2226C5E51AE6665581F98639290C901CF14 (void);
+// 0x00000018 System.Void CloseButtonController::.ctor()
+extern void CloseButtonController__ctor_mEFBB4CEAEF2633518F9E77A08939FDF0BD81C8B5 (void);
+// 0x00000019 System.String Symbol::get_SymbolName()
+extern void Symbol_get_SymbolName_mB00D2CD4FD27EB1316E56B13C6CED6C9C4F1BCF3 (void);
+// 0x0000001A System.Void Symbol::set_SymbolName(System.String)
+extern void Symbol_set_SymbolName_m9B31A45174DF5BC4DA33FB6D550344691C6553A8 (void);
+// 0x0000001B System.Int32 Symbol::get_SymbolId()
+extern void Symbol_get_SymbolId_mE7839A32FC32D4EDEA26896846997B7E69311BC3 (void);
+// 0x0000001C System.Void Symbol::set_SymbolId(System.Int32)
+extern void Symbol_set_SymbolId_m10EE9F9639C920046A67C46C10AD1E1B86D6AA8A (void);
+// 0x0000001D System.Action`1<System.Boolean> Symbol::get_ShowFrame()
+extern void Symbol_get_ShowFrame_m941ED7BF229E7756977B6EB5A39C668D96DF5AF1 (void);
+// 0x0000001E System.Void Symbol::set_ShowFrame(System.Action`1<System.Boolean>)
+extern void Symbol_set_ShowFrame_m8DE769DAEFCF16CD401123428BB311080F729B83 (void);
+// 0x0000001F System.Action`1<System.Boolean> Symbol::get_ShowWinEffect()
+extern void Symbol_get_ShowWinEffect_m23D6AA7FACBF8E976711D0341384EF3A1CB14097 (void);
+// 0x00000020 System.Void Symbol::set_ShowWinEffect(System.Action`1<System.Boolean>)
+extern void Symbol_set_ShowWinEffect_mB213412FACC01FFBCF58E23D7D706C5E1A36CD8A (void);
+// 0x00000021 System.Void Symbol::.ctor()
+extern void Symbol__ctor_m528A09CA2B43C31600036BCEC66039DBA9758CDC (void);
+// 0x00000022 System.Void GameManager::OnSpinButtonClick()
+extern void GameManager_OnSpinButtonClick_mF40993CB793170F1F532C3D251F3D826FE5A653E (void);
+// 0x00000023 System.Void GameManager::OnCloseButtonClick()
+extern void GameManager_OnCloseButtonClick_mFAEC1CA02B0BBB4328B32768E48001E7ED365F78 (void);
+// 0x00000024 System.Void GameManager::Start()
+extern void GameManager_Start_m26461AEF27E44DB8FECCBC19D6C9E228B658BF8E (void);
+// 0x00000025 System.Void GameManager::SpinIfReady()
+extern void GameManager_SpinIfReady_mD058EB8E4B206B9C1557EA97BDC2F5B42D03CE0E (void);
+// 0x00000026 System.Void GameManager::Update()
+extern void GameManager_Update_mC9303BA7C3117BD861F49F8E36151CC52117E6C1 (void);
+// 0x00000027 System.Void GameManager::UpdateScore(System.Int32)
+extern void GameManager_UpdateScore_m54CA912FF9C47361616B3364D7F8056413A91326 (void);
+// 0x00000028 System.Void GameManager::UpdateSpins(System.Int32)
+extern void GameManager_UpdateSpins_m48C2BE3B9B577A9AC54A394088E057EC17AFBBF6 (void);
+// 0x00000029 System.Collections.Generic.List`1<Symbol> GameManager::GetPayLine(System.Int32)
+extern void GameManager_GetPayLine_mD2B7093189F3E448C6932C88C7EADC90FFEF3F8D (void);
+// 0x0000002A System.Collections.Generic.List`1<Symbol> GameManager::GetScatterLine(System.Int32)
+extern void GameManager_GetScatterLine_mECD39847C2100BEC396FE734BF61150634F6B5DD (void);
+// 0x0000002B System.Collections.IEnumerator GameManager::WonCountUpFinishRoutine()
+extern void GameManager_WonCountUpFinishRoutine_mDE4BAD25552D8B213D289298771B95EBC7AD3935 (void);
+// 0x0000002C System.Collections.IEnumerator GameManager::ReelSpinSoundCountdownRoutine()
+extern void GameManager_ReelSpinSoundCountdownRoutine_mDF0112955322CE647E4C18272E0A6C9277E76F46 (void);
+// 0x0000002D System.Collections.IEnumerator GameManager::ReelSpinCountdownRoutine()
+extern void GameManager_ReelSpinCountdownRoutine_m695CEAAD325884CE3826CEFD7FA0E817ABBC79A0 (void);
+// 0x0000002E System.Void GameManager::SaveReels()
+extern void GameManager_SaveReels_m63F9874DB0AC6BCD9FAA1A3298BD8C89B98952FF (void);
+// 0x0000002F System.Void GameManager::LoadReels()
+extern void GameManager_LoadReels_m49CF30F00D00AF57C54174FC73E7351FA80A1CBC (void);
+// 0x00000030 System.Void GameManager::.ctor()
+extern void GameManager__ctor_mE8666F6D0CA9C31E16B719F79780DC4B0245B64D (void);
+// 0x00000031 System.Void GameManager/SymbolIds::.ctor()
+extern void SymbolIds__ctor_m0D709F8F69CA647EA10A980EF899A8F9A2895383 (void);
+// 0x00000032 System.Void GameManager/SymbolIds::.cctor()
+extern void SymbolIds__cctor_m5FA39E4309BDFC303CB7E33702B81598EF6C3F05 (void);
+// 0x00000033 System.Void GameManager/<>c__DisplayClass35_0::.ctor()
+extern void U3CU3Ec__DisplayClass35_0__ctor_mCDDE8A13E40F8B61A00D9FF47B895CBB5E53ED20 (void);
+// 0x00000034 System.Void GameManager/<>c__DisplayClass35_1::.ctor()
+extern void U3CU3Ec__DisplayClass35_1__ctor_mA7D48F46AADD4CB84300DA9EFCA374C591954E44 (void);
+// 0x00000035 System.Boolean GameManager/<>c__DisplayClass35_1::<GetPayLine>b__0(Symbol)
+extern void U3CU3Ec__DisplayClass35_1_U3CGetPayLineU3Eb__0_mFD60C938FCCDBAE5E8C7BA94B9057DBD7066C45A (void);
+// 0x00000036 System.Void GameManager/<WonCountUpFinishRoutine>d__37::.ctor(System.Int32)
+extern void U3CWonCountUpFinishRoutineU3Ed__37__ctor_m950F759B113DAE23A439F2D40749F69B8A6EA94C (void);
+// 0x00000037 System.Void GameManager/<WonCountUpFinishRoutine>d__37::System.IDisposable.Dispose()
+extern void U3CWonCountUpFinishRoutineU3Ed__37_System_IDisposable_Dispose_m9B11F8E9B9B1E8043767C5D7212F06F86457082F (void);
+// 0x00000038 System.Boolean GameManager/<WonCountUpFinishRoutine>d__37::MoveNext()
+extern void U3CWonCountUpFinishRoutineU3Ed__37_MoveNext_m4312F2E651049FC9D5FFE9A6143C86EE0910B821 (void);
+// 0x00000039 System.Object GameManager/<WonCountUpFinishRoutine>d__37::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CWonCountUpFinishRoutineU3Ed__37_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mFF22685948EF72A201D4275E605EF837A95340E5 (void);
+// 0x0000003A System.Void GameManager/<WonCountUpFinishRoutine>d__37::System.Collections.IEnumerator.Reset()
+extern void U3CWonCountUpFinishRoutineU3Ed__37_System_Collections_IEnumerator_Reset_m796E7307D1D6BC93668A447E21BD92CAF193239E (void);
+// 0x0000003B System.Object GameManager/<WonCountUpFinishRoutine>d__37::System.Collections.IEnumerator.get_Current()
+extern void U3CWonCountUpFinishRoutineU3Ed__37_System_Collections_IEnumerator_get_Current_m26A8F92E472D5E6E25C9ECC3ACF179ECA07A9E97 (void);
+// 0x0000003C System.Void GameManager/<ReelSpinSoundCountdownRoutine>d__38::.ctor(System.Int32)
+extern void U3CReelSpinSoundCountdownRoutineU3Ed__38__ctor_mCF80B7B61E2EC237EF7B19B26ADAB95A1917B037 (void);
+// 0x0000003D System.Void GameManager/<ReelSpinSoundCountdownRoutine>d__38::System.IDisposable.Dispose()
+extern void U3CReelSpinSoundCountdownRoutineU3Ed__38_System_IDisposable_Dispose_mD0518E039EE10FB2E8ABEFCD52D49D7C34A0EA89 (void);
+// 0x0000003E System.Boolean GameManager/<ReelSpinSoundCountdownRoutine>d__38::MoveNext()
+extern void U3CReelSpinSoundCountdownRoutineU3Ed__38_MoveNext_mE74877B3D4449BB3E4F6EA776C2EA377BE00250C (void);
+// 0x0000003F System.Object GameManager/<ReelSpinSoundCountdownRoutine>d__38::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CReelSpinSoundCountdownRoutineU3Ed__38_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mF1D3FF1BFF13E9E293E79BC1CF45A3C6E7F25308 (void);
+// 0x00000040 System.Void GameManager/<ReelSpinSoundCountdownRoutine>d__38::System.Collections.IEnumerator.Reset()
+extern void U3CReelSpinSoundCountdownRoutineU3Ed__38_System_Collections_IEnumerator_Reset_mB74C29018884B3BF3D24CD5A768F3FCF06A826A7 (void);
+// 0x00000041 System.Object GameManager/<ReelSpinSoundCountdownRoutine>d__38::System.Collections.IEnumerator.get_Current()
+extern void U3CReelSpinSoundCountdownRoutineU3Ed__38_System_Collections_IEnumerator_get_Current_m46B2BDD2EF1869E55F0E5A338761A2DFBF7AD612 (void);
+// 0x00000042 System.Void GameManager/<>c::.cctor()
+extern void U3CU3Ec__cctor_m98B52F6DFB9B80EDB1056974AB4C8E5BEFA58072 (void);
+// 0x00000043 System.Void GameManager/<>c::.ctor()
+extern void U3CU3Ec__ctor_m32C667B9723029A3D406CF2D437E88EAEFC906B9 (void);
+// 0x00000044 System.Void GameManager/<>c::<ReelSpinCountdownRoutine>b__39_0(System.String)
+extern void U3CU3Ec_U3CReelSpinCountdownRoutineU3Eb__39_0_mA302EC85296008B3A175CE5316C48A043D8E1072 (void);
+// 0x00000045 System.Void GameManager/<>c::<ReelSpinCountdownRoutine>b__39_1(System.String)
+extern void U3CU3Ec_U3CReelSpinCountdownRoutineU3Eb__39_1_m5096F20FB4E1B7FEFBC48FDE69EE5D5F984EE9CB (void);
+// 0x00000046 System.Void GameManager/<ReelSpinCountdownRoutine>d__39::.ctor(System.Int32)
+extern void U3CReelSpinCountdownRoutineU3Ed__39__ctor_m4A5DAFE9BB6BC46B9EDDC83597E04E206C7DE796 (void);
+// 0x00000047 System.Void GameManager/<ReelSpinCountdownRoutine>d__39::System.IDisposable.Dispose()
+extern void U3CReelSpinCountdownRoutineU3Ed__39_System_IDisposable_Dispose_m79382561DA6CC036C0F605A645B74D71CCCEF217 (void);
+// 0x00000048 System.Boolean GameManager/<ReelSpinCountdownRoutine>d__39::MoveNext()
+extern void U3CReelSpinCountdownRoutineU3Ed__39_MoveNext_m8A14806E43A4AA97FF44AEF666713ABD2BE8EB14 (void);
+// 0x00000049 System.Object GameManager/<ReelSpinCountdownRoutine>d__39::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CReelSpinCountdownRoutineU3Ed__39_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m5FD9EF1D756E3FD5A14F4C105110F5F24E299487 (void);
+// 0x0000004A System.Void GameManager/<ReelSpinCountdownRoutine>d__39::System.Collections.IEnumerator.Reset()
+extern void U3CReelSpinCountdownRoutineU3Ed__39_System_Collections_IEnumerator_Reset_mAC71AAA1FF65D1961AEA7190ED387E6930DD8466 (void);
+// 0x0000004B System.Object GameManager/<ReelSpinCountdownRoutine>d__39::System.Collections.IEnumerator.get_Current()
+extern void U3CReelSpinCountdownRoutineU3Ed__39_System_Collections_IEnumerator_get_Current_m36B82884C1A3D68BF02E7D9EE35E88C4C6D81133 (void);
+// 0x0000004C System.Void GemController::Start()
+extern void GemController_Start_m740ACC992287A95E482894F3F89256D147E875B9 (void);
+// 0x0000004D System.Void GemController::Update()
+extern void GemController_Update_m7698BDD330B0578382E8D33F1E94ACF825E86AFF (void);
+// 0x0000004E System.Void GemController::SetWinAmount(System.Int32)
+extern void GemController_SetWinAmount_mAAE39CB248ED70BC9679CC9D57D87F6C7EA93856 (void);
+// 0x0000004F System.Void GemController::OnMouseDown()
+extern void GemController_OnMouseDown_m516C6EF1ABD598E29C6395670C68BEF4926E44FB (void);
+// 0x00000050 System.Void GemController::.ctor()
+extern void GemController__ctor_mB3FEE20C03085804E42D774D4CDAA790B80CD7FE (void);
+// 0x00000051 System.Boolean MegaWinController::get_IsVisable()
+extern void MegaWinController_get_IsVisable_m398B050D5611BF0039901758D1387F44F68DACDD (void);
+// 0x00000052 System.Void MegaWinController::SetVisible(System.Boolean)
+extern void MegaWinController_SetVisible_m36AB7EEEBED219C91746D7D3A2E4DD0BF9CD668D (void);
+// 0x00000053 System.Void MegaWinController::Start()
+extern void MegaWinController_Start_m39E740F0B2E82674D3C3CD5B78973BF98D765756 (void);
+// 0x00000054 System.Void MegaWinController::Update()
+extern void MegaWinController_Update_mB8CA5F4E38B74818BFF6C31B5E8021359AD03B9C (void);
+// 0x00000055 System.Void MegaWinController::.ctor()
+extern void MegaWinController__ctor_mAB985EE58AD224A4575B2EC7C0D19EAD9E39479D (void);
+// 0x00000056 System.Void PayLineController::Start()
+extern void PayLineController_Start_m30C5CB8BDB1EB4247713C009911A28888364BCD3 (void);
+// 0x00000057 System.Void PayLineController::ShowLine(System.Boolean)
+extern void PayLineController_ShowLine_m90A5CFD535677C3F7219443AEFA20111E02460C3 (void);
+// 0x00000058 System.Void PayLineController::Update()
+extern void PayLineController_Update_m05AFB1F980D743A51DC331A2E65068B9C166E893 (void);
+// 0x00000059 System.Void PayLineController::.ctor()
+extern void PayLineController__ctor_mE5695919D646E2C07A21FCC376604DA8F3F7AC74 (void);
+// 0x0000005A System.Void PlayerController::Start()
+extern void PlayerController_Start_m9531F30EC892BDD1758A2EEC724E86EFBDA150A3 (void);
+// 0x0000005B System.Void PlayerController::Update()
+extern void PlayerController_Update_mB31159CAD7DD2329859472554BC9154A83D8E794 (void);
+// 0x0000005C System.Void PlayerController::.ctor()
+extern void PlayerController__ctor_mF30385729DAFDFCB895C4939F6051DCE6C0327FB (void);
+// 0x0000005D System.Void ReelController::Start()
+extern void ReelController_Start_m888B9D8A0B0F2DF6D6ECA859ABDD208FE4700EEB (void);
+// 0x0000005E System.Void ReelController::StartupSpawn()
+extern void ReelController_StartupSpawn_mBDAF752F7FD0AF62A56CBAB72935804AC8D825FF (void);
+// 0x0000005F System.Void ReelController::ReelRowCollider(System.Boolean)
+extern void ReelController_ReelRowCollider_m9AC1DACCFDC14AFF43FA490363E41C10D97793D1 (void);
+// 0x00000060 System.Void ReelController::SpinReel()
+extern void ReelController_SpinReel_mF625B613F30C5ADEE676FEEF0EAE4314D046D4BC (void);
+// 0x00000061 System.Void ReelController::Update()
+extern void ReelController_Update_mABDEF7CE93AA840E25E66712B913572769FB355E (void);
+// 0x00000062 System.Void ReelController::SpawnSymbol(ReelSymbol,System.Boolean)
+extern void ReelController_SpawnSymbol_mAF07641CD7B33116207799CA9889FA8B9C980CCA (void);
+// 0x00000063 System.Void ReelController::ReelInit()
+extern void ReelController_ReelInit_m2A1A48C4F53BCD3B54768597EF585F1C09119D63 (void);
+// 0x00000064 System.Void ReelController::SpawnRandomSymbol()
+extern void ReelController_SpawnRandomSymbol_mF1310131A33C1F37F7631D3CD6431FBE13BDA6CC (void);
+// 0x00000065 System.Collections.Generic.List`1<ReelSymbol> ReelController::GetSymbolChildren()
+extern void ReelController_GetSymbolChildren_mC8F2241D5C5A9580449767B2830A295CEC807A2F (void);
+// 0x00000066 System.Collections.IEnumerator ReelController::ReelSpinCountdownRoutine(System.Nullable`1<System.Single>)
+extern void ReelController_ReelSpinCountdownRoutine_m8155D8F805491D27DAE11E862DF3B37233184180 (void);
+// 0x00000067 System.Collections.IEnumerator ReelController::ReelSpinStopRoutine()
+extern void ReelController_ReelSpinStopRoutine_m3154C1E0366AB8C03FE4A60E852C2F55B65E483B (void);
+// 0x00000068 System.Void ReelController::.ctor()
+extern void ReelController__ctor_mE619787C1F388B1E07D760C9A206F017140EABDC (void);
+// 0x00000069 System.Void ReelController/<>c__DisplayClass17_0::.ctor()
+extern void U3CU3Ec__DisplayClass17_0__ctor_m622009FF75DE22EF16992D0C262A7171E300421D (void);
+// 0x0000006A System.Boolean ReelController/<>c__DisplayClass17_0::<SpawnSymbol>b__0(UnityEngine.GameObject)
+extern void U3CU3Ec__DisplayClass17_0_U3CSpawnSymbolU3Eb__0_mBFC02635139BA946F5083BCA7764FF87B5DE45F2 (void);
+// 0x0000006B System.Void ReelController/<ReelSpinCountdownRoutine>d__21::.ctor(System.Int32)
+extern void U3CReelSpinCountdownRoutineU3Ed__21__ctor_mB3D0CBEC3CB06CE7BDE548FD9DC3070ACF3A5FE8 (void);
+// 0x0000006C System.Void ReelController/<ReelSpinCountdownRoutine>d__21::System.IDisposable.Dispose()
+extern void U3CReelSpinCountdownRoutineU3Ed__21_System_IDisposable_Dispose_mB6B9A75E2CD19003BCC0E24AB69974204B070ACA (void);
+// 0x0000006D System.Boolean ReelController/<ReelSpinCountdownRoutine>d__21::MoveNext()
+extern void U3CReelSpinCountdownRoutineU3Ed__21_MoveNext_mB6D9CE49E3B54E186D41D0400C06090EA785622B (void);
+// 0x0000006E System.Object ReelController/<ReelSpinCountdownRoutine>d__21::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CReelSpinCountdownRoutineU3Ed__21_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m72B22CEF5879E583D03753A6E4445FE671754771 (void);
+// 0x0000006F System.Void ReelController/<ReelSpinCountdownRoutine>d__21::System.Collections.IEnumerator.Reset()
+extern void U3CReelSpinCountdownRoutineU3Ed__21_System_Collections_IEnumerator_Reset_mEBD6A28D78B456505753E90D82F32A65F6685329 (void);
+// 0x00000070 System.Object ReelController/<ReelSpinCountdownRoutine>d__21::System.Collections.IEnumerator.get_Current()
+extern void U3CReelSpinCountdownRoutineU3Ed__21_System_Collections_IEnumerator_get_Current_m262893DE8F4232DE17E1DE73E9F801BC973BEA2E (void);
+// 0x00000071 System.Void ReelController/<ReelSpinStopRoutine>d__22::.ctor(System.Int32)
+extern void U3CReelSpinStopRoutineU3Ed__22__ctor_m705C31A8F0D93C7E4EEADD3F410887C07833CC97 (void);
+// 0x00000072 System.Void ReelController/<ReelSpinStopRoutine>d__22::System.IDisposable.Dispose()
+extern void U3CReelSpinStopRoutineU3Ed__22_System_IDisposable_Dispose_m3C7ED8D00ED803AFDDDC79B1100982FAD9FEB5A8 (void);
+// 0x00000073 System.Boolean ReelController/<ReelSpinStopRoutine>d__22::MoveNext()
+extern void U3CReelSpinStopRoutineU3Ed__22_MoveNext_m9DB9512AB0FBAEBE125CB1E3919F9625FED692A3 (void);
+// 0x00000074 System.Object ReelController/<ReelSpinStopRoutine>d__22::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CReelSpinStopRoutineU3Ed__22_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA5436A8B6BD9BDB23943372F5422F9AEDB15E9A8 (void);
+// 0x00000075 System.Void ReelController/<ReelSpinStopRoutine>d__22::System.Collections.IEnumerator.Reset()
+extern void U3CReelSpinStopRoutineU3Ed__22_System_Collections_IEnumerator_Reset_mDF9EBF8D6B6345B692A201767643FAA155FA98F7 (void);
+// 0x00000076 System.Object ReelController/<ReelSpinStopRoutine>d__22::System.Collections.IEnumerator.get_Current()
+extern void U3CReelSpinStopRoutineU3Ed__22_System_Collections_IEnumerator_get_Current_m5410EFCBAF0F6237F7FDC58EA2ADF0698FEB4AD2 (void);
+// 0x00000077 System.String ReelSymbol::get_SymbolName()
+extern void ReelSymbol_get_SymbolName_m588D574C345378CBBD2D5E7D320F01EF1EAD5EB6 (void);
+// 0x00000078 System.Void ReelSymbol::set_SymbolName(System.String)
+extern void ReelSymbol_set_SymbolName_mA408E89CFBEDC2D7392223D6598A6A9413B60084 (void);
+// 0x00000079 System.Int32 ReelSymbol::get_SymbolId()
+extern void ReelSymbol_get_SymbolId_m805C8F9EBD05C79F61B1BC44E79C3BF239F62393 (void);
+// 0x0000007A System.Void ReelSymbol::set_SymbolId(System.Int32)
+extern void ReelSymbol_set_SymbolId_m5C61975A5BA87D0EEE952B05AFBE8B49EB0D13F7 (void);
+// 0x0000007B System.Void ReelSymbol::.ctor()
+extern void ReelSymbol__ctor_mC9F3624FAC46BE8462CB2A1FAA2AB2C6E625990E (void);
+// 0x0000007C System.Void ShineAnimatedLogoController::Start()
+extern void ShineAnimatedLogoController_Start_m6E2FDFA842B68A6B1963455C6F178EA86CAA0B67 (void);
+// 0x0000007D System.Collections.IEnumerator ShineAnimatedLogoController::AnimationDelay()
+extern void ShineAnimatedLogoController_AnimationDelay_m45EB36D68AF25FBD1D6F5962510465CE0113C4F4 (void);
+// 0x0000007E System.Void ShineAnimatedLogoController::Update()
+extern void ShineAnimatedLogoController_Update_m0E2AB1CA927F5C0146448C1026C1309B47BD3354 (void);
+// 0x0000007F System.Void ShineAnimatedLogoController::.ctor()
+extern void ShineAnimatedLogoController__ctor_m8B0F3726D4398F961A66DFC19CE95A27E220257C (void);
+// 0x00000080 System.Void ShineAnimatedLogoController/<AnimationDelay>d__3::.ctor(System.Int32)
+extern void U3CAnimationDelayU3Ed__3__ctor_m99648EA3728CEDB5F6CE9193173FAF0BCB1BFB40 (void);
+// 0x00000081 System.Void ShineAnimatedLogoController/<AnimationDelay>d__3::System.IDisposable.Dispose()
+extern void U3CAnimationDelayU3Ed__3_System_IDisposable_Dispose_mE3CA79DF4DB0AE1F4854B4C49BB4273451869719 (void);
+// 0x00000082 System.Boolean ShineAnimatedLogoController/<AnimationDelay>d__3::MoveNext()
+extern void U3CAnimationDelayU3Ed__3_MoveNext_m658B0FD21A9B59856F069616DBBADE10EBB0C1C3 (void);
+// 0x00000083 System.Object ShineAnimatedLogoController/<AnimationDelay>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CAnimationDelayU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA3B9B0A2441D7FB4CD2E5D79EB9CECE5DF95C7D0 (void);
+// 0x00000084 System.Void ShineAnimatedLogoController/<AnimationDelay>d__3::System.Collections.IEnumerator.Reset()
+extern void U3CAnimationDelayU3Ed__3_System_Collections_IEnumerator_Reset_m5C429D0B3823C9C31097CCF20138669992211D84 (void);
+// 0x00000085 System.Object ShineAnimatedLogoController/<AnimationDelay>d__3::System.Collections.IEnumerator.get_Current()
+extern void U3CAnimationDelayU3Ed__3_System_Collections_IEnumerator_get_Current_m6CD3FB723160B051C442A36571520F3C98BF794C (void);
+// 0x00000086 System.Void SpinButtonController::Start()
+extern void SpinButtonController_Start_m572F390C86C13EA5163B412475987E06D5835920 (void);
+// 0x00000087 System.Void SpinButtonController::OnMouseDown()
+extern void SpinButtonController_OnMouseDown_mD02C941C48FDE17404BA70006DA0276ACFDBD50F (void);
+// 0x00000088 System.Void SpinButtonController::Update()
+extern void SpinButtonController_Update_mB1DAF3327A824B500A9D41025CEA936A497BCF04 (void);
+// 0x00000089 System.Void SpinButtonController::.ctor()
+extern void SpinButtonController__ctor_mBCEB51B385D8F24BE3517EAD84115546B5DCD001 (void);
+// 0x0000008A System.Boolean SymbolController::get_PullingHandle()
+extern void SymbolController_get_PullingHandle_mBE4DE11DCB7E0CF2088D8BB658901A1818920C3C (void);
+// 0x0000008B System.Void SymbolController::set_PullingHandle(System.Boolean)
+extern void SymbolController_set_PullingHandle_m2C99DEF1866A8FE852E6CEFDF8BF6C6E482487AC (void);
+// 0x0000008C System.Void SymbolController::Start()
+extern void SymbolController_Start_mB79BE6CC2E5FA92B8AB99BCF17A0235D7F98F2AF (void);
+// 0x0000008D System.Void SymbolController::Update()
+extern void SymbolController_Update_mDC5583A7FC219F5446C3C073ED52EE00BDD4D3D7 (void);
+// 0x0000008E System.Void SymbolController::OnTriggerEnter(UnityEngine.Collider)
+extern void SymbolController_OnTriggerEnter_mCF67CED339C6D2F62E1A984FFB2C3909AE9FA650 (void);
+// 0x0000008F System.Void SymbolController::OnCollisionExit(UnityEngine.Collision)
+extern void SymbolController_OnCollisionExit_mBC782FFF5EA5FD57014C32BFEEFDBF657CD2C517 (void);
+// 0x00000090 System.Void SymbolController::.ctor()
+extern void SymbolController__ctor_m0F5B24E9E719734E642915902F1538FEEA3467B0 (void);
+// 0x00000091 System.Void TextController::SetText(System.String)
+extern void TextController_SetText_mDB740491C71596B7703474A551ECF5B160A64232 (void);
+// 0x00000092 System.Void TextController::SetText(System.Int32,System.Boolean,System.Action`1<System.String>)
+extern void TextController_SetText_m1B26F10AA55DB400EF4F3DEFEA74FB85E972CADF (void);
+// 0x00000093 System.Void TextController::FinishAnimationEarly()
+extern void TextController_FinishAnimationEarly_m468481D7CF445545D6CC42C850539A53AAB936FE (void);
+// 0x00000094 System.Void TextController::PlayAnimateSound()
+extern void TextController_PlayAnimateSound_m33739EBA54320CE0F51901DAAFAF463810FED38B (void);
+// 0x00000095 System.Void TextController::Start()
+extern void TextController_Start_m15081F8F856BB0907FACB0F7655436F287A46319 (void);
+// 0x00000096 System.Void TextController::Update()
+extern void TextController_Update_m1E0250612056DC745E7ADBF3978B723C7A7854A3 (void);
+// 0x00000097 System.Collections.IEnumerator TextController::CountUpRoutine(System.Action`1<System.String>)
+extern void TextController_CountUpRoutine_m05C29F9D8C46604E605BD9CF1BF7104E331B9F65 (void);
+// 0x00000098 System.Void TextController::.ctor()
+extern void TextController__ctor_m62ECE2CB6D0A4F91F707E8FD0D9E288282EAF87D (void);
+// 0x00000099 System.Void TextController/<CountUpRoutine>d__11::.ctor(System.Int32)
+extern void U3CCountUpRoutineU3Ed__11__ctor_m35591B2BE5715F6E171BE5F62DCB855A6DAB5A67 (void);
+// 0x0000009A System.Void TextController/<CountUpRoutine>d__11::System.IDisposable.Dispose()
+extern void U3CCountUpRoutineU3Ed__11_System_IDisposable_Dispose_m0384DD46A81B09C891CEAC0B425C8368FB0CCF11 (void);
+// 0x0000009B System.Boolean TextController/<CountUpRoutine>d__11::MoveNext()
+extern void U3CCountUpRoutineU3Ed__11_MoveNext_mFE20C305BC8AA0230D5522B588F7F6601D6C2CC7 (void);
+// 0x0000009C System.Object TextController/<CountUpRoutine>d__11::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CCountUpRoutineU3Ed__11_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m665408D503E406A1A87D43849687066A9949A0C7 (void);
+// 0x0000009D System.Void TextController/<CountUpRoutine>d__11::System.Collections.IEnumerator.Reset()
+extern void U3CCountUpRoutineU3Ed__11_System_Collections_IEnumerator_Reset_m1AFE070EADA2C3CBFF03B6E4A8EF0D4BB3111119 (void);
+// 0x0000009E System.Object TextController/<CountUpRoutine>d__11::System.Collections.IEnumerator.get_Current()
+extern void U3CCountUpRoutineU3Ed__11_System_Collections_IEnumerator_get_Current_m58452E724B14CC45F7179471ACD44A9080E16920 (void);
+// 0x0000009F System.Void TextFloatingControl::SetText(System.String)
+extern void TextFloatingControl_SetText_mAE522E9116B807C9D44375AE9A27FE5C236C24C6 (void);
+// 0x000000A0 System.Void TextFloatingControl::SetText(System.Int32)
+extern void TextFloatingControl_SetText_m7C79831BF656E56D118A57D4F4DB7FCFA02EEBB2 (void);
+// 0x000000A1 System.Void TextFloatingControl::Start()
+extern void TextFloatingControl_Start_mC004624A3E433A6EB0815F12D62157A23CC84671 (void);
+// 0x000000A2 System.Void TextFloatingControl::Update()
+extern void TextFloatingControl_Update_mD884BD18ACA663809FDF1AF0C5776385872242AD (void);
+// 0x000000A3 System.Void TextFloatingControl::.ctor()
+extern void TextFloatingControl__ctor_mC89A9808F8B7C3923B98331038C25EFF86E48E72 (void);
+static Il2CppMethodPointer s_methodPointers[163] = 
+{
+	BonusGameManager_Start_m1EB261D01336A0F296BDB95D5E254AA8AC778A9F,
+	BonusGameManager_Update_mE667B0A6E700AD1DEB503A6CF0F0F271D15F918E,
+	BonusGameManager_Win_mD53BC80B25C2CE5B4166088EB97AD3FFE057AE7D,
+	BonusGameManager__ctor_m07F5436DC6282502837C26CBB23A6C5E941B7786,
+	CellController_get_Frame_mEBE7EA310619C510F5EF2DE3715289756AED65EF,
+	CellController_set_Frame_mF3A47A98811DD296491F01803476033A2789847C,
+	CellController_get_SymbolName_mBA30E26BBFC8969CB826DE838502909CBF94CAAC,
+	CellController_set_SymbolName_mFA579D7FB135E3A3ADC9A2B7D33EC5596A064135,
+	CellController_get_SymbolId_mDFD57AC2B534AF244F86D8137A4AE0CD2C2E2177,
+	CellController_set_SymbolId_m2E997CE0C04CF8615A1501292D50BA5985F8CB83,
+	CellController_ShowFrame_m04EE27E0D4C341F3B852CF42643B9D1307860E6B,
+	CellController_ShowWinEffect_m2AC6B640EFFA78F42F958BF46A46093712ADCFC5,
+	CellController_Start_mD42F2462989A279A21E9BCF710ABAB6D57F47101,
+	CellController_Update_m9B6773860C11F760C65147B14743D89C3A5BC280,
+	CellController_OnTriggerEnter_m1820F08EA2EAA00AB74BB411E718CF2639417EA7,
+	CellController__ctor_m8B180FADBA32A5846BD63F8649666E916E8867D8,
+	U3CU3Ec__cctor_m086FEE1197C868E4EE83BC6ACF70BC6CD3F51FA9,
+	U3CU3Ec__ctor_m886CA44150A204218D2A0FFF4488328394483B67,
+	U3CU3Ec_U3CShowFrameU3Eb__13_0_mAF150647543439ABD53C75E056C0166206D381E8,
+	U3CU3Ec_U3CShowWinEffectU3Eb__14_0_mB496B087C17D9A16A16D2C5762C4E88411BABD76,
+	CloseButtonController_Start_m724696C29110CC8B43592AD79A5FA75AAF86F1C2,
+	CloseButtonController_OnMouseDown_mF7EFF7C9204E3D68A1818AFDF3457579F855968B,
+	CloseButtonController_Update_mDC87E2226C5E51AE6665581F98639290C901CF14,
+	CloseButtonController__ctor_mEFBB4CEAEF2633518F9E77A08939FDF0BD81C8B5,
+	Symbol_get_SymbolName_mB00D2CD4FD27EB1316E56B13C6CED6C9C4F1BCF3,
+	Symbol_set_SymbolName_m9B31A45174DF5BC4DA33FB6D550344691C6553A8,
+	Symbol_get_SymbolId_mE7839A32FC32D4EDEA26896846997B7E69311BC3,
+	Symbol_set_SymbolId_m10EE9F9639C920046A67C46C10AD1E1B86D6AA8A,
+	Symbol_get_ShowFrame_m941ED7BF229E7756977B6EB5A39C668D96DF5AF1,
+	Symbol_set_ShowFrame_m8DE769DAEFCF16CD401123428BB311080F729B83,
+	Symbol_get_ShowWinEffect_m23D6AA7FACBF8E976711D0341384EF3A1CB14097,
+	Symbol_set_ShowWinEffect_mB213412FACC01FFBCF58E23D7D706C5E1A36CD8A,
+	Symbol__ctor_m528A09CA2B43C31600036BCEC66039DBA9758CDC,
+	GameManager_OnSpinButtonClick_mF40993CB793170F1F532C3D251F3D826FE5A653E,
+	GameManager_OnCloseButtonClick_mFAEC1CA02B0BBB4328B32768E48001E7ED365F78,
+	GameManager_Start_m26461AEF27E44DB8FECCBC19D6C9E228B658BF8E,
+	GameManager_SpinIfReady_mD058EB8E4B206B9C1557EA97BDC2F5B42D03CE0E,
+	GameManager_Update_mC9303BA7C3117BD861F49F8E36151CC52117E6C1,
+	GameManager_UpdateScore_m54CA912FF9C47361616B3364D7F8056413A91326,
+	GameManager_UpdateSpins_m48C2BE3B9B577A9AC54A394088E057EC17AFBBF6,
+	GameManager_GetPayLine_mD2B7093189F3E448C6932C88C7EADC90FFEF3F8D,
+	GameManager_GetScatterLine_mECD39847C2100BEC396FE734BF61150634F6B5DD,
+	GameManager_WonCountUpFinishRoutine_mDE4BAD25552D8B213D289298771B95EBC7AD3935,
+	GameManager_ReelSpinSoundCountdownRoutine_mDF0112955322CE647E4C18272E0A6C9277E76F46,
+	GameManager_ReelSpinCountdownRoutine_m695CEAAD325884CE3826CEFD7FA0E817ABBC79A0,
+	GameManager_SaveReels_m63F9874DB0AC6BCD9FAA1A3298BD8C89B98952FF,
+	GameManager_LoadReels_m49CF30F00D00AF57C54174FC73E7351FA80A1CBC,
+	GameManager__ctor_mE8666F6D0CA9C31E16B719F79780DC4B0245B64D,
+	SymbolIds__ctor_m0D709F8F69CA647EA10A980EF899A8F9A2895383,
+	SymbolIds__cctor_m5FA39E4309BDFC303CB7E33702B81598EF6C3F05,
+	U3CU3Ec__DisplayClass35_0__ctor_mCDDE8A13E40F8B61A00D9FF47B895CBB5E53ED20,
+	U3CU3Ec__DisplayClass35_1__ctor_mA7D48F46AADD4CB84300DA9EFCA374C591954E44,
+	U3CU3Ec__DisplayClass35_1_U3CGetPayLineU3Eb__0_mFD60C938FCCDBAE5E8C7BA94B9057DBD7066C45A,
+	U3CWonCountUpFinishRoutineU3Ed__37__ctor_m950F759B113DAE23A439F2D40749F69B8A6EA94C,
+	U3CWonCountUpFinishRoutineU3Ed__37_System_IDisposable_Dispose_m9B11F8E9B9B1E8043767C5D7212F06F86457082F,
+	U3CWonCountUpFinishRoutineU3Ed__37_MoveNext_m4312F2E651049FC9D5FFE9A6143C86EE0910B821,
+	U3CWonCountUpFinishRoutineU3Ed__37_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mFF22685948EF72A201D4275E605EF837A95340E5,
+	U3CWonCountUpFinishRoutineU3Ed__37_System_Collections_IEnumerator_Reset_m796E7307D1D6BC93668A447E21BD92CAF193239E,
+	U3CWonCountUpFinishRoutineU3Ed__37_System_Collections_IEnumerator_get_Current_m26A8F92E472D5E6E25C9ECC3ACF179ECA07A9E97,
+	U3CReelSpinSoundCountdownRoutineU3Ed__38__ctor_mCF80B7B61E2EC237EF7B19B26ADAB95A1917B037,
+	U3CReelSpinSoundCountdownRoutineU3Ed__38_System_IDisposable_Dispose_mD0518E039EE10FB2E8ABEFCD52D49D7C34A0EA89,
+	U3CReelSpinSoundCountdownRoutineU3Ed__38_MoveNext_mE74877B3D4449BB3E4F6EA776C2EA377BE00250C,
+	U3CReelSpinSoundCountdownRoutineU3Ed__38_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mF1D3FF1BFF13E9E293E79BC1CF45A3C6E7F25308,
+	U3CReelSpinSoundCountdownRoutineU3Ed__38_System_Collections_IEnumerator_Reset_mB74C29018884B3BF3D24CD5A768F3FCF06A826A7,
+	U3CReelSpinSoundCountdownRoutineU3Ed__38_System_Collections_IEnumerator_get_Current_m46B2BDD2EF1869E55F0E5A338761A2DFBF7AD612,
+	U3CU3Ec__cctor_m98B52F6DFB9B80EDB1056974AB4C8E5BEFA58072,
+	U3CU3Ec__ctor_m32C667B9723029A3D406CF2D437E88EAEFC906B9,
+	U3CU3Ec_U3CReelSpinCountdownRoutineU3Eb__39_0_mA302EC85296008B3A175CE5316C48A043D8E1072,
+	U3CU3Ec_U3CReelSpinCountdownRoutineU3Eb__39_1_m5096F20FB4E1B7FEFBC48FDE69EE5D5F984EE9CB,
+	U3CReelSpinCountdownRoutineU3Ed__39__ctor_m4A5DAFE9BB6BC46B9EDDC83597E04E206C7DE796,
+	U3CReelSpinCountdownRoutineU3Ed__39_System_IDisposable_Dispose_m79382561DA6CC036C0F605A645B74D71CCCEF217,
+	U3CReelSpinCountdownRoutineU3Ed__39_MoveNext_m8A14806E43A4AA97FF44AEF666713ABD2BE8EB14,
+	U3CReelSpinCountdownRoutineU3Ed__39_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m5FD9EF1D756E3FD5A14F4C105110F5F24E299487,
+	U3CReelSpinCountdownRoutineU3Ed__39_System_Collections_IEnumerator_Reset_mAC71AAA1FF65D1961AEA7190ED387E6930DD8466,
+	U3CReelSpinCountdownRoutineU3Ed__39_System_Collections_IEnumerator_get_Current_m36B82884C1A3D68BF02E7D9EE35E88C4C6D81133,
+	GemController_Start_m740ACC992287A95E482894F3F89256D147E875B9,
+	GemController_Update_m7698BDD330B0578382E8D33F1E94ACF825E86AFF,
+	GemController_SetWinAmount_mAAE39CB248ED70BC9679CC9D57D87F6C7EA93856,
+	GemController_OnMouseDown_m516C6EF1ABD598E29C6395670C68BEF4926E44FB,
+	GemController__ctor_mB3FEE20C03085804E42D774D4CDAA790B80CD7FE,
+	MegaWinController_get_IsVisable_m398B050D5611BF0039901758D1387F44F68DACDD,
+	MegaWinController_SetVisible_m36AB7EEEBED219C91746D7D3A2E4DD0BF9CD668D,
+	MegaWinController_Start_m39E740F0B2E82674D3C3CD5B78973BF98D765756,
+	MegaWinController_Update_mB8CA5F4E38B74818BFF6C31B5E8021359AD03B9C,
+	MegaWinController__ctor_mAB985EE58AD224A4575B2EC7C0D19EAD9E39479D,
+	PayLineController_Start_m30C5CB8BDB1EB4247713C009911A28888364BCD3,
+	PayLineController_ShowLine_m90A5CFD535677C3F7219443AEFA20111E02460C3,
+	PayLineController_Update_m05AFB1F980D743A51DC331A2E65068B9C166E893,
+	PayLineController__ctor_mE5695919D646E2C07A21FCC376604DA8F3F7AC74,
+	PlayerController_Start_m9531F30EC892BDD1758A2EEC724E86EFBDA150A3,
+	PlayerController_Update_mB31159CAD7DD2329859472554BC9154A83D8E794,
+	PlayerController__ctor_mF30385729DAFDFCB895C4939F6051DCE6C0327FB,
+	ReelController_Start_m888B9D8A0B0F2DF6D6ECA859ABDD208FE4700EEB,
+	ReelController_StartupSpawn_mBDAF752F7FD0AF62A56CBAB72935804AC8D825FF,
+	ReelController_ReelRowCollider_m9AC1DACCFDC14AFF43FA490363E41C10D97793D1,
+	ReelController_SpinReel_mF625B613F30C5ADEE676FEEF0EAE4314D046D4BC,
+	ReelController_Update_mABDEF7CE93AA840E25E66712B913572769FB355E,
+	ReelController_SpawnSymbol_mAF07641CD7B33116207799CA9889FA8B9C980CCA,
+	ReelController_ReelInit_m2A1A48C4F53BCD3B54768597EF585F1C09119D63,
+	ReelController_SpawnRandomSymbol_mF1310131A33C1F37F7631D3CD6431FBE13BDA6CC,
+	ReelController_GetSymbolChildren_mC8F2241D5C5A9580449767B2830A295CEC807A2F,
+	ReelController_ReelSpinCountdownRoutine_m8155D8F805491D27DAE11E862DF3B37233184180,
+	ReelController_ReelSpinStopRoutine_m3154C1E0366AB8C03FE4A60E852C2F55B65E483B,
+	ReelController__ctor_mE619787C1F388B1E07D760C9A206F017140EABDC,
+	U3CU3Ec__DisplayClass17_0__ctor_m622009FF75DE22EF16992D0C262A7171E300421D,
+	U3CU3Ec__DisplayClass17_0_U3CSpawnSymbolU3Eb__0_mBFC02635139BA946F5083BCA7764FF87B5DE45F2,
+	U3CReelSpinCountdownRoutineU3Ed__21__ctor_mB3D0CBEC3CB06CE7BDE548FD9DC3070ACF3A5FE8,
+	U3CReelSpinCountdownRoutineU3Ed__21_System_IDisposable_Dispose_mB6B9A75E2CD19003BCC0E24AB69974204B070ACA,
+	U3CReelSpinCountdownRoutineU3Ed__21_MoveNext_mB6D9CE49E3B54E186D41D0400C06090EA785622B,
+	U3CReelSpinCountdownRoutineU3Ed__21_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m72B22CEF5879E583D03753A6E4445FE671754771,
+	U3CReelSpinCountdownRoutineU3Ed__21_System_Collections_IEnumerator_Reset_mEBD6A28D78B456505753E90D82F32A65F6685329,
+	U3CReelSpinCountdownRoutineU3Ed__21_System_Collections_IEnumerator_get_Current_m262893DE8F4232DE17E1DE73E9F801BC973BEA2E,
+	U3CReelSpinStopRoutineU3Ed__22__ctor_m705C31A8F0D93C7E4EEADD3F410887C07833CC97,
+	U3CReelSpinStopRoutineU3Ed__22_System_IDisposable_Dispose_m3C7ED8D00ED803AFDDDC79B1100982FAD9FEB5A8,
+	U3CReelSpinStopRoutineU3Ed__22_MoveNext_m9DB9512AB0FBAEBE125CB1E3919F9625FED692A3,
+	U3CReelSpinStopRoutineU3Ed__22_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA5436A8B6BD9BDB23943372F5422F9AEDB15E9A8,
+	U3CReelSpinStopRoutineU3Ed__22_System_Collections_IEnumerator_Reset_mDF9EBF8D6B6345B692A201767643FAA155FA98F7,
+	U3CReelSpinStopRoutineU3Ed__22_System_Collections_IEnumerator_get_Current_m5410EFCBAF0F6237F7FDC58EA2ADF0698FEB4AD2,
+	ReelSymbol_get_SymbolName_m588D574C345378CBBD2D5E7D320F01EF1EAD5EB6,
+	ReelSymbol_set_SymbolName_mA408E89CFBEDC2D7392223D6598A6A9413B60084,
+	ReelSymbol_get_SymbolId_m805C8F9EBD05C79F61B1BC44E79C3BF239F62393,
+	ReelSymbol_set_SymbolId_m5C61975A5BA87D0EEE952B05AFBE8B49EB0D13F7,
+	ReelSymbol__ctor_mC9F3624FAC46BE8462CB2A1FAA2AB2C6E625990E,
+	ShineAnimatedLogoController_Start_m6E2FDFA842B68A6B1963455C6F178EA86CAA0B67,
+	ShineAnimatedLogoController_AnimationDelay_m45EB36D68AF25FBD1D6F5962510465CE0113C4F4,
+	ShineAnimatedLogoController_Update_m0E2AB1CA927F5C0146448C1026C1309B47BD3354,
+	ShineAnimatedLogoController__ctor_m8B0F3726D4398F961A66DFC19CE95A27E220257C,
+	U3CAnimationDelayU3Ed__3__ctor_m99648EA3728CEDB5F6CE9193173FAF0BCB1BFB40,
+	U3CAnimationDelayU3Ed__3_System_IDisposable_Dispose_mE3CA79DF4DB0AE1F4854B4C49BB4273451869719,
+	U3CAnimationDelayU3Ed__3_MoveNext_m658B0FD21A9B59856F069616DBBADE10EBB0C1C3,
+	U3CAnimationDelayU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA3B9B0A2441D7FB4CD2E5D79EB9CECE5DF95C7D0,
+	U3CAnimationDelayU3Ed__3_System_Collections_IEnumerator_Reset_m5C429D0B3823C9C31097CCF20138669992211D84,
+	U3CAnimationDelayU3Ed__3_System_Collections_IEnumerator_get_Current_m6CD3FB723160B051C442A36571520F3C98BF794C,
+	SpinButtonController_Start_m572F390C86C13EA5163B412475987E06D5835920,
+	SpinButtonController_OnMouseDown_mD02C941C48FDE17404BA70006DA0276ACFDBD50F,
+	SpinButtonController_Update_mB1DAF3327A824B500A9D41025CEA936A497BCF04,
+	SpinButtonController__ctor_mBCEB51B385D8F24BE3517EAD84115546B5DCD001,
+	SymbolController_get_PullingHandle_mBE4DE11DCB7E0CF2088D8BB658901A1818920C3C,
+	SymbolController_set_PullingHandle_m2C99DEF1866A8FE852E6CEFDF8BF6C6E482487AC,
+	SymbolController_Start_mB79BE6CC2E5FA92B8AB99BCF17A0235D7F98F2AF,
+	SymbolController_Update_mDC5583A7FC219F5446C3C073ED52EE00BDD4D3D7,
+	SymbolController_OnTriggerEnter_mCF67CED339C6D2F62E1A984FFB2C3909AE9FA650,
+	SymbolController_OnCollisionExit_mBC782FFF5EA5FD57014C32BFEEFDBF657CD2C517,
+	SymbolController__ctor_m0F5B24E9E719734E642915902F1538FEEA3467B0,
+	TextController_SetText_mDB740491C71596B7703474A551ECF5B160A64232,
+	TextController_SetText_m1B26F10AA55DB400EF4F3DEFEA74FB85E972CADF,
+	TextController_FinishAnimationEarly_m468481D7CF445545D6CC42C850539A53AAB936FE,
+	TextController_PlayAnimateSound_m33739EBA54320CE0F51901DAAFAF463810FED38B,
+	TextController_Start_m15081F8F856BB0907FACB0F7655436F287A46319,
+	TextController_Update_m1E0250612056DC745E7ADBF3978B723C7A7854A3,
+	TextController_CountUpRoutine_m05C29F9D8C46604E605BD9CF1BF7104E331B9F65,
+	TextController__ctor_m62ECE2CB6D0A4F91F707E8FD0D9E288282EAF87D,
+	U3CCountUpRoutineU3Ed__11__ctor_m35591B2BE5715F6E171BE5F62DCB855A6DAB5A67,
+	U3CCountUpRoutineU3Ed__11_System_IDisposable_Dispose_m0384DD46A81B09C891CEAC0B425C8368FB0CCF11,
+	U3CCountUpRoutineU3Ed__11_MoveNext_mFE20C305BC8AA0230D5522B588F7F6601D6C2CC7,
+	U3CCountUpRoutineU3Ed__11_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m665408D503E406A1A87D43849687066A9949A0C7,
+	U3CCountUpRoutineU3Ed__11_System_Collections_IEnumerator_Reset_m1AFE070EADA2C3CBFF03B6E4A8EF0D4BB3111119,
+	U3CCountUpRoutineU3Ed__11_System_Collections_IEnumerator_get_Current_m58452E724B14CC45F7179471ACD44A9080E16920,
+	TextFloatingControl_SetText_mAE522E9116B807C9D44375AE9A27FE5C236C24C6,
+	TextFloatingControl_SetText_m7C79831BF656E56D118A57D4F4DB7FCFA02EEBB2,
+	TextFloatingControl_Start_mC004624A3E433A6EB0815F12D62157A23CC84671,
+	TextFloatingControl_Update_mD884BD18ACA663809FDF1AF0C5776385872242AD,
+	TextFloatingControl__ctor_mC89A9808F8B7C3923B98331038C25EFF86E48E72,
+};
+static const int32_t s_InvokerIndices[163] = 
+{
+	2725,
+	2725,
+	2259,
+	2725,
+	2670,
+	2272,
+	2670,
+	2272,
+	2656,
+	2259,
+	2296,
+	2296,
+	2725,
+	2725,
+	2272,
+	2725,
+	3984,
+	2725,
+	1981,
+	1981,
+	2725,
+	2725,
+	2725,
+	2725,
+	2670,
+	2272,
+	2656,
+	2259,
+	2670,
+	2272,
+	2670,
+	2272,
+	2725,
+	2725,
+	2725,
+	2725,
+	2725,
+	2725,
+	2259,
+	2259,
+	1788,
+	1788,
+	2670,
+	2670,
+	2670,
+	2725,
+	2725,
+	2725,
+	2725,
+	3984,
+	2725,
+	2725,
+	1981,
+	2259,
+	2725,
+	2695,
+	2670,
+	2725,
+	2670,
+	2259,
+	2725,
+	2695,
+	2670,
+	2725,
+	2670,
+	3984,
+	2725,
+	2272,
+	2272,
+	2259,
+	2725,
+	2695,
+	2670,
+	2725,
+	2670,
+	2725,
+	2725,
+	2259,
+	2725,
+	2725,
+	2695,
+	2296,
+	2725,
+	2725,
+	2725,
+	2725,
+	2296,
+	2725,
+	2725,
+	2725,
+	2725,
+	2725,
+	2725,
+	2725,
+	2296,
+	2725,
+	2725,
+	1362,
+	2725,
+	2725,
+	2670,
+	1772,
+	2670,
+	2725,
+	2725,
+	1981,
+	2259,
+	2725,
+	2695,
+	2670,
+	2725,
+	2670,
+	2259,
+	2725,
+	2695,
+	2670,
+	2725,
+	2670,
+	2670,
+	2272,
+	2656,
+	2259,
+	2725,
+	2725,
+	2670,
+	2725,
+	2725,
+	2259,
+	2725,
+	2695,
+	2670,
+	2725,
+	2670,
+	2725,
+	2725,
+	2725,
+	2725,
+	2695,
+	2296,
+	2725,
+	2725,
+	2272,
+	2272,
+	2725,
+	2272,
+	817,
+	2725,
+	2725,
+	2725,
+	2725,
+	1791,
+	2725,
+	2259,
+	2725,
+	2695,
+	2670,
+	2725,
+	2670,
+	2272,
+	2259,
+	2725,
+	2725,
+	2725,
+};
+extern const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[];
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	163,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	g_AssemblyU2DCSharp_AttributeGenerators,
+	NULL, // module initializer,
+	NULL,
+	NULL,
+	NULL,
+};

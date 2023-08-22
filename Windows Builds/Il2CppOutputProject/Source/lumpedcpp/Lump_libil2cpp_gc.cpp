@@ -1,0 +1,7 @@
+#include "il2cpp-config.h"
+#include "C:\Unity\Silly-Slots\Windows Builds\Il2CppOutputProject\IL2CPP\libil2cpp\gc\BoehmGC.cpp"
+#include "C:\Unity\Silly-Slots\Windows Builds\Il2CppOutputProject\IL2CPP\libil2cpp\gc\GCHandle.cpp"
+#include "C:\Unity\Silly-Slots\Windows Builds\Il2CppOutputProject\IL2CPP\libil2cpp\gc\GarbageCollector.cpp"
+#include "C:\Unity\Silly-Slots\Windows Builds\Il2CppOutputProject\IL2CPP\libil2cpp\gc\NullGC.cpp"
+#include "C:\Unity\Silly-Slots\Windows Builds\Il2CppOutputProject\IL2CPP\libil2cpp\gc\WriteBarrier.cpp"
+#include "C:\Unity\Silly-Slots\Windows Builds\Il2CppOutputProject\IL2CPP\libil2cpp\gc\WriteBarrierValidation.cpp"

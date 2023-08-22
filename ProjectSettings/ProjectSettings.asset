@@ -246,7 +246,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 1
+  androidUseCustomKeystore: 0
   m_AndroidBanners:
   - width: 320
     height: 180
@@ -713,16 +713,16 @@ PlayerSettings:
     Android: 6
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Template_3D
-  metroPackageVersion: 
-  metroCertificatePath: 
+  metroPackageName: Silly-Slots
+  metroPackageVersion: 1.0.0.0
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Template_3D
+  metroCertificateSubject: Kenneth Peterson
+  metroCertificateIssuer: Kenneth Peterson
+  metroCertificateNotAfter: 00bd1e99c87dd901
+  metroApplicationDescription: Silly Slots
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Silly-Slots
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -736,7 +736,10 @@ PlayerSettings:
     a: 1}
   metroSplashScreenUseBackgroundColor: 0
   platformCapabilities: {}
-  metroTargetDeviceFamilies: {}
+  metroTargetDeviceFamilies:
+    Desktop: True
+    Mobile: True
+    Xbox: True
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
